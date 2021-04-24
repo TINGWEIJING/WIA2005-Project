@@ -7,28 +7,28 @@
 
 ## Installation
 - Create venv with the name venv
-```bash
+```Shell
 py -m venv venv
 ```
 - Activate venv
-```bash
+```Shell
 venv\Scripts\activate
 ```
-- Install required library
-```bash
+- Install required libraries
+```Shell
 py -m pip install -r requirements.txt
 ```
 
 ## Run
 - Using CMD
-```bash
+```Shell
 venv\Scripts\activate
 set FLASK_APP=core
 set FLASK_ENV=development
 flask run
 ```
 - Using Power Shell
-```bash
+```Shell
 venv\Scripts\activate
 $env:FLASK_APP = "core"
 $env:FLASK_ENV = "development"
@@ -36,6 +36,25 @@ flask run
 ```
 
 ## Target Features
+### Backend (Python)
+1. Geocoding & Routing & Distance
+   - https://osmnx.readthedocs.io/en/stable/
+   - https://shakasom.medium.com/routing-street-networks-find-your-way-with-python-9ba498147342
+   - https://pypi.org/project/openrouteservice/
+   - https://openrouteservice.org/
+   - https://pypi.org/project/geopy/#downloads
+1. Web scraping
+2. Sentiment Analysis + filtering
+3. Data Visualization for sentiment analysis
+4. Ranking algorithm
+5. Video & audio analysis
+6. Dynamic Time Warping (DTW)
+
+### Frontend (Javascript)
+1. Address input field
+2. Display Google Map with waypoint & Draw Routes
+3. Display table of distance
+4. Ranking
 
 ## Gits Commands
 - Clone repo
