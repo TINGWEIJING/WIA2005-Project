@@ -21,6 +21,8 @@ def sampleGetRequest():
         app.logger.error(error)
         return Response(status=500)
 
+    error = None
+
     results = {}
     results['Text'] = 'A'
     results['Value'] = 1
