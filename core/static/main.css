@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* use color in bootstrap for other common color */
+:root {
+  --dark-purple: rgb(134, 75, 189);
+  --light-purple: #834d9b;
+  --light-gray: rgb(223, 223, 223);
+  --dark-gray: #3A3A3A;
+  /* --dark-gray: rgb(141, 141, 141); */
+}

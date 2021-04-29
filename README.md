@@ -55,6 +55,8 @@ flask run
 2. Display Google Map with waypoint & Draw Routes
 3. Display table of distance
 4. Ranking
+5. General Info
+   - Bootstrap version is 4.6
 
 ## Gits Commands
 - Clone repo
