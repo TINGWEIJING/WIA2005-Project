@@ -52,11 +52,20 @@ flask run
 
 ### Frontend (Javascript)
 1. Address input field
+   - Use Bootstrap [Form](https://getbootstrap.com/docs/4.6/components/forms/)
 2. Display Google Map with waypoint & Draw Routes
+   - Draw the route using [polyline](https://www.sitepoint.com/create-a-polyline-using-the-geolocation-and-the-google-maps-api/)
+   - [gmplot](https://github.com/gmplot/gmplot) can draw the route for us with the help of [Google Direction API](https://developers.google.com/maps/documentation/directions/overview)
+     - [Guide](https://www.tutorialspoint.com/plotting-google-map-using-gmplot-package-in-python) to use gmplot
+   - GCP Account needed to have API Key
 3. Display table of distance
+   - Use Bootstrap [Table](https://getbootstrap.com/docs/4.6/content/tables/)
 4. Ranking
+   - Use Bootstrap Table
 5. General Info
-   - Bootstrap version is 4.6
+   - [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) version is 4.6
+   - Use [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) to diaplay map in index.html
+   - [normalize.css](https://necolas.github.io/normalize.css/) used to maintain cross-browser compatability
 
 ## Gits Commands
 - Clone repo
