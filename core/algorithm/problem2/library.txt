@@ -1,0 +1,9 @@
+Requests will allow us to send HTTP requests to get HTML files
+
+BeautifulSoupwill help us parse the HTML files
+
+pandas will help us assemble the data into a DataFrame to clean and analyze it
+
+NumPy will add support for mathematical functions and tools for working with arrays
+
+reference url: https://tinyurl.com/dwf7kj42
