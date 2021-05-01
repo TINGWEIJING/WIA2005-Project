@@ -1,14 +1,119 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet" />
+    <!-- icon - fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- custom css files -->
+    <link rel='stylesheet' type='text/css' media='screen' href='../static/normalize.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../static/main.css'>
-    <script src='../static/main.js'></script>
 </head>
+
 <body>
-    Index
+    <main class="container-fluid bg-dark text-white">
+        <div class="row d-flex justify-content-center">
+            <span class="h1 py-3">Project Title</span>
+            <form class="col-12">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">From</label>
+                        <select class="custom-select">
+                            <option selected>Select Starting Place</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Destination</label>
+                        <select class="custom-select">
+                            <option selected>Select Destination</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <div class="col-12">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-12">
+                <div class="bg-white text-dark d-flex justify-content-center align-items-center" style="height: 300px;">
+                    <!-- This is the map -->
+                    <iframe id="map-iframe" title="Inline Frame Example" width="100%" height="100%"
+                        src="./map1.html">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-12 d-flex justify-content-between py-3">
+                <button type="button" class="btn btn-primary" id="btn1">Company A</button>
+                <button type="button" class="btn btn-primary" id="btn2">Company B</button>
+                <button type="button" class="btn btn-primary" id="btn3">Company C</button>
+                <button type="button" class="btn btn-primary" id="btn4">Company D</button>
+                <button type="button" class="btn btn-primary" id="btn5">Company E</button>
+            </div>
+            <div class="col-12 pb-3">
+                <div class="bg-white text-dark d-flex justify-content-center align-items-center" style="height: 100px;">
+                    This is conclusion
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- bootstrap javascript files -->
+    <script src="/libs/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <!-- custom js files -->
+    <script src='../static/main.js'></script>
 </body>
+
 </html>
