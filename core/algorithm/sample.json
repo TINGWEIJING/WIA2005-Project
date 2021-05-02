@@ -1,0 +1,377 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJX2v2IcaqzTERmOP4XQ-9I_k",
+            "types": [
+                "establishment",
+                "point_of_interest",
+                "storage"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ-Vgp6jFozDERGPznI9zBvYk",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 3.3740421,
+                    "lng": 101.6006855
+                },
+                "southwest": {
+                    "lat": 3.0293616,
+                    "lng": 101.3730586
+                }
+            },
+            "copyrights": "Map data ©2021 Google",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "67.8 km",
+                        "value": 67824
+                    },
+                    "duration": {
+                        "text": "52 mins",
+                        "value": 3125
+                    },
+                    "end_address": "a9, Jalan Mawar 2b/1, Taman Kosaso, 48200 Rawang, Selangor, Malaysia",
+                    "end_location": {
+                        "lat": 3.3616829,
+                        "lng": 101.5631798
+                    },
+                    "start_address": "Lot 4, Lebuh Sultan Mohamed 2, Kawasan 21, Bandar Sultan Sulaiman, Port Pelabuhan Klang, Malaysia, Kawasan Perusahaan Bandar Sultan Suleiman, 42000 Port Klang, Selangor, Malaysia",
+                    "start_location": {
+                        "lat": 3.0314879,
+                        "lng": 101.3730586
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.4 km",
+                                "value": 397
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 51
+                            },
+                            "end_location": {
+                                "lat": 3.0293932,
+                                "lng": 101.3759558
+                            },
+                            "html_instructions": "Head \u003cb\u003esoutheast\u003c/b\u003e on \u003cb\u003eLeboh Sultan Mohamed 1\u003c/b\u003e toward \u003cb\u003eLebuh Sultan Mohamed 2\u003c/b\u003e",
+                            "polyline": {
+                                "points": "yaoQslviRXa@rAwBx@qAxA_C`B_C~@wA"
+                            },
+                            "start_location": {
+                                "lat": 3.0314879,
+                                "lng": 101.3730586
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "1.9 km",
+                                "value": 1851
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 112
+                            },
+                            "end_location": {
+                                "lat": 3.0414478,
+                                "lng": 101.3872161
+                            },
+                            "html_instructions": "Take the ramp onto \u003cb\u003eLebuhraya Selat Klang\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRoute 20\u003c/b\u003e",
+                            "maneuver": "ramp-left",
+                            "polyline": {
+                                "points": "utnQw~viRBS@I?M?MCSqBsAqCkBmA_AuAgAoA_ACCEEAEIQaBsAmBeBqI_IuCkCaIcHoAiAoAiAgAeAiAeAqBiB{@w@qCgCkBiBaAw@eA}@"
+                            },
+                            "start_location": {
+                                "lat": 3.0293932,
+                                "lng": 101.3759558
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "11.4 km",
+                                "value": 11385
+                            },
+                            "duration": {
+                                "text": "9 mins",
+                                "value": 551
+                            },
+                            "end_location": {
+                                "lat": 3.0688682,
+                                "lng": 101.4551167
+                            },
+                            "html_instructions": "Slight \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eLebuhraya Pintas Selat Klang Utara Baru\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eLebuhraya Shapadu\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eE30\u003c/b\u003e (signs for \u003cb\u003eE 30\u003c/b\u003e)\u003cdiv style=\"font-size:0.9em\"\u003eToll road\u003c/div\u003e",
+                            "maneuver": "turn-slight-left",
+                            "polyline": {
+                                "points": "a`qQceyiR]KECIEs@k@cAu@iBqA_Aw@WW_@_@c@e@oBmBcA{@gGwFs@q@g@_@WQ_@QOGKEECe@Ok@Kg@GSAo@AS?M?O@YBq@Hu@JwARkC\\eC^aALm@FaBN{ADs@AcA?g@A]?WAc@Co@Gq@Em@Iq@KcB]gIcBm@O_AUkA_@iA_@_@Oq@]e@SYOCAw@a@IGo@_@g@]i@_@i@a@g@e@c@_@GEMQa@_@Y]SSa@e@]g@a@k@]e@[i@g@aAMUQ]M[O_@CG[y@M_@GSUq@Sy@Qs@Qw@_@cBGY}AkHEUeA{E_AyESwACQIy@Iw@Ek@Eq@I}@AiAA]CqCFyAD{@@YFqAJcA@IVqBPkA\\aBHa@`@mBRgADSDSD]L{@BYFs@@OBc@BaA?q@Au@C_AAICc@ASO_BIk@Kg@ScAW}@]gAa@aAEIQ]MUWe@_@m@S[c@o@m@q@g@i@aAy@eAu@KIw@e@y@e@w@_@]OcAc@iAc@yAi@MEeA_@WKwHsCo@Ws@U[MYKe@QeC}@_C}@CAaBk@YKeAe@uG{BaC_A}Ac@s@WiF{BaBo@{CoAqAq@iAq@{B}ASS_BuAaBcB[c@g@s@s@kAaB{C]{@g@oAi@oBKg@Me@G[Ke@E[K{@M_AEk@Gy@Cm@CaAAuA?WCiOOco@A_@@s@AwEAsC?i@A{BE}C?aA?k@@i@?EBa@B_@?AB]Hq@Hi@FSVu@Tq@HMZk@V_@HKLM^_@ROf@c@XQ^S@?dAe@d@OTEdAUJCTE~AY|FeAzE{@vJiBXENGbCe@DAZEFANEPE^Kp@Yp@_@p@_@n@g@l@e@v@y@`@Yv@u@TSXYZWHGrAgAj@c@bBgANK\\SBAPKpBeAtBcAB?DAx@@"
+                            },
+                            "start_location": {
+                                "lat": 3.0414478,
+                                "lng": 101.3872161
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "1.0 km",
+                                "value": 977
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 51
+                            },
+                            "end_location": {
+                                "lat": 3.0662941,
+                                "lng": 101.4631896
+                            },
+                            "html_instructions": "\u003cb\u003eLebuhraya Pintas Selat Klang Utara Baru\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eLebuhraya Shapadu\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eE30\u003c/b\u003e turns \u003cb\u003eleft\u003c/b\u003e and becomes \u003cb\u003eLebuhraya Selat Klang\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRoute 20\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eToll road\u003c/div\u003e",
+                            "polyline": {
+                                "points": "mkvQomfjRbCsBx@w@`@g@^i@\\m@Zq@Xs@DQBIRy@Hk@JmAF_APqC?OXoEHwAPoC`@cGHmA"
+                            },
+                            "start_location": {
+                                "lat": 3.0688682,
+                                "lng": 101.4551167
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.7 km",
+                                "value": 749
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 40
+                            },
+                            "end_location": {
+                                "lat": 3.0688179,
+                                "lng": 101.4690862
+                            },
+                            "html_instructions": "Take the \u003cb\u003eE1\u003c/b\u003e exit toward \u003cb\u003eLebuhraya PLUS\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eIpoh\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eKuala Lumpur\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eE6\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eKLIA\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eE2\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eJohor Bahru\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eToll road\u003c/div\u003e",
+                            "maneuver": "ramp-left",
+                            "polyline": {
+                                "points": "i{uQ}_hjRGw@Ds@Dq@@o@?ABg@CwAEkACMMu@Ms@AKQi@[_Ao@uAa@s@e@m@g@i@MMi@i@WWOQYY{@cAW[MOMMWa@GS"
+                            },
+                            "start_location": {
+                                "lat": 3.0662941,
+                                "lng": 101.4631896
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "23.0 km",
+                                "value": 22981
+                            },
+                            "duration": {
+                                "text": "17 mins",
+                                "value": 1005
+                            },
+                            "end_location": {
+                                "lat": 3.177971,
+                                "lng": 101.6003667
+                            },
+                            "html_instructions": "Continue onto \u003cb\u003eLebuhraya Baru Lembah Klang\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eE1\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eToll road\u003c/div\u003e",
+                            "polyline": {
+                                "points": "ckvQydijRU]OQeCcDOSoGyH}AkB{E{F{A{B{A}BmA{ByBgE}@uBsC_HO_@gCaGqCuGSa@M[w@cBc@{@S]sAuBs@eAe@k@gAsAyBcC[[EGeFkFYYWW}BaCYY{@}@iEoE_D}CkCsCiB_CMOKOuBgCQUi@o@gF_HeAwAqEyFsBiCKOyEgGiD_FeA{AqAmBOY}CgF[k@KW_@y@]aAMe@CKSy@[yAI_ACm@EgAAcAByD@oADwC@UHyDBoB@U@a@BcA?ABcBB_B@}B?eB?aDCaC?E?Y?C?c@EaCC}AMmICsBGuEAkAAeAAc@Ac@CeAKuIAqD?wE@c@?u@B}B?c@@c@?c@HoH?oAB_I?mBA[CiA?GA[Aa@?ACs@E}@G{@IgAIcAG}@gC}WOyAKuAIuAE{B?w@B{@?I@}@@C@_@@YDu@Hu@Ju@Js@^wB`@eCl@gDr@kEt@cEVaB|AcJF]\\qBTeBPeBNcCDmA@m@?i@EeBY}FGmAI}Bq@gN[eFI}@YuEWqFKyA]sCMw@[yAIUKa@?CK]?Am@eBcBmE}C}Ha@eAO_@s@gByEuLSe@CGMUCGgC}FMWGMGMw@oB]_AW}@WaACKCKI_@UoAWwAGa@K{@McBK{AQiEa@}IOcDCa@?ACg@QyDE{@OkDGmACe@KyBWcFEs@Gm@Eg@Gg@Ku@Kq@Kg@Qk@[{@i@mAsB}DIQi@eAOWMW[m@[o@Q]OWCGEGGMgEgIg@}@e@_Ai@aAaB}Cs@iAm@y@o@w@e@i@i@i@[Yu@u@w@q@m@e@y@g@q@_@wAq@{@_@wAk@cA]s@QUIc@KeB]eC]cBMSCQA]CoIk@cHc@qF_@c@AcCQ_AImAM}BYWCEASCUCkB[cJyAA?SCsF_AyHoA_@KgGmAMCqBa@MC_HmASEa@GKAKCYCGA[EsDa@kBQeAM{@KeAI_AIg@Cm@Ec@Co@EaAEaAAaACc@@oCGM?a@?oA?}JAm@FyBDI?g@@y@?o@@qC@mD@qD@M?wBAmF?eCAkBCmAE{COaCQcCSmBQc@EkAKeBOiE]IAc@Gc@Ea@Ec@EAA{CU_CSi@EuLeAyBUmBM}AIsCIgCAG?cDBuBHgAAC@[BG?a@DsDRwGr@{Gr@_It@sEd@kDZ_AFo@?eA?uAE}AKo@IkAKwAa@oAc@wAi@cAa@_@O{@]e@Qu@YeHmC_DmAeBm@yAm@oAi@{Ai@iA_@_AMi@IcCa@]CkAFw@AQ?eBXk@No@N"
+                            },
+                            "start_location": {
+                                "lat": 3.0688179,
+                                "lng": 101.4690862
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "24.4 km",
+                                "value": 24420
+                            },
+                            "duration": {
+                                "text": "15 mins",
+                                "value": 909
+                            },
+                            "end_location": {
+                                "lat": 3.3648833,
+                                "lng": 101.5549197
+                            },
+                            "html_instructions": "Keep \u003cb\u003eleft\u003c/b\u003e to continue on \u003cb\u003eLebuhraya Utara - Selatan\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eAH2\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eE1\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eToll road\u003c/div\u003e",
+                            "maneuver": "keep-left",
+                            "polyline": {
+                                "points": "iukRiybkRQPA@a@Ns@^MJy@f@y@h@]T_CzAyB~AsBvAoBpAeAt@YTs@h@o@j@GFk@j@w@v@QNEBI@MPUXYb@EHUZMRKNS^EHILINCDMXqAjDEJ]x@g@hAQb@Sb@M\\O`@Qh@c@nAIPwApDWn@a@jA{BlGqExLyAxDk@tAc@|@[p@a@r@UZSX[`@q@n@[Z_@VqA`Ae@VULc@Ri@Rw@Ze@Nm@NQD_C`@gALgAFeABaAAoB?WAm@?kBCmEA]?uBCsEGyDAaD?c@AsDGoCEqCCoCEaAA[?oAAmCCW?e@?WA_@?oCAcDC[?qA?M?_B@kB@_@AiAA}ACY?q@@i@@_@@gBJ}ALw@JSBGBcARuAZsBl@qAd@QFiAd@uAl@MDQH_@N_CbAc@Re@RaA^{An@cDtA_@P_@N}IxDm@Xe@N[Nc@Tc@RWHUJKDcBp@mBz@uAl@qAl@QJa@TeAh@i@\\i@\\}@n@u@l@gBzAs@r@m@l@g@l@m@p@y@`AyAhBOPMPu@`AuAfBaE|EmHxIo@v@WXw@~@e@j@EDi@n@wA`Bi@l@q@l@SPEDCBm@`@[TA?]Ra@Ty@^w@Zi@PYJyA^SBG@YDWDo@D]BeADuA@{D?{AAG?iA@Y?G?[?_B@oBB{DDaBBiG@c@?c@@eE@Q?c@?c@@sDBgA@c@?c@?c@@qA@mADmAJiALk@JMBODeB`@aAZi@TUHID_@PQHKFeBfA{BhB{@r@wIpHuBhBgCvBeA|@YVuBdByCdCIHQLqAdAYTw@n@yK|Iw@l@[VqGfFg@`@e@b@u@l@qB`BqEtDe@`@e@b@}ElEc@`@IFo@f@aAl@WPi@X]Nc@Rc@Pw@VSFk@NuAXe@Fu@Ji@Dc@Ba@@A?[@I?e@?W?WAK?gAGA?qAMg@Iu@Oc@Kq@QKEGAYK_@OaA[{Ai@eAe@_@OECWMSIuBu@kC}@{CiAaCy@WKKGKCUKaRaH_A]s@Uq@U_@O]MgBm@]K_@MsA_@q@OmAUeAMeAIaBE{B?y@Bi@Fk@H_@HSDiAV}Af@QJ}@`@q@\\a@T]TMJ[VeA~@gA`AYV[VuAnAm@h@YVo@l@CBgD~CeJhIaAx@uAjA_CvB{ArA[Xi@`@}@p@}A|@wAr@_Bp@c@PwBn@{@RuATuAR}BVyC\\_QnBYBcBRkKhA]BmC\\yBViFj@u@FM@c@Bc@BY@cA@_A?SAU?MA[AGAc@Ek@GSCm@Kg@KSEe@MWIi@QMGy@[}Ay@aAq@e@_@GGa@_@c@c@GIaAcAW[sAwA{@gAWYW[o@u@U[WY_BmB}AkBW[cQ}SIGo@w@uBeCW[WYuBgCW[o@u@oKgM{@o@[U_Ao@eB{@OG{Ai@c@KCAa@Ie@Kg@G[CcDSe@Ao@Bc@@sABm@Bo@B}FRS@c@@I?}@@iDJi@BmL`@oOh@M@_GPy@Fs@H}@Jk@LaB^aAV_A\\_Bp@{@b@eBfAiAv@kCjBoDhCA?uClBaBfAmAr@iB`AwAt@o@V_@NMDQFa@Lc@NyAd@}A`@}@RkARyAV{APqBPc@Bc@D]B{ADiA@mDAcACYCc@CyDYEAcNgAgAIa@Ec@EuOmAyHi@iD[}CYePoAaE_@a@C_@CyAKYCA?a@CKAK?e@Eg@G"
+                            },
+                            "start_location": {
+                                "lat": 3.177971,
+                                "lng": 101.6003667
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.0 km",
+                                "value": 1951
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 104
+                            },
+                            "end_location": {
+                                "lat": 3.3729857,
+                                "lng": 101.5504455
+                            },
+                            "html_instructions": "Take exit \u003cb\u003e117\u003c/b\u003e toward \u003cb\u003eSg. Buaya\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eSerendah\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eToll road\u003c/div\u003e",
+                            "maneuver": "ramp-left",
+                            "polyline": {
+                                "points": "oepSg}yjR]DA?SCe@EcAMw@Mq@Mm@Mi@Oi@Mo@Qq@SWKAAi@S]OcAe@OIi@WyAy@]USMSMiD{BQIyAy@a@U{@c@[QGE_@Sa@W[MMGMCSGOCYCGAY?c@@i@Da@JKFQFKDYN[Va@ZU\\Yh@IRKXKb@ETAPAX?Z?F?b@@NBj@?LBRDr@^nDZ`Ch@dEFb@F`@@DB\\Fb@D`@Fb@JfA@DNdBJlAHzA"
+                            },
+                            "start_location": {
+                                "lat": 3.3648833,
+                                "lng": 101.5549197
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 129
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 20
+                            },
+                            "end_location": {
+                                "lat": 3.3729399,
+                                "lng": 101.5492875
+                            },
+                            "html_instructions": "Keep \u003cb\u003eright\u003c/b\u003e to continue toward \u003cb\u003eJln Sungai Buaya\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRoute 1208\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eToll road\u003c/div\u003e",
+                            "maneuver": "keep-right",
+                            "polyline": {
+                                "points": "exqSiayjRHnA@F?`AAlA"
+                            },
+                            "start_location": {
+                                "lat": 3.3729857,
+                                "lng": 101.5504455
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.4 km",
+                                "value": 361
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 38
+                            },
+                            "end_location": {
+                                "lat": 3.3724119,
+                                "lng": 101.5460889
+                            },
+                            "html_instructions": "Keep \u003cb\u003eright\u003c/b\u003e to continue toward \u003cb\u003eJln Sungai Buaya\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRoute 1208\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eToll road\u003c/div\u003e",
+                            "maneuver": "keep-right",
+                            "polyline": {
+                                "points": "{wqSazxjRBpAB|@PvB@JHn@l@tETdB"
+                            },
+                            "start_location": {
+                                "lat": 3.3729399,
+                                "lng": 101.5492875
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.4 km",
+                                "value": 2365
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 180
+                            },
+                            "end_location": {
+                                "lat": 3.360627,
+                                "lng": 101.5617005
+                            },
+                            "html_instructions": "Sharp \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eJln Sungai Buaya\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eRoute 1208\u003c/b\u003e (signs for \u003cb\u003e3208\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eSg. Buaya\u003c/b\u003e)",
+                            "maneuver": "turn-sharp-left",
+                            "polyline": {
+                                "points": "qtqSafxjRRTB@D@D?D@DADADCBADGBC@OB_@Jg@Pc@TWTMPAPKLGl@SdBa@LCRGRG`@KNExBs@|@c@b@URKBAPGJCPEZIPEd@IHCRGBAPKRSBAn@u@fAqAhAuAFGFINOPUTOLKTM^Ix@M\\KVI?AHGHGFKDI`@eALWFMHOJYFO@MBI?A@M?O?EC_@G}@?I?C?QAK@C@G@M@ABGDGFK@?JOX_@^a@FIDGPS^c@f@q@x@yA?Af@}@f@_ARm@DM?ABIDU@AB]Fi@Di@LsBB_@DS@MBMFYNo@Lg@H]J[BEHQDMBELQBCDGJILIXQRMb@YLQHOJUVs@FSL_@DMj@eBv@qCVwA`@oC"
+                            },
+                            "start_location": {
+                                "lat": 3.3724119,
+                                "lng": 101.5460889
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 124
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 29
+                            },
+                            "end_location": {
+                                "lat": 3.3617062,
+                                "lng": 101.5619772
+                            },
+                            "html_instructions": "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eJalan Mawar Utama\u003c/b\u003e",
+                            "maneuver": "turn-left",
+                            "polyline": {
+                                "points": "}joSsg{jR{AU}AY]G"
+                            },
+                            "start_location": {
+                                "lat": 3.360627,
+                                "lng": 101.5617005
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 km",
+                                "value": 134
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 35
+                            },
+                            "end_location": {
+                                "lat": 3.3616829,
+                                "lng": 101.5631798
+                            },
+                            "html_instructions": "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eJalan Mawar 4\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eDestination will be on the right\u003c/div\u003e",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "uqoSki{jRBU@mD?k@"
+                            },
+                            "start_location": {
+                                "lat": 3.3617062,
+                                "lng": 101.5619772
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "yaoQslviR`GkJ`DwED]?[CSqBsA_FkDeDgCUa@wTeSs\\mZmDaDcBiAgCkBaFaE_NgMsCuBgAa@wCWkADcTlC{F@iCMuFy@aOiDaH}CkD_CaB}AqBwByBcDsCsGcAsDwCaN_DcP]oDSwEJaIl@qGzA}H`AgHDmEKaCy@wF}AqEwAgCmCgDkE_DsEyBkTaIaNaF{PeG{OsG{CcBoCqBaEyDcAwAuCgFeAkCkAyEk@}DUuEY{pAAcOPqB~@eDfAeBhBaB`CkAlCo@tb@_Ix@OtCkAfEgDhC}BzHuF|FuC~@?|DkDzBqDv@iCdBsWj@qIAkBJkC[gF}@iDqAiCmAwA_BaB{BiCcAaBuLcOyHgJwDyFgEcIqEuK}HyQ}ByEuF{HkQaRqP_QyFgHu[ya@qIcMeFeJcAmDe@yCIuBHeNN_IPePMkQe@w\\KcWD{FLcVE{Ei@yJkDk_@KeIb@gHzIoh@lA{IViHq@oPqBa^c@kIk@kEq@uC}CsIcGkOaLeXuB{Fi@yBaAeGmAgV_AqSkAcSu@{DcEyIeDqGcNeWmDeEwDgD_GyCeFeBiCi@iFk@sKu@}TwAcHu@iWcEc`@gHkH{@mNmAwLWcWL{_@BwMk@aJw@iMkA{VuBgFc@qFSiLJoBBim@xFkG@mCUcDm@kG_C}LwEoLsEeDiAiBWaDe@cCDsEx@iBbA_DrB}MdJcE`DqDlDsBdDmL`ZiMl]mCxFwBfCsDlC{CpAeFfAoCTgC@aHEib@YeWWm^IoG\\wCf@mHvB_EbBkQrHmQvHoM|FwEtC_GjFsKxMeUjXgEnEsA`A{BhAuExAmAPiFPgO@yl@^qGj@eEfAiBv@_GbEa_@h[mTfQeXxT{H~GaDhBsCdA}E|@uELmBIsEs@cJaD_m@sTcEwAsFsAkCW}EEoD^mEpAoDjBqJnIsZpX_F`EuDpBcCbAsDbAkDh@wYdDoa@nEgGJyEc@yBi@oEoBqCyBeCmC}JoLy[a`@mQaTwAeAeDkBsC_AkCa@iEUsADoL^qg@`B{Jd@mGpA_DnAaDjBgKlHoLjHuDbBqDjAaI`BuGl@qJHo[_C{dAgI{AEsEo@gHsB{HcEwLeHyAq@eAQ}@@kAPcAd@}@r@o@fAg@fB@|D`CjSbAhKTtF@~CTtDnAvJb@XVEN]NgAf@{@fAc@tJoCdEcBtA[l@c@hGeH|Bq@~@_@dBsDLi@AcACcCzAoB~@iAhCkE`A}BN_Ar@qHjA}DbCkBbCsGnAiF`@oC{AU{Ba@DcE?k@"
+            },
+            "summary": "E1",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

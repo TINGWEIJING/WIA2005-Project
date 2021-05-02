@@ -43,6 +43,8 @@ flask run
    - https://pypi.org/project/openrouteservice/
    - https://openrouteservice.org/
    - https://pypi.org/project/geopy/#downloads
+   - https://github.com/googlemaps/google-maps-services-python
+   - https://developers.google.com/maps/documentation/directions/get-directions
 1. Web scraping
 2. Sentiment Analysis + filtering
 3. Data Visualization for sentiment analysis
