@@ -50,6 +50,7 @@ flask run
 5. Video & audio analysis
 6. Dynamic Time Warping (DTW)
    - https://www.youtube.com/watch?v=_K1OsqCicBY
+   - https://www.youtube.com/watch?v=tfOevFKQIjQ
 
 ### Frontend (Javascript)
 1. Address input field
