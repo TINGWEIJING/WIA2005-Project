@@ -49,6 +49,7 @@ flask run
 4. Ranking algorithm
 5. Video & audio analysis
 6. Dynamic Time Warping (DTW)
+   - https://www.youtube.com/watch?v=_K1OsqCicBY
 
 ### Frontend (Javascript)
 1. Address input field
