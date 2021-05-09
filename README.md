@@ -51,6 +51,8 @@ flask run
 6. Dynamic Time Warping (DTW)
    - https://www.youtube.com/watch?v=_K1OsqCicBY
    - https://www.youtube.com/watch?v=tfOevFKQIjQ
+   - https://towardsdatascience.com/dynamic-time-warping-3933f25fcdd
+   - https://dynamictimewarping.github.io/python/
 
 ### Frontend (Javascript)
 1. Address input field
