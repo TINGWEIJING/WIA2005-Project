@@ -1,9 +1,13 @@
 # WIA2005-Project
 ## TOC
-- [Installation](#installation)
-- [Run](#run)
-- [Target Features](#target-features)
-- [Gits Commands](#gits-commands)
+- [WIA2005-Project](#wia2005-project)
+  - [TOC](#toc)
+  - [Installation](#installation)
+  - [Run](#run)
+  - [Target Features](#target-features)
+    - [Backend (Python)](#backend-python)
+    - [Frontend (Javascript)](#frontend-javascript)
+  - [Gits Commands](#gits-commands)
 
 ## Installation
 - Create venv with the name venv
