@@ -1,9 +1,13 @@
 # WIA2005-Project
 ## TOC
-- [Installation](#installation)
-- [Run](#run)
-- [Target Features](#target-features)
-- [Gits Commands](#gits-commands)
+- [WIA2005-Project](#wia2005-project)
+  - [TOC](#toc)
+  - [Installation](#installation)
+  - [Run](#run)
+  - [Target Features](#target-features)
+    - [Backend (Python)](#backend-python)
+    - [Frontend (Javascript)](#frontend-javascript)
+  - [Gits Commands](#gits-commands)
 
 ## Installation
 - Create venv with the name venv
@@ -49,6 +53,10 @@ flask run
 4. Ranking algorithm
 5. Video & audio analysis
 6. Dynamic Time Warping (DTW)
+   - https://www.youtube.com/watch?v=_K1OsqCicBY
+   - https://www.youtube.com/watch?v=tfOevFKQIjQ
+   - https://towardsdatascience.com/dynamic-time-warping-3933f25fcdd
+   - https://dynamictimewarping.github.io/python/
 
 ### Frontend (Javascript)
 1. Address input field
