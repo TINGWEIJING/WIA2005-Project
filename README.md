@@ -45,6 +45,7 @@ flask run
    - https://pypi.org/project/geopy/#downloads
 1. Web scraping
 2. Sentiment Analysis + filtering
+   - [GitHub python-hash-trie](https://github.com/bzamecnik/python-hash-trie/blob/master/hash_trie/hash_trie.py)
 3. Data Visualization for sentiment analysis
 4. Ranking algorithm
 5. Video & audio analysis
