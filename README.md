@@ -47,6 +47,8 @@ flask run
    - https://pypi.org/project/openrouteservice/
    - https://openrouteservice.org/
    - https://pypi.org/project/geopy/#downloads
+   - https://github.com/googlemaps/google-maps-services-python
+   - https://developers.google.com/maps/documentation/directions/get-directions
 1. Web scraping
    - Ways to use bs4
    https://towardsdatascience.com/scraping-1000s-of-news-articles-using-10-simple-steps-d57636a49755
@@ -78,8 +80,11 @@ flask run
    - https://www.youtube.com/watch?v=XXusSAdHQ7U
    Implementation in python code (github)?
    - https://github.com/crawles/dtw
+7. Billing infomation
+   - [Google Cloud Billing Overview](https://developers.google.com/maps/billing/gmp-billing#billing-overview)
+   - [Google Cloud Billing Credit](https://developers.google.com/maps/billing-credits)
+   - [Google Cloud Billing Pricing](https://cloud.google.com/maps-platform/pricing/sheet/?_ga=2.42127266.622598182.1620895783-341686522.1608875911)
 
-   
 
 ### Frontend (Javascript)
 1. Address input field
@@ -88,6 +93,7 @@ flask run
    - Draw the route using [polyline](https://www.sitepoint.com/create-a-polyline-using-the-geolocation-and-the-google-maps-api/)
    - [gmplot](https://github.com/gmplot/gmplot) can draw the route for us with the help of [Google Direction API](https://developers.google.com/maps/documentation/directions/overview)
      - [Guide](https://www.tutorialspoint.com/plotting-google-map-using-gmplot-package-in-python) to use gmplot
+     - [More Guide](https://www.codedisciples.in/google-map-plots.html)
    - GCP Account needed to have API Key
 3. Display table of distance
    - Use Bootstrap [Table](https://getbootstrap.com/docs/4.6/content/tables/)
