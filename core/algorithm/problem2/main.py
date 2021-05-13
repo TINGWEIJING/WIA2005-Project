@@ -161,12 +161,12 @@ for i in tqdm(companyList,desc='Preprocess Data'):
     for word in i['stopWordFreq']:
         i['wordFreq'].remove(word)
 
-    # Can remove the comments below to get the positive and negative words and their respective word count directly
-    # Can refer company.csv under project directory to see the output
-    # # i['positiveWordFreq'] = stringMatching(i['wordFreq'],positiveWords)
-    # # i['negativeWordFreq'] = stringMatching(i['wordFreq'],negativeWords)
-    df = pd.DataFrame(companyList) 
-    df.to_csv('company.csv', index=False, encoding='utf-8')
+# Can remove the comments below to get the positive and negative words and their respective word count directly
+# Can refer company.csv under project directory to see the output
+# # i['positiveWordFreq'] = stringMatching(i['wordFreq'],positiveWords)
+# # i['negativeWordFreq'] = stringMatching(i['wordFreq'],negativeWords)
+df = pd.DataFrame(companyList) 
+df.to_csv('company.csv', index=False, encoding='utf-8')
 
 # Data Visualization for plotly in case needed (can remove when frontend is ready)
 stopwordDict = [{'compName':'Citylink'},{'compName':'Poslaju'},{'compName':'GDEX'},{'compName':'J&T'},{'compName':'DHL'}]
