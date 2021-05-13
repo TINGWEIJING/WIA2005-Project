@@ -70,6 +70,16 @@ flask run
    - https://www.youtube.com/watch?v=tfOevFKQIjQ
    - https://towardsdatascience.com/dynamic-time-warping-3933f25fcdd
    - https://dynamictimewarping.github.io/python/
+   Basic implementation rules reference & complexity of the algorithm:
+   - https://betterprogramming.pub/how-to-do-speech-recognition-with-a-dynamic-time-warping-algorithm-159c2a1bb83c
+   Article Research on DWT:
+   - https://iopscience.iop.org/article/10.1088/1742-6596/1366/1/012091/pdf
+   Matlab needed?
+   - https://www.youtube.com/watch?v=XXusSAdHQ7U
+   Implementation in python code (github)?
+   - https://github.com/crawles/dtw
+
+   
 
 ### Frontend (Javascript)
 1. Address input field
