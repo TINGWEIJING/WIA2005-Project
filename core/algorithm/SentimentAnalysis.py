@@ -8,7 +8,7 @@ class AlgoException(Exception):
 
 class SentimentAnalysis:
 
-    cTrie = {}
+    cTrie: dict[str,str] = {}
     SENT_VALUE_KEY = '___'
 
     def __init__(self, file_path: str) -> None:
@@ -27,7 +27,7 @@ class SentimentAnalysis:
         if len(self.__class__.cTrie) == 0:
             raise AlgoException('Sentiment trie is empty')
 
-    def get_sentiment_values(self, words: list) -> dict:
+    def get_sentiment_values(self, words: 'list[str]') -> dict:
         '''
         Sentiment analysis for a list of words
         '''
