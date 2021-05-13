@@ -44,6 +44,18 @@ flask run
    - https://openrouteservice.org/
    - https://pypi.org/project/geopy/#downloads
 1. Web scraping
+   - Ways to use bs4
+   https://towardsdatascience.com/scraping-1000s-of-news-articles-using-10-simple-steps-d57636a49755
+   https://towardsdatascience.com/web-scraping-news-articles-in-python-9dd605799558 
+   - Clean tag
+   https://medium.com/@jorlugaqui/how-to-strip-html-tags-from-a-string-in-python-7cb81a2bbf44 
+   - Progress bar
+   https://medium.com/@abhirsk02/web-scraping-weather-data-using-python-4dfe2ee0ba6e 
+   - Pyplot
+   https://plotly.com/python/bar-charts/ 
+   https://plotly.com/python/figure-labels/ 
+   - Count Word Frequencies
+   https://programminghistorian.org/en/lessons/counting-frequencies
 2. Sentiment Analysis + filtering
 3. Data Visualization for sentiment analysis
 4. Ranking algorithm
