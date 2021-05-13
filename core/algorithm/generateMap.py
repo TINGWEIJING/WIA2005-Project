@@ -4,7 +4,7 @@ from gmplot import *
 # First two arugments are the geogrphical coordinates .i.e. Latitude and Longitude
 #and the zoom resolution.
 # klang - 3.0346383, 101.3741497
-gmap = gmplot.GoogleMapPlotter(3.0346383, 101.3741497, 18)
+gmap = gmplot.GoogleMapPlotter(3.0346383, 101.3741497, 25)
 # Coordinates - path one
 # { "lat": 3.3616847, "lng": 101.5634998 }
 # { "lat": 3.0346383, "lng": 101.3741497 }
