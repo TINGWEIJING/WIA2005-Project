@@ -50,7 +50,20 @@ flask run
    - https://github.com/googlemaps/google-maps-services-python
    - https://developers.google.com/maps/documentation/directions/get-directions
 1. Web scraping
+   - Ways to use bs4
+   https://towardsdatascience.com/scraping-1000s-of-news-articles-using-10-simple-steps-d57636a49755
+   https://towardsdatascience.com/web-scraping-news-articles-in-python-9dd605799558 
+   - Clean tag
+   https://medium.com/@jorlugaqui/how-to-strip-html-tags-from-a-string-in-python-7cb81a2bbf44 
+   - Progress bar
+   https://medium.com/@abhirsk02/web-scraping-weather-data-using-python-4dfe2ee0ba6e 
+   - Pyplot
+   https://plotly.com/python/bar-charts/ 
+   https://plotly.com/python/figure-labels/ 
+   - Count Word Frequencies
+   https://programminghistorian.org/en/lessons/counting-frequencies
 2. Sentiment Analysis + filtering
+   - [GitHub python-hash-trie](https://github.com/bzamecnik/python-hash-trie/blob/master/hash_trie/hash_trie.py)
 3. Data Visualization for sentiment analysis
 4. Ranking algorithm
 5. Video & audio analysis
@@ -59,10 +72,19 @@ flask run
    - https://www.youtube.com/watch?v=tfOevFKQIjQ
    - https://towardsdatascience.com/dynamic-time-warping-3933f25fcdd
    - https://dynamictimewarping.github.io/python/
+   Basic implementation rules reference & complexity of the algorithm:
+   - https://betterprogramming.pub/how-to-do-speech-recognition-with-a-dynamic-time-warping-algorithm-159c2a1bb83c
+   Article Research on DWT:
+   - https://iopscience.iop.org/article/10.1088/1742-6596/1366/1/012091/pdf
+   Matlab needed?
+   - https://www.youtube.com/watch?v=XXusSAdHQ7U
+   Implementation in python code (github)?
+   - https://github.com/crawles/dtw
 7. Billing infomation
    - [Google Cloud Billing Overview](https://developers.google.com/maps/billing/gmp-billing#billing-overview)
    - [Google Cloud Billing Credit](https://developers.google.com/maps/billing-credits)
    - [Google Cloud Billing Pricing](https://cloud.google.com/maps-platform/pricing/sheet/?_ga=2.42127266.622598182.1620895783-341686522.1608875911)
+
 
 ### Frontend (Javascript)
 1. Address input field
