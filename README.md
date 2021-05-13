@@ -59,6 +59,10 @@ flask run
    - https://www.youtube.com/watch?v=tfOevFKQIjQ
    - https://towardsdatascience.com/dynamic-time-warping-3933f25fcdd
    - https://dynamictimewarping.github.io/python/
+7. Billing infomation
+   - [Google Cloud Billing Overview](https://developers.google.com/maps/billing/gmp-billing#billing-overview)
+   - [Google Cloud Billing Credit](https://developers.google.com/maps/billing-credits)
+   - [Google Cloud Billing Pricing](https://cloud.google.com/maps-platform/pricing/sheet/?_ga=2.42127266.622598182.1620895783-341686522.1608875911)
 
 ### Frontend (Javascript)
 1. Address input field
@@ -67,6 +71,7 @@ flask run
    - Draw the route using [polyline](https://www.sitepoint.com/create-a-polyline-using-the-geolocation-and-the-google-maps-api/)
    - [gmplot](https://github.com/gmplot/gmplot) can draw the route for us with the help of [Google Direction API](https://developers.google.com/maps/documentation/directions/overview)
      - [Guide](https://www.tutorialspoint.com/plotting-google-map-using-gmplot-package-in-python) to use gmplot
+     - [More Guide](https://www.codedisciples.in/google-map-plots.html)
    - GCP Account needed to have API Key
 3. Display table of distance
    - Use Bootstrap [Table](https://getbootstrap.com/docs/4.6/content/tables/)

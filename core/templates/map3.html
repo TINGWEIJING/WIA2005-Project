@@ -3,12 +3,26 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>Google Maps - gmplot</title>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyDUUCnl-iYsjapMKK-IyplHJrWHbPM12iI"></script>
 <script type="text/javascript">
     function initialize() {
         var map = new google.maps.Map(document.getElementById("map_canvas"), {
             zoom: 18,
-            center: new google.maps.LatLng(17.438139, 78.395830)
+            center: new google.maps.LatLng(3.034638, 101.374150)
+        });
+
+        new google.maps.Polyline({
+            clickable: false,
+            geodesic: true,
+            strokeColor: "#6495ED",
+            strokeOpacity: 1.000000,
+            strokeWeight: 3,
+            map: map,
+            path: [
+                new google.maps.LatLng(3.361685, 101.563500),
+                new google.maps.LatLng(3.034638, 101.374150),
+                new google.maps.LatLng(3.100120, 101.530948),
+            ]
         });
 
     }
