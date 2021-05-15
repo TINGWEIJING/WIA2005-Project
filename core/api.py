@@ -1,16 +1,16 @@
 import functools
 
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for, app
+    Blueprint, flash, g, redirect, render_template, request, session, url_for, app, Flask, jsonify
 )
 from flask.wrappers import Response
 from werkzeug.security import check_password_hash, generate_password_hash
-
+from flask_cors import CORS, cross_origin
 from core.db import get_db
 from core import view
 
 bp = Blueprint('api', __name__, url_prefix='/api')
-
+CORS(bp)
 
 @bp.route('/get', methods=(['GET']))
 def sampleGetRequest():
@@ -39,3 +39,117 @@ def samplePostRequest():
 
     # return "Success", 200
     return redirect(url_for('view.loadMainPage'))
+
+app = Flask(__name__)
+# app.config['SECRET_KEY'] = 'the quick brown fox jumps over the lazy   dog'
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+# http://127.0.0.1:5000/api/getroutes
+@bp.route('/getroutes', methods=(['GET']))
+# @cross_origin(origin='localhost',headers=['Content-Type','Authorization'])
+def obtainRoutesRequest():
+    """Get all routes from src and dest"""
+    error = None
+    # request.form
+    # request.json
+    # print(request.form)
+    # srcLat = request.form.get('srcLat')
+    # srcLong = request.form.get('srcLong')
+    # destLat = request.form.get('destLat')
+    # destLong = request.form.get('destLong')
+    # try:
+        # print(float(srcLat))
+        # print(float(srcLong))
+        # print(float(destLat))
+        # print(float(destLong))
+    # except ValueError:
+    #     return "Unsuccessful", 501
+
+    result = {
+        "routes": [
+            {
+                "hub": "City-link Express",
+                "distance": 10,
+                "legs": [
+                    {
+                        "point": [1, 2]
+                    },
+                    {
+                        "point": [3, 4]
+                    },
+                    {
+                        "point": [3, 4]
+                    },
+                ]
+            },
+            {
+                "hub": "Pos Laju",
+                "distance": 9,
+                "legs": [
+                    {
+                        "point": [1, 2]
+                    },
+                    {
+                        "point": [3, 4]
+                    }
+                ]
+            },
+            {
+                "hub": "GDEX",
+                "distance": 8,
+                "legs": [
+                    {
+                        "point": [1, 2]
+                    },
+                    {
+                        "point": [3, 4]
+                    }
+                ]
+            },
+            {
+                "hub": "J&T",
+                "distance": 7,
+                "legs": [
+                    {
+                        "point": [1, 2]
+                    },
+                    {
+                        "point": [3, 4]
+                    }
+                ]
+            },
+            {
+                "hub": "DHL",
+                "distance": 6,
+                "legs": [
+                    {
+                        "point": [1, 2]
+                    },
+                    {
+                        "point": [3, 4]
+                    }
+                ]
+            }
+        ]
+    }
+
+    return result, 200
+
+# http://127.0.0.1:5000/api/analyse
+@bp.route('/analyse', methods=(['POST']))
+def analyseRequest():
+    """Get all routes from src and dest"""
+    error = None
+    # request.form
+    # request.json
+    print(request.json)
+    url = request.json.get('url')
+    text = request.json.get('text')
+
+    result = {
+        "pos_words":10,
+        "neg_words":5,
+        "neu_words":1,
+    }
+
+    return result, 200
