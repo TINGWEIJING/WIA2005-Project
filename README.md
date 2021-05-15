@@ -49,6 +49,7 @@ flask run
    - https://pypi.org/project/geopy/#downloads
    - https://github.com/googlemaps/google-maps-services-python
    - https://developers.google.com/maps/documentation/directions/get-directions
+   - [Alternative Routing Libraries](https://www.igismap.com/top-10-map-direction-api-routing-libraries-navigation-free-or-paid/) - _Google Direction API is not free_
 1. Web scraping
    - Ways to use bs4
    https://towardsdatascience.com/scraping-1000s-of-news-articles-using-10-simple-steps-d57636a49755
