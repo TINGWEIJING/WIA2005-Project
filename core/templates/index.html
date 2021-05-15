@@ -16,6 +16,8 @@
     <!-- icon - fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- chart.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
     <!-- custom css files -->
     <link rel='stylesheet' type='text/css' media='screen' href='../static/normalize.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../static/main.css'>
@@ -25,68 +27,153 @@
     <main class="container-fluid bg-dark text-white">
         <div class="row d-flex justify-content-center">
             <span class="h1 py-3">Project Title</span>
-            <form class="col-12">
+            <form class="col-12" id="generate-map">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="start-destination">From</label>
-                        <input type="text" class="form-control" id="start-destination" aria-describedby="start destination">
+                        <label for="start-destination">From (Coordinate or Address)</label>
+                        <textarea rows="4" class="form-control" id="start-destination"
+                            aria-describedby="start destination"></textarea>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="end-destination">Destination</label>
-                        <input type="text" class="form-control" id="end-destination" aria-describedby="end destination">
+                        <label for="end-destination">Destination (Coordinate or Address)</label>
+                        <textarea rows="4" class="form-control" id="end-destination"
+                            aria-describedby="end destination"></textarea>
                     </div>
+                </div>
+                <div class="d-flex flex-row-reverse pb-3"><button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
             <div class="col-12">
-                <table class="table table-striped table-dark">
+                <h2 class="text-white col-12 d-flex justify-content-center pt-3"> Result </h2>
+                <table class="table table-striped table-dark table-bordered">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Courier Company</th>
+                            <th scope="col">Delivery Hub</th>
+                            <th scope="col">Coordinate</th>
+                            <th scope="col">Distance (km)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>City-link Express</td>
+                            <td>Port Klang</td>
+                            <td>3.0319924887507144,
+                                101.37344116244806
+                            </td>
+                            <td>100</td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>Pos Laju</td>
+                            <td>Petaling Jaya</td>
+                            <td>3.112924170027219,
+                                101.63982650389863</td>
+                            <td>200</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                            <td>GDEX</td>
+                            <td>Batu Caves</td>
+                            <td>3.265154613796736,
+                                101.68024844550233</td>
+                            <td>300</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>J&T</td>
+                            <td>Kajang</td>
+                            <td>2.9441205329488325,
+                                101.7901521759029</td>
+                            <td>400</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>DHL</td>
+                            <td>Sungai Buloh</td>
+                            <td>3.2127230893650065,
+                                101.57467295692778</td>
+                            <td>500</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            
 
+            <h2 class="text-white col-12 d-flex justify-content-center pt-3 pb-2"> Map </h2>
+            <div class="col-12 d-flex justify-content-center">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark border-top">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav m-auto h5">
+                            <li class="nav-item px-4 active">
+                                <a class="nav-link" href="#">City-link Express</span></a>
+                            </li>
+                            <li class="nav-item px-4">
+                                <a class="nav-link" href="#">Pos Laju</a>
+                            </li>
+                            <li class="nav-item px-4">
+                                <a class="nav-link" href="#">GDEX</a>
+                            </li>
+                            <li class="nav-item px-4">
+                                <a class="nav-link" href="#">J&T</a>
+                            </li>
+                            <li class="nav-item px-4">
+                                <a class="nav-link" href="#">DHL</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
             <div class="col-12">
                 <div class="bg-white text-dark d-flex justify-content-center align-items-center" style="height: 300px;">
                     <!-- This is the map -->
-                    <iframe id="map-iframe" title="Inline Frame Example" width="100%" height="100%"
-                        src="./map3.html">
+                    <iframe id="map-iframe" title="Inline Frame Example" width="100%" height="100%" src="./map3.html">
                     </iframe>
                 </div>
             </div>
 
-            <div class="col-12 d-flex justify-content-between py-3">
-                <button type="button" class="btn btn-primary" id="btn1">Company A</button>
-                <button type="button" class="btn btn-primary" id="btn2">Company B</button>
-                <button type="button" class="btn btn-primary" id="btn3">Company C</button>
-                <button type="button" class="btn btn-primary" id="btn4">Company D</button>
-                <button type="button" class="btn btn-primary" id="btn5">Company E</button>
+            <h2 class="text-white col-12 d-flex justify-content-center pt-3"> Chart Title </h2>
+            <div class="p-4 col-6" style="height: 25rem;">
+                <table class="charts-css column show-labels data-spacing-5" id="motion-effect">
+                    <tbody>
+                        <tr>
+                            <th scope="row"> City-link Express </th>
+                            <td style="--size: calc( 80 / 100 )"> 80K </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> Pos Laju </th>
+                            <td style="--size: calc( 50 / 100 )"> 50K </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> GDEX </th>
+                            <td style="--size: calc( 60 / 100 )"> 60K </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> J&T </th>
+                            <td style="--size: calc( 70 / 100 )"> 70K </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> DHL </th>
+                            <td style="--size: calc( 100 / 100 )"> 100K </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-12 pb-3">
+            <!-- <div class="col-12 d-flex justify-content-between py-3">
+                <button type="button" class="btn btn-primary" id="btn1">City-link Express</button>
+                <button type="button" class="btn btn-primary" id="btn2">Pos Laju</button>
+                <button type="button" class="btn btn-primary" id="btn3">GDEX</button>
+                <button type="button" class="btn btn-primary" id="btn4">J&T</button>
+                <button type="button" class="btn btn-primary" id="btn5">DHL</button>
+            </div> -->
+            <div class="col-12 py-3">
+                <h2 class="text-white col-12 d-flex justify-content-center pt-3"> Conclusion </h2>
                 <div class="bg-white text-dark d-flex justify-content-center align-items-center" style="height: 100px;">
                     This is conclusion
                 </div>
@@ -95,12 +182,11 @@
     </main>
 
     <!-- bootstrap javascript files -->
-    <script src="/libs/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
     <!-- custom js files -->
     <script src='../static/main.js'></script>

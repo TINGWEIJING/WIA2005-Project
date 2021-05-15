@@ -1,4 +1,3 @@
-from pathlib import Path
 import json
 
 
@@ -8,34 +7,39 @@ class AlgoException(Exception):
 
 class SentimentAnalysis:
 
-    cTrie: dict[str,str] = {}
+    COMPR_TRIE = {}
     SENT_VALUE_KEY = '___'
+    TRIE_JSON_FILE = r'core\storage\compressed_trie.json'
 
-    def __init__(self, file_path: str) -> None:
+    def __init__(self, url: str = None, text: str = None):
         '''
         Initialize compressed sentiment tries from json file
         '''
-        # check file extension
-        if Path(file_path).suffix != '.json':
-            raise AlgoException('Not a json file')
+        if len(self.__class__.COMPR_TRIE) == 0:
+            self.read_compressed_trie()
 
-        # import json and convert into compressed trie
-        with open(file_path, 'r') as jsonFile:
-            self.__class__.cTrie = json.load(jsonFile)
+        if url:
+            # TODO: web scraping
+            # TODO: run preprocess_strings()
+            pass
+        elif text:
+            # TODO: run preprocess_strings()
+            pass
 
-        # check imported compressed trie
-        if len(self.__class__.cTrie) == 0:
-            raise AlgoException('Sentiment trie is empty')
+    def preprocess_strings(self, text: str) -> list:
+        '''
+        - Split strings into list of strings
+        - Remove punctuation, symbols and unwanted spaces
+        - All lowercase
+        - Sort
+        '''
+        pass
 
-    def get_sentiment_values(self, words: 'list[str]') -> dict:
+    def sentiment_analysis(self, words: 'list[str]'):
         '''
         Sentiment analysis for a list of words
         '''
-        # TODO: implement looping with searching
-        # TODO: raise error if cTrie is empty
         # TODO: optimized searching by sorting
-
-        ####
         def search(trie: dict, word: str) -> int:
             '''
             Helper method to search compressed trie
@@ -60,15 +64,29 @@ class SentimentAnalysis:
         ####
 
         # check imported compressed trie
-        if len(self.__class__.cTrie) == 0:
+        if len(self.__class__.COMPR_TRIE) == 0:
             raise AlgoException('Sentiment trie is empty')
 
-        results = {}
+        self.results = {}
 
+        # TODO: stop words will not store in results
         for word in words:
-            results[word] = search(self.__class__.cTrie, word)
+            self.results[word] = search(self.__class__.COMPR_TRIE, word)
 
-        return results
+    def get_sentiment_values(self, words: 'list[str]') -> dict:
+        '''
+        Retrieve sentiment analysis result
+        '''
+        # TODO: optimized searching by sorting
+        ####
+        return self.result
+
+    @classmethod
+    def read_compressed_trie(cls) -> dict:
+        '''Read compressed trie data into cTrie class variable'''
+        with open(cls.TRIE_JSON_FILE, 'r') as jsonFile:
+            cls.COMPR_TRIE = json.load(jsonFile)
+        return cls.COMPR_TRIE
 
     def generate_tries_json(file_paths: list, sentiment_values: list, output_path: str) -> None:
         '''
@@ -81,7 +99,7 @@ class SentimentAnalysis:
 
 
 if __name__ == "__main__":
-    TRIE_JSON_FILE = r'core\storage\compressed_trie.json'
-    ex = SentimentAnalysis(TRIE_JSON_FILE)
-    print(ex.cTrie)
+    SentimentAnalysis.read_compressed_trie()
+    ex = SentimentAnalysis()
+    # print(ex.cTrie)
     print(ex.get_sentiment_values(['no', "ya", "yea", "yeah"]))
