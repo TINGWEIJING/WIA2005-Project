@@ -26,6 +26,7 @@ class SentimentAnalysis:
             self.read_compressed_trie()
 
         self.result = {}
+        self.clean_result={}
         tempText = ''
         if url:
             # web scraping
@@ -94,17 +95,17 @@ class SentimentAnalysis:
         if len(self.__class__.COMPR_TRIE) == 0:
             raise AlgoException('Sentiment trie is empty')
 
-        self.result = {} # TODO: exclude stop word
-
-        self.pos_words = self.get_pos_words_frequency() # TODO: frequency
-        self.neg_words = 0
-        self.stop_words = 0
-        self.neu_words = 0
-        print(self.pos_words)
+        
         # TODO: store words frq
-        # TODO: check which company
         for word in words:
             self.result[word] = search(self.__class__.COMPR_TRIE, word)
+        self.pos_words = self.get_words_frequency(1) # TODO: frequency
+        self.neg_words = self.get_words_frequency(-1)
+        self.stop_words = self.get_words_frequency(-1000)
+        self.neu_words = self.get_words_frequency(0)
+        self.remove_stop_word() # TODO: exclude stop word
+        # TODO: check which company
+        
 
     def get_sentiment_values(self) -> dict:
         '''
@@ -112,12 +113,17 @@ class SentimentAnalysis:
         '''
         return self.result
 
+    def remove_stop_word(self) -> dict:
+        self.clean_result = {key:val for key, val in self.result.items() if val != -1000}
+        print(self.clean_result)
+
     # TODO: write get freq methods
-    def get_pos_words_frequency(self) -> dict:
+    def get_words_frequency(self, value:int ) -> dict:
         count = 0
-        for value in self.result:
-            if(self.result[value]==1):
-                count+=1
+        for v in self.result:
+            if(self.result[v] == value):
+                count += 1
+        print(count)
         return count
 
     @classmethod
@@ -142,4 +148,3 @@ if __name__ == "__main__":
     ex = SentimentAnalysis("https://www.thestar.com.my/business/business-news/2015/01/05/citylink-mulls-main-market-listing-in-three-years",None)
     # ex.sentiment_analysis(['no', "ya", "yea", "yeah"])
     # print(ex.cTrie)
-    print(ex.get_sentiment_values())
