@@ -1,5 +1,12 @@
 import json
-
+import requests
+from bs4 import BeautifulSoup
+import copy
+# re for data processing
+import re
+# ignore warning due to skipping verification while scrapping
+import warnings
+warnings.filterwarnings('ignore')
 
 class AlgoException(Exception):
     pass
@@ -11,7 +18,7 @@ class SentimentAnalysis:
     SENT_VALUE_KEY = '___'
     TRIE_JSON_FILE = r'core\storage\compressed_trie.json'
 
-    def __init__(self, url: str = None, text: str = None):
+    def __init__(self, url: str, text: str):
         '''
         Initialize compressed sentiment tries from json file
         '''
@@ -19,17 +26,27 @@ class SentimentAnalysis:
             self.read_compressed_trie()
 
         self.result = {}
-
+        tempText = ''
         if url:
-            # TODO: web scraping
-            # TODO: run preprocess_strings()
-            pass
-        elif text:
-            # TODO: run preprocess_strings()
-            pass
-        
-        # TODO: sentiment_analysis()
-
+            # web scraping
+            r = requests.get(url,verify = False)
+            if r.status_code == 200:
+                article = BeautifulSoup(r.content, "html.parser")
+                resultArr = []
+                if "www.thestar.com" in url:
+                    body = article.find('div',attrs={"id": "story-body"})   
+                elif "www.theborneopost.com" in url:
+                    body = article.find('div',attrs={"class": "post-content description"})  
+                resultArr = body.findAll('p')
+                if len(resultArr) != 0:
+                    for j in resultArr:
+                        tempText += str(j.get_text()) 
+        else:
+            tempText = copy.deepcopy(text)
+        # preprocessing
+        textList = self.preprocess_strings(tempText)
+        # sentiment_analysis
+        self.sentiment_analysis(textList)
 
     def preprocess_strings(self, text: str) -> list:
         '''
@@ -38,7 +55,11 @@ class SentimentAnalysis:
         - All lowercase
         - Sort ascending
         '''
-        pass
+        tempText = copy.deepcopy(text)
+        tempText = re.sub(r'[^a-zA-Z]', ' ', tempText)
+        tempText = tempText.lower().split()
+        tempText.sort()
+        return tempText
 
     def sentiment_analysis(self, words: 'list[str]'):
         '''
@@ -75,11 +96,11 @@ class SentimentAnalysis:
 
         self.result = {} # TODO: exclude stop word
 
-        self.pos_words = 0 # TODO: frequency
+        self.pos_words = self.get_pos_words_frequency() # TODO: frequency
         self.neg_words = 0
         self.stop_words = 0
         self.neu_words = 0
-
+        print(self.pos_words)
         # TODO: store words frq
         # TODO: check which company
         for word in words:
@@ -93,7 +114,11 @@ class SentimentAnalysis:
 
     # TODO: write get freq methods
     def get_pos_words_frequency(self) -> dict:
-        pass
+        count = 0
+        for value in self.result:
+            if(self.result[value]==1):
+                count+=1
+        return count
 
     @classmethod
     def read_compressed_trie(cls) -> dict:
@@ -114,7 +139,7 @@ class SentimentAnalysis:
 
 if __name__ == "__main__":
     SentimentAnalysis.read_compressed_trie()
-    ex = SentimentAnalysis()
-    ex.sentiment_analysis(['no', "ya", "yea", "yeah"])
+    ex = SentimentAnalysis("https://www.thestar.com.my/business/business-news/2015/01/05/citylink-mulls-main-market-listing-in-three-years",None)
+    # ex.sentiment_analysis(['no', "ya", "yea", "yeah"])
     # print(ex.cTrie)
     print(ex.get_sentiment_values())
