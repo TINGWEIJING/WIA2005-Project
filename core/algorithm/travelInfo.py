@@ -127,6 +127,7 @@ class HubRouting:
             for j in range(len(self.__class__.ROUTES)-i-1):
                 if(self.__class__.ROUTES[j]['distance'] > self.__class__.ROUTES[j+1]['distance']):
                     self.__class__.ROUTES[j], self.__class__.ROUTES[j +1] = self.__class__.ROUTES[j+1], self.__class__.ROUTES[j]
+
         # TODO: store sorted routes in self.directions
         # STORE THE ROUTES IN waypointsForPloting.json (TESTING PURPOSE)
         # file = open(
