@@ -18,6 +18,8 @@ class SentimentAnalysis:
         if len(self.__class__.COMPR_TRIE) == 0:
             self.read_compressed_trie()
 
+        self.result = {}
+
         if url:
             # TODO: web scraping
             # TODO: run preprocess_strings()
@@ -25,13 +27,16 @@ class SentimentAnalysis:
         elif text:
             # TODO: run preprocess_strings()
             pass
+        
+        # TODO: sentiment_analysis()
+
 
     def preprocess_strings(self, text: str) -> list:
         '''
         - Split strings into list of strings
         - Remove punctuation, symbols and unwanted spaces
         - All lowercase
-        - Sort
+        - Sort ascending
         '''
         pass
 
@@ -40,6 +45,7 @@ class SentimentAnalysis:
         Sentiment analysis for a list of words
         '''
         # TODO: optimized searching by sorting
+        ####
         def search(trie: dict, word: str) -> int:
             '''
             Helper method to search compressed trie
@@ -67,23 +73,31 @@ class SentimentAnalysis:
         if len(self.__class__.COMPR_TRIE) == 0:
             raise AlgoException('Sentiment trie is empty')
 
-        self.results = {}
+        self.result = {} # TODO: exclude stop word
 
-        # TODO: stop words will not store in results
+        self.pos_words = 0 # TODO: frequency
+        self.neg_words = 0
+        self.stop_words = 0
+        self.neu_words = 0
+
+        # TODO: store words frq
+        # TODO: check which company
         for word in words:
-            self.results[word] = search(self.__class__.COMPR_TRIE, word)
+            self.result[word] = search(self.__class__.COMPR_TRIE, word)
 
-    def get_sentiment_values(self, words: 'list[str]') -> dict:
+    def get_sentiment_values(self) -> dict:
         '''
         Retrieve sentiment analysis result
         '''
-        # TODO: optimized searching by sorting
-        ####
         return self.result
+
+    # TODO: write get freq methods
+    def get_pos_words_frequency(self) -> dict:
+        pass
 
     @classmethod
     def read_compressed_trie(cls) -> dict:
-        '''Read compressed trie data into cTrie class variable'''
+        '''Read compressed trie data into COMPR_TRIE class variable'''
         with open(cls.TRIE_JSON_FILE, 'r') as jsonFile:
             cls.COMPR_TRIE = json.load(jsonFile)
         return cls.COMPR_TRIE
@@ -101,5 +115,6 @@ class SentimentAnalysis:
 if __name__ == "__main__":
     SentimentAnalysis.read_compressed_trie()
     ex = SentimentAnalysis()
+    ex.sentiment_analysis(['no', "ya", "yea", "yeah"])
     # print(ex.cTrie)
-    print(ex.get_sentiment_values(['no', "ya", "yea", "yeah"]))
+    print(ex.get_sentiment_values())
