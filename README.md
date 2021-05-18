@@ -22,6 +22,10 @@ venv\Scripts\activate
 ```Shell
 py -m pip install -r requirements.txt
 ```
+- Update requirements.txt
+```Shell
+pip freeze > requirements.txt
+```
 
 ## Run
 - Using CMD
@@ -85,7 +89,11 @@ flask run
    - [Google Cloud Billing Overview](https://developers.google.com/maps/billing/gmp-billing#billing-overview)
    - [Google Cloud Billing Credit](https://developers.google.com/maps/billing-credits)
    - [Google Cloud Billing Pricing](https://cloud.google.com/maps-platform/pricing/sheet/?_ga=2.42127266.622598182.1620895783-341686522.1608875911)
-
+9. MongoDB
+   - [Flask-PyMongo Official](https://flask-pymongo.readthedocs.io/en/latest/)
+   - [Integrating MongoDB with Flask Using Flask-PyMongo](https://stackabuse.com/integrating-mongodb-with-flask-using-flask-pymongo/)
+   - [How to Set Up Flask with MongoDB](https://pythonbasics.org/flask-mongodb/)
+   - [Connecting to a MongoDB in Flask Using Flask-PyMongo (2019)](https://youtu.be/3ZS7LEH_XBg)
 
 ### Frontend (Javascript)
 1. Address input field

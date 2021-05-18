@@ -5,7 +5,7 @@ from flask import (
 from flask.wrappers import Response
 from werkzeug.security import check_password_hash, generate_password_hash
 from core.db import get_db
-from core import view
+from core import view, mongo_db
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 
@@ -142,3 +142,10 @@ def analyseRequest():
     }
 
     return result, 200
+
+@bp.route('/hello')
+def hello():
+    db = mongo_db
+    todo = db.todos.find_one()
+    print(todo)
+    return 'Hello, World!'

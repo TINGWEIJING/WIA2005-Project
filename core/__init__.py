@@ -1,9 +1,11 @@
 import os
 
 from flask import Flask
+from flask_pymongo import PyMongo
 
-# https://flask.palletsprojects.com/en/1.1.x/tutorial/factory/
+# https://flask.palletsprojects.com/en/2.0.x/tutorial/factory/
 
+mongo_db = None
 
 def create_app(test_config=None):
     """
@@ -28,6 +30,11 @@ def create_app(test_config=None):
         # map to config instance
         app.config.from_mapping(test_config)
 
+    # setting up MongoDB
+    app.config["MONGO_URI"] = "mongodb+srv://admin:0KwfxU628CQ6uA66@cluster0.pibyp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    global mongo_db
+    mongo_db = PyMongo(app).db
+
     # ensure the instance folder exists
     try:
         # check folder existence
@@ -38,11 +45,14 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/hello')
     def hello():
+        db = mongo_db
+        todo = db.todos.find_one()
+        print(todo)
         return 'Hello, World!'
 
     # initialize app and register functions in db.py
-    # from . import db
-    # db.init_app(app)
+    from . import db
+    db.init_app(app)
 
     # register blueprint
     from . import api
