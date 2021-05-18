@@ -28,3 +28,12 @@ body,
 #motion-effect:hover {
   filter: none;
 }
+
+textarea.error {
+  border-color: #e74c3c;
+  border-width: 3px;
+}
+
+textarea.success {
+  border-color: #c3e6cb
+}

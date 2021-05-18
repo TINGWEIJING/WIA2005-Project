@@ -41,18 +41,19 @@ def samplePostRequest():
     return redirect(url_for('view.loadMainPage'))
 
 app = Flask(__name__)
-# app.config['SECRET_KEY'] = 'the quick brown fox jumps over the lazy   dog'
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-# http://127.0.0.1:5000/api/getroutes
-@bp.route('/getroutes', methods=(['GET']))
-# @cross_origin(origin='localhost',headers=['Content-Type','Authorization'])
+# The client and the server communication via json
+@bp.route('/getroutes', methods=(['POST']))
 def obtainRoutesRequest():
     """Get all routes from src and dest"""
     error = None
     # request.form
     # request.json
     # print(request.form)
+    print(request.json)
+    # for eachData in request.data:
+    #     print(eachData)
     # srcLat = request.form.get('srcLat')
     # srcLong = request.form.get('srcLong')
     # destLat = request.form.get('destLat')
