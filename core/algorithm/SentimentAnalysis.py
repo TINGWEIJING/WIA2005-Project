@@ -103,8 +103,10 @@ class SentimentAnalysis:
         self.neg_words = self.get_words_frequency(-1)
         self.stop_words = self.get_words_frequency(-1000)
         self.neu_words = self.get_words_frequency(0)
-        self.remove_stop_word() # TODO: exclude stop word
-        # TODO: check which company
+        self.remove_stop_word() #exclude stop word
+        print(self.analysis()) #shows sentiment analysis result
+
+        return self.stop_words,self.pos_words, self.neg_words,self.analysis()
         
 
     def get_sentiment_values(self) -> dict:
@@ -125,6 +127,16 @@ class SentimentAnalysis:
                 count += 1
         print(count)
         return count
+
+    def analysis(self) -> dict:
+        if(self.pos_words>self.neg_words):
+            ayat =  "This article shows positive sentiment."
+        elif (self.pos_words<self.neg_words):
+            ayat =  "This article shows negative sentiment."
+        else:
+            ayat =  "This article shows neutral sentiment."
+
+        return ayat
 
     @classmethod
     def read_compressed_trie(cls) -> dict:
