@@ -1,14 +1,15 @@
 import functools
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for, app
+    Blueprint, flash, g, redirect, render_template, request, session, url_for, app, Flask, jsonify
 )
 from flask.wrappers import Response
 from werkzeug.security import check_password_hash, generate_password_hash
+from flask_cors import CORS, cross_origin
 from core.db import get_db
 from core import view, mongo_db
 
 bp = Blueprint('api', __name__, url_prefix='/api')
-
+CORS(bp)
 
 @bp.route('/get', methods=(['GET']))
 def sampleGetRequest():
@@ -39,24 +40,31 @@ def samplePostRequest():
     return redirect(url_for('view.loadMainPage'))
 
 
+app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+# The client and the server communication via json
 @bp.route('/getroutes', methods=(['POST']))
 def obtainRoutesRequest():
     """Get all routes from src and dest"""
     error = None
     # request.form
     # request.json
+    # print(request.form)
     print(request.json)
-    srcLat = request.json.get('srcLat')
-    srcLong = request.json.get('srcLong')
-    destLat = request.json.get('destLat')
-    destLong = request.json.get('destLong')
-    try:
-        print(float(srcLat))
-        print(float(srcLong))
-        print(float(destLat))
-        print(float(destLong))
-    except ValueError:
-        return "Unsuccessful", 501
+    # for eachData in request.data:
+    #     print(eachData)
+    # srcLat = request.form.get('srcLat')
+    # srcLong = request.form.get('srcLong')
+    # destLat = request.form.get('destLat')
+    # destLong = request.form.get('destLong')
+    # try:
+        # print(float(srcLat))
+        # print(float(srcLong))
+        # print(float(destLat))
+        # print(float(destLong))
+    # except ValueError:
+    #     return "Unsuccessful", 501
 
     result = {
         "routes": [
@@ -69,7 +77,11 @@ def obtainRoutesRequest():
                     },
                     {
                         "point": [3, 4]
-                    }
+                    },
+                    {
+                        "point": [3, 4]
+                    },
+                    
                 ]
             },
             {
@@ -125,6 +137,8 @@ def obtainRoutesRequest():
 
     return result, 200
 
+
+# http://127.0.0.1:5000/api/analyse
 @bp.route('/analyse', methods=(['POST']))
 def analyseRequest():
     """Get all routes from src and dest"""
@@ -140,7 +154,6 @@ def analyseRequest():
         "neg_words":5,
         "neu_words":1,
     }
-
     return result, 200
 
 @bp.route('/hello')
