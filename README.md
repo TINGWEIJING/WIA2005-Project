@@ -22,6 +22,10 @@ venv\Scripts\activate
 ```Shell
 py -m pip install -r requirements.txt
 ```
+- Update requirements.txt
+```Shell
+pip freeze > requirements.txt
+```
 
 ## Run
 - Using CMD
@@ -73,19 +77,20 @@ flask run
    - https://www.youtube.com/watch?v=tfOevFKQIjQ
    - https://towardsdatascience.com/dynamic-time-warping-3933f25fcdd
    - https://dynamictimewarping.github.io/python/
-   Basic implementation rules reference & complexity of the algorithm:
-   - https://betterprogramming.pub/how-to-do-speech-recognition-with-a-dynamic-time-warping-algorithm-159c2a1bb83c
-   Article Research on DWT:
-   - https://iopscience.iop.org/article/10.1088/1742-6596/1366/1/012091/pdf
-   Matlab needed?
-   - https://www.youtube.com/watch?v=XXusSAdHQ7U
-   Implementation in python code (github)?
-   - https://github.com/crawles/dtw
+   - https://betterprogramming.pub/how-to-do-speech-recognition-with-a-dynamic-time-warping-algorithm-159c2a1bb83c - Basic implementation rules reference & complexity of the algorithm:
+   - https://iopscience.iop.org/article/10.1088/1742-6596/1366/1/012091/pdf - Article Research on DWT:
+   - https://www.youtube.com/watch?v=XXusSAdHQ7U - Matlab needed?
+   - https://github.com/crawles/dtw - Implementation in python code (github)?
+   - github.com/pierre-rouanet/dtw - refering by ^
 7. Billing infomation
    - [Google Cloud Billing Overview](https://developers.google.com/maps/billing/gmp-billing#billing-overview)
    - [Google Cloud Billing Credit](https://developers.google.com/maps/billing-credits)
    - [Google Cloud Billing Pricing](https://cloud.google.com/maps-platform/pricing/sheet/?_ga=2.42127266.622598182.1620895783-341686522.1608875911)
-
+9. MongoDB
+   - [Flask-PyMongo Official](https://flask-pymongo.readthedocs.io/en/latest/)
+   - [Integrating MongoDB with Flask Using Flask-PyMongo](https://stackabuse.com/integrating-mongodb-with-flask-using-flask-pymongo/)
+   - [How to Set Up Flask with MongoDB](https://pythonbasics.org/flask-mongodb/)
+   - [Connecting to a MongoDB in Flask Using Flask-PyMongo (2019)](https://youtu.be/3ZS7LEH_XBg)
 
 ### Frontend (Javascript)
 1. Address input field

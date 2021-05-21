@@ -1,5 +1,4 @@
 import functools
-
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for, app, Flask, jsonify
 )
@@ -7,7 +6,7 @@ from flask.wrappers import Response
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_cors import CORS, cross_origin
 from core.db import get_db
-from core import view
+from core import view, mongo_db
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 CORS(bp)
@@ -32,13 +31,14 @@ def sampleGetRequest():
 def samplePostRequest():
     """A sample POST API function"""
     error = None
-    print(request.form)
+    print(request.json)
 
     if error is not None:
         flash(error)
 
     # return "Success", 200
     return redirect(url_for('view.loadMainPage'))
+
 
 app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -81,6 +81,7 @@ def obtainRoutesRequest():
                     {
                         "point": [3, 4]
                     },
+                    
                 ]
             },
             {
@@ -136,6 +137,7 @@ def obtainRoutesRequest():
 
     return result, 200
 
+
 # http://127.0.0.1:5000/api/analyse
 @bp.route('/analyse', methods=(['POST']))
 def analyseRequest():
@@ -152,5 +154,11 @@ def analyseRequest():
         "neg_words":5,
         "neu_words":1,
     }
-
     return result, 200
+
+@bp.route('/hello')
+def hello():
+    db = mongo_db
+    todo = db.todos.find_one()
+    print(todo)
+    return 'Hello, World!'
