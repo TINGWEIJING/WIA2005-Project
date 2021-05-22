@@ -7,6 +7,7 @@ import click
 from flask import current_app, g
 from flask.cli import with_appcontext
 from core import mongo_db
+from core.algorithm.SentimentAnalysis import SentimentAnalysis
 
 def init_app(app: Flask):
     """Initialize app for registering functions"""
@@ -21,7 +22,6 @@ def get_db():
         # mongo = PyMongo(current_app)
         # g.db = mongo.db
         g.db = mongo_db
-        print('get db')
 
     # return the connection of db which is stored in g
     return g.db
@@ -38,7 +38,13 @@ def init_db():
     """Initialize database"""
     db = get_db()
     # insert some data
-    db.todos.insert_one({'title': "todo title", 'body': "todo body"})
+    data_list = SentimentAnalysis.retrieve_all()
+    for data in data_list:
+        filter = {
+            "courier":data['courier'],
+            "url":data['url']
+        }
+        db.analysis.update_one(filter=filter, update={"$set":data}, upsert=True)
 
 
 
