@@ -7,6 +7,9 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from flask_cors import CORS, cross_origin
 from core.db import get_db
 from core import view, mongo_db
+from core.algorithm.SentimentAnalysis import SentimentAnalysis
+from bson import json_util
+import json
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 CORS(bp)
@@ -158,7 +161,25 @@ def analyseRequest():
 
 @bp.route('/hello')
 def hello():
+    # db = mongo_db
+    # todo = db.todos.find_one()
+    # print(todo)
+    # return json.loads(json.dumps(todo, default=json_util.default))
+    data_list = SentimentAnalysis.retrieve_all()
+    re_data = {
+        'data':data_list
+    }
+    return re_data
+
+@bp.route('/getAnalysis', methods=(['GET']))
+def getAllAnalysis():
+    '''Retrun json results of all sentiment analysis'''
     db = mongo_db
-    todo = db.todos.find_one()
-    print(todo)
-    return 'Hello, World!'
+    cursor = db.analysis.find({})
+    data_list = []
+    for document in cursor:
+        data = document
+        del data['_id']
+        del data['last_retrieve']
+        data_list.append(data)
+    return json.loads(json.dumps({"result":data_list}, default=json_util.default))
