@@ -27,7 +27,7 @@ class ranking:
     def getRanking(self):
         self.sortByDistance()
         # compare 1st and 2nd
-        #   if distance smaller than 3, 
+        #   if distance smaller than 10, 
         #       compare sentiment, 
         #       if the second one has better sentiment, swap, 
         #       else, keep
