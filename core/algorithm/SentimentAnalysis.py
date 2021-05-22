@@ -2,11 +2,12 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import copy
-# re for data processing
 import re
-# ignore warning due to skipping verification while scrapping
 import warnings
+from datetime import datetime
+from bson import json_util
 warnings.filterwarnings('ignore')
+
 
 class AlgoException(Exception):
     pass
@@ -17,37 +18,54 @@ class SentimentAnalysis:
     COMPR_TRIE = {}
     SENT_VALUE_KEY = '___'
     TRIE_JSON_FILE = r'core\storage\compressed_trie.json'
+    POS_VALUE = 1
+    NEU_VALUE = 0
+    NEG_VALUE = -1
+    STOP_VALUE = -1000
 
-    def __init__(self, url: str, text: str):
+    def __init__(self, url: str, text: str, courier: str = ''):
         '''
         Initialize compressed sentiment tries from json file
         '''
         if len(self.__class__.COMPR_TRIE) == 0:
             self.read_compressed_trie()
 
+        self.courier = courier
+        self.url = url
+        self.title = ''
+        self.ori_text = ''
         self.result = {}
-        self.clean_result={}
-        tempText = ''
+        self.clean_result = {}
+        self.pos_words = 0
+        self.neg_words = 0
+        self.neu_words = 0
+        self.stop_words = 0
+        self.processed_word_list = []
+
         if url:
             # web scraping
-            r = requests.get(url,verify = False)
+            r = requests.get(url, verify=False)
             if r.status_code == 200:
                 article = BeautifulSoup(r.content, "html.parser")
                 resultArr = []
                 if "www.thestar.com" in url:
-                    body = article.find('div',attrs={"id": "story-body"})   
+                    body = article.find('div', attrs={"id": "story-body"})
+                    title_tag = article.find('meta', attrs={"name": "content_title"})
+                    self.title = title_tag.get('content', None)
                 elif "www.theborneopost.com" in url:
-                    body = article.find('div',attrs={"class": "post-content description"})  
+                    body = article.find('div', attrs={"class": "post-content description"})
+                    title_tag = article.find('h1', attrs={"class": "post-title item fn"})
+                    self.title = title_tag.text.strip()
                 resultArr = body.findAll('p')
                 if len(resultArr) != 0:
                     for j in resultArr:
-                        tempText += str(j.get_text()) 
+                        self.ori_text += str(j.get_text())
         else:
-            tempText = copy.deepcopy(text)
+            self.ori_text = copy.deepcopy(text)
         # preprocessing
-        textList = self.preprocess_strings(tempText)
+        self.processed_word_list = self.preprocess_strings(self.ori_text)
         # sentiment_analysis
-        self.sentiment_analysis(textList)
+        self.sentiment_analysis(self.processed_word_list)
 
     def preprocess_strings(self, text: str) -> list:
         '''
@@ -56,8 +74,11 @@ class SentimentAnalysis:
         - All lowercase
         - Sort ascending
         '''
-        tempText = copy.deepcopy(text)
-        tempText = re.sub(r'[^a-zA-Z]', ' ', tempText)
+        # tempText = copy.deepcopy(text)
+        # tempText = re.sub(r'[^a-zA-Z]', ' ', tempText)
+        # tempText = tempText.lower().split()
+        # tempText.sort()
+        tempText = re.sub(r'[^a-zA-Z]', ' ', text)
         tempText = tempText.lower().split()
         tempText.sort()
         return tempText
@@ -66,7 +87,6 @@ class SentimentAnalysis:
         '''
         Sentiment analysis for a list of words
         '''
-        # TODO: optimized searching by sorting
         ####
         def search(trie: dict, word: str) -> int:
             '''
@@ -95,48 +115,79 @@ class SentimentAnalysis:
         if len(self.__class__.COMPR_TRIE) == 0:
             raise AlgoException('Sentiment trie is empty')
 
-        
-        # TODO: store words frq
+        # searching
         for word in words:
-            self.result[word] = search(self.__class__.COMPR_TRIE, word)
-        self.pos_words = self.get_words_frequency(1) # TODO: frequency
-        self.neg_words = self.get_words_frequency(-1)
-        self.stop_words = self.get_words_frequency(-1000)
-        self.neu_words = self.get_words_frequency(0)
-        self.remove_stop_word() #exclude stop word
-        print(self.analysis()) #shows sentiment analysis result
+            sentiment_value = search(self.__class__.COMPR_TRIE, word)
+            # if positive word
+            if sentiment_value == self.__class__.POS_VALUE:
+                self.result[word] = sentiment_value
+                self.clean_result[word] = sentiment_value
+                self.pos_words += 1
+            # if negative word
+            elif sentiment_value == self.__class__.NEG_VALUE:
+                self.result[word] = sentiment_value
+                self.clean_result[word] = sentiment_value
+                self.neg_words += 1
+            # if neutral word
+            elif sentiment_value == self.__class__.NEU_VALUE:
+                self.result[word] = sentiment_value
+                self.clean_result[word] = sentiment_value
+                self.neu_words += 1
+            # if stop word
+            else:
+                self.result[word] = sentiment_value
+                self.stop_words += 1
 
-        return self.stop_words,self.pos_words, self.neg_words,self.analysis()
-        
-
-    def get_sentiment_values(self) -> dict:
+    def get_sentiment_result(self) -> dict:
         '''
         Retrieve sentiment analysis result
         '''
         return self.result
 
-    def remove_stop_word(self) -> dict:
-        self.clean_result = {key:val for key, val in self.result.items() if val != -1000}
-        print(self.clean_result)
-
-    # TODO: write get freq methods
-    def get_words_frequency(self, value:int ) -> dict:
-        count = 0
-        for v in self.result:
-            if(self.result[v] == value):
-                count += 1
-        print(count)
-        return count
-
-    def analysis(self) -> dict:
-        if(self.pos_words>self.neg_words):
-            ayat =  "This article shows positive sentiment."
-        elif (self.pos_words<self.neg_words):
-            ayat =  "This article shows negative sentiment."
+    def get_analysis_result(self) -> tuple:
+        '''Return analysis_result and its value in tuple'''
+        result = ''
+        result_val = 0
+        if(self.pos_words >= self.neg_words * 3.5 and self.pos_words<=10):
+            result = "This article shows neutral sentiment."
+            result_val = 0
+        elif (self.pos_words >= self.neg_words * 3.5):
+            result = "This article shows positive sentiment."
+            result_val = 1
         else:
-            ayat =  "This article shows neutral sentiment."
+            result = "This article shows negative sentiment."
+            result_val = -1
 
-        return ayat
+        return result, result_val
+
+    def get_data(self) -> dict:
+        '''Return a json data'''
+        result, result_value = self.get_analysis_result()
+        data = {
+            "courier": self.courier,
+            "url": self.url,
+            "title": self.title,
+            "ori_text": self.ori_text,
+            "sentiment": self.clean_result,
+            "frequency": {
+                "positive": self.pos_words,
+                "negative": self.neg_words,
+                "neutral": self.neu_words,
+            },
+            "result": result,
+            "result_value": result_value,
+            "last_retrieve": datetime.now(),
+            "dull_sentiment": self.result,
+        }
+        return data
+
+    @classmethod
+    def get_instance(cls, data: dict) -> 'SentimentAnalysis':
+        '''Return a new analysis result from data'''
+        newObj = cls(url=data['url'],
+                     text=data['ori_text'],
+                     courier=data['courier'])
+        return newObj
 
     @classmethod
     def read_compressed_trie(cls) -> dict:
@@ -144,6 +195,23 @@ class SentimentAnalysis:
         with open(cls.TRIE_JSON_FILE, 'r') as jsonFile:
             cls.COMPR_TRIE = json.load(jsonFile)
         return cls.COMPR_TRIE
+
+    @classmethod
+    def retrieve_all(cls) -> list:
+        result_list = []
+        URL_LIST_JSON_FILE = r'core\storage\url_list.json'
+        with open(URL_LIST_JSON_FILE, 'r') as reader:
+            url_dict = json.load(reader)
+            for courier, urls in url_dict.items():
+                print(courier)
+                for url in urls:
+                    ex = SentimentAnalysis(url=url, text=None, courier=courier)
+                    data = ex.get_data()
+                    del data["dull_sentiment"]
+                    result_list.append(data)
+                    print(url)
+                print('')
+        return result_list
 
     def generate_tries_json(file_paths: list, sentiment_values: list, output_path: str) -> None:
         '''
@@ -156,7 +224,21 @@ class SentimentAnalysis:
 
 
 if __name__ == "__main__":
-    SentimentAnalysis.read_compressed_trie()
-    ex = SentimentAnalysis("https://www.thestar.com.my/business/business-news/2015/01/05/citylink-mulls-main-market-listing-in-three-years",None)
-    # ex.sentiment_analysis(['no', "ya", "yea", "yeah"])
-    # print(ex.cTrie)
+    # URL_LIST_JSON_FILE = r'core\storage\url_list.json'
+    # with open(URL_LIST_JSON_FILE, 'r') as reader:
+    #     url_dict = json.load(reader)
+    #     for courier, urls in url_dict.items():
+    #         print(courier)
+    #         for url in urls:
+    #             print(url)
+    #         print('')
+
+    print(SentimentAnalysis.retrieve_all())
+
+    # SentimentAnalysis.read_compressed_trie()
+    # ex = SentimentAnalysis(url="https://www.theborneopost.com/2020/07/08/poslaju-customers-urged-to-bear-with-longer-waiting-time/", text=None)
+    # data = ex.get_data()
+    # print(json.dumps(data, indent=2, default=json_util.default))
+    # newObj = SentimentAnalysis.get_instance(data)
+    # data2 = newObj.get_data()
+    # print(json.dumps(data2, indent=2, default=json_util.default))
