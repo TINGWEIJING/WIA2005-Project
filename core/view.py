@@ -31,3 +31,9 @@ def sendData():
     """Send data"""
     # pass in the file path, default starting with "/templates/" path
     return render_template('send_data.html')
+
+@bp.route('/gdexMap.html', methods=(['GET']))
+def getGdexMap():
+    """Send data"""
+    # pass in the file path, default starting with "/templates/" path
+    return render_template('gdexMap.html')
