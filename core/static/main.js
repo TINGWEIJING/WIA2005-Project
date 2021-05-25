@@ -1,7 +1,23 @@
 // http://127.0.0.1:5000/api/getAnalysis
 const mapIframe = document.getElementById('map-iframe');
-
-const maps = ['./map1.html', './map2.html', './map3.html', './map4.html', './map5.html'];
+const cityLinkBtn = document.getElementById('city-link-btn');
+const posLajuBtn = document.getElementById('pos-laju-btn');
+const gdexBtn = document.getElementById('gdex-btn');
+const jAndTBtn = document.getElementById('j-and-t-btn');
+const dhlBtn = document.getElementById('dhl-btn');
+const btns = [cityLinkBtn, posLajuBtn, gdexBtn, jAndTBtn, dhlBtn];
+const maps = ['cityLinkMap.html', 'posLajuMap.html', 'gdexMap.html', 'jAndTMap.html', 'dhlMap.html'];
+btns.forEach((btn, idx) => {
+  console.log(btn);
+  btn.addEventListener('click', (event)=> {
+    event.preventDefault();
+    mapIframe.setAttribute('src', maps[idx]);
+    // deactive the active element
+    const cur = document.getElementsByClassName('active');
+    cur[0].className = cur[0].className.replace(' active', '');
+    btn.classList.add('active');
+  });
+});
 
 function error(input, message) {
   input.classList.add('error');
@@ -36,8 +52,6 @@ form.addEventListener('submit', evt => {
   evt.preventDefault();
   let start = startEle.value;
   let end = endEle.value;
-  console.log(start);
-  console.log(end);
   // check required fields
   let valid = true;
   requiredFields.forEach((input) => {
@@ -53,7 +67,6 @@ form.addEventListener('submit', evt => {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify(data),
     }).then(response => {
@@ -63,4 +76,16 @@ form.addEventListener('submit', evt => {
       return data;
     });
   }
+});
+console.log('Load analysis');
+fetch('http://127.0.0.1:5000/api/getAnalysis', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+}).then(response => {
+  return response.json();
+}).then(data => {
+  console.log(data);
+  return data;
 });
