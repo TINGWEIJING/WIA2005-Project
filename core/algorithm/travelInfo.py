@@ -48,10 +48,19 @@ class GoogleDirectionsRouting:
             distance = float(res['routes'][0]['legs'][0]['distance']['text'].replace(
                 ' km', '')) + float(res['routes'][0]['legs'][1]['distance']['text'].replace(' km', ''))
 
+            originLocation = []
+            destinationLocation = []
             # path 0 is (origin->hub), 1 is (hub->destination)
             for path in range(2):
                 # loop through all the available steps in each path
                 for i in range(len(res['routes'][0]['legs'][path]['steps'])-1):
+                    if(path==0 and i==0):
+                        originLocation = [res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lat"],
+                            res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lng"]]
+                    if(i==len(res['routes'][0]['legs'][path]['steps'])-2):
+                        destinationLocation = [res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lat"],
+                        res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lng"]]
+
                     start = [res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lat"],
                             res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lng"]]
                     end = [res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lat"],
@@ -64,6 +73,9 @@ class GoogleDirectionsRouting:
             # add the travel information for each hub
             self.__class__.ROUTES.append({
                 "hub": hub,
+                "origin": originLocation,
+                "hubLocation":[self.__class__.HUB_LOCATION[hub]["lat"],self.__class__.HUB_LOCATION[hub]["long"]],
+                "destination": destinationLocation,
                 "distance": distance,
                 "centre": centre,
                 "legs": legs

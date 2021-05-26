@@ -1,3 +1,4 @@
+// http://127.0.0.1:5000/api/getAnalysis
 const mapIframe = document.getElementById('map-iframe');
 
 const maps = ['./map1.html', './map2.html', './map3.html', './map4.html', './map5.html'];
