@@ -152,8 +152,14 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     else if(neg>=pos && neg>=neu) return "Negative";
     else return "Neutral";
   };
-  console.log(cityLinkRow);
-  const cityH5 = cityLinkRow.getElementsByTagName('h5');
-  cityH5.innerText += getResult(cityStat);
-  console.log(cityH5.innerText);
+  const cityCap = cityLinkRow.parentElement.previousElementSibling;
+  cityCap.innerHTML += ` - <i>${getResult(cityStat)} article</i>`; 
+  const posCap = posLajuRow.parentElement.previousElementSibling;
+  posCap.innerHTML += ` - <i>${getResult(posStat)} article</i>`; 
+  const gdexCap = gdexRow.parentElement.previousElementSibling;
+  gdexCap.innerHTML += ` - <i>${getResult(gdexStat)} article</i>`; 
+  const jAndTCap = jAndTRow.parentElement.previousElementSibling;
+  jAndTCap.innerHTML += ` - <i>${getResult(jAndTStat)} article</i>`; 
+  const dhlCap = dhlRow.parentElement.previousElementSibling;
+  dhlCap.innerHTML += ` - <i>${getResult(dhlStat)} article</i>`; 
 });
