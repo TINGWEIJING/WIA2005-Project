@@ -3,7 +3,8 @@ import googlemaps
 import json
 import os
 import sys
-
+from collections import OrderedDict
+import math as math
 
 class GoogleDirectionsRouting:
     # set quota per minute per user to UNLIMITED
@@ -80,13 +81,7 @@ class GoogleDirectionsRouting:
                 "centre": centre,
                 "legs": legs
             })
-
-        # bubble sort based on total distance in ASCENDING order
-        for i in range(len(self.__class__.ROUTES)-1):
-            for j in range(len(self.__class__.ROUTES)-i-1):
-                if(self.__class__.ROUTES[j]['distance'] > self.__class__.ROUTES[j+1]['distance']):
-                    self.__class__.ROUTES[j], self.__class__.ROUTES[j +
-                        1] = self.__class__.ROUTES[j+1], self.__class__.ROUTES[j]
+        self.introsort()
 
     @classmethod
     def get_route(cls,origin,destination, waypoint)->dict:
@@ -101,6 +96,10 @@ class GoogleDirectionsRouting:
         # file.close()
         return {"routes": self.__class__.ROUTES}
 
+    def get_sorted_routes(self):
+        #return sorted Ordered Dict 
+        return self.Distance
+
     @classmethod
     def read_hub_location(cls) -> dict:
         '''Read hub locations data into HUB_LOCATION class variable'''
@@ -109,6 +108,94 @@ class GoogleDirectionsRouting:
 
         return cls.HUB_LOCATION
 
+    #Start for introsort
+    def introsort(self) -> OrderedDict:
+        #build a tester list so that can sort easier
+        self.temp = self.__class__.ROUTES
+        self.tester = list()
+        list1 = []
+        for i in range (0,len(self.temp)):
+            list1.append(self.temp[i]['hub'])
+        list2 = []
+        for i in range (0,len(self.temp)):
+            list2.append(self.temp[i]['distance'])
+        for i in range (0,len(list1)):
+            self.tester.append([list1[i],list2[i]])
+
+        # calculate the maxdepth using the formula log(length(A)) × 2
+        maxdepth = (len(self.tester).bit_length() - 1)*2
+        #call recursion method
+        self.introsort_recur( 0, len(self.tester), maxdepth)
+        self.build_Ordered_Dict()
+
+    def introsort_recur(self, start, end, maxdepth):
+        if end - start <= 1:
+            #no need sort since only 0/1 element
+            return
+        elif maxdepth == 0:
+            self.heapsort(start, end)
+        else:
+            #find partition
+            p = self.partition(start, end)
+            #quick sort the left part
+            self.introsort_recur(start,p+1,maxdepth-1)
+            #quick sort the right part
+            self.introsort_recur(p+1,end,maxdepth-1)
+
+    def partition(self,start,end):
+        pivot = self.tester[start][1]
+        i = start - 1
+        j = end
+
+        while True:
+            #bring the pivot to its appropiate position such that
+            i = i + 1
+            #left of the pivot is smaller 
+            while self.tester[i][1] < pivot:
+                i = i + 1
+            j = j - 1
+            #right of the pivot is larger
+            while self.tester[j][1] > pivot:
+                j = j - 1
+            
+            if i >= j:
+                return j
+            else:
+                self.tester[i], self.tester[j] = self.tester[j], self.tester[i]
+
+    def heapsort(self, start, end):
+        self.build_max_heap(start,end)
+        for i in range(end-1,start,-1):
+            #swap the root node with last node
+           self.tester[i], self.tester[start] = self.tester[start], self.tester[i]
+           self.max_heapify(index=0, start=start, end=i)
+
+    def build_max_heap(self,start,end):
+        length = end - start
+        index = (length-1)-1//2
+        while index >= 0:
+            self.max_heapify(index, start,end)
+            index = index - 1
+
+    def max_heapify(self, index, start, end):
+        size = end - start
+        left = 2*index + 1
+        right = 2*index + 2
+        if (left < size and self.tester[start+left][1] > self.tester[start+index][1]):
+            largest = left
+        else:
+            largest = index
+        if (right < size and self.tester[start+right][1] > self.tester[start+largest][1]):
+            largest = right
+        if largest != index:
+            self.tester[start + largest], self.tester[start + index] = self.tester[start + index], self.tester[start + largest]
+            self.max_heapify(largest, start, end)
+
+    def build_Ordered_Dict(self) ->OrderedDict:
+        self.Distance = OrderedDict()
+        for i in range(0,len(self.tester)):
+            self.Distance[self.tester[i][0]]=self.tester[i][1]
+        return self.Distance
 
 class TravelInfoTEST:
     def __init__(self):
@@ -270,4 +357,4 @@ if __name__ == "__main__":
     # print(test1.get_routes())
     test1 = GoogleDirectionsRouting(
         "26, Jalan Kejora U5/121A, Taman Puteri Subang", "University of Malaya, Kuala Lumpur")
-    print(test1.get_routes())
+    print(test1.get_sorted_routes())
