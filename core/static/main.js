@@ -93,20 +93,6 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
   }
   const chartTitle = document.getElementById('chart-title');
   // get max for chart
-  const getMax = (a, b) => Math.max(a, b);
-  const constructOneBar = (value, maxLen, row) => {
-    const td = document.createElement('td');
-    const span1 = document.createElement('span');
-    span1.setAttribute('class', 'data');
-    const span2 = document.createElement('span');
-    span2.setAttribute('class', 'tooltip');
-    span2.innerText = value;
-    td.setAttribute('style', `--size: calc( ${value}/${maxLen} )`);
-    td.appendChild(span1);
-    td.appendChild(span2);
-    // td.innerText = value;
-    row.appendChild(td);
-  }
   // show whether the courier company is positive or negative
   const getResult = (value) => {
     if (value === 1) return "Positive";
@@ -115,27 +101,43 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
   };
   // use this data to render charts in html
   const titles = ['City-link Express', 'Pos Laju', 'GDEX', 'J&T', 'DHL'];
-  ret.reverse().forEach((article,index) => {
-    
+  ret.reverse().forEach((article, index) => {
+
     const div = document.createElement('div');
     div.setAttribute('class', 'px-4 py-2 col-12 col-lg-8');
     div.setAttribute('style', 'height: 15rem;');
-    div.innerHTML = `
-    <table class="charts-css bar datasets-spacing-5 show-primary-axis  multiple show-heading">
-      <caption class="text-white h6"><a href=${article.url} class="text-primary"> ${article.title} </a></caption>
-      <tbody>
-          <tr id="chart-row">
-              <th scope="row"> ${article.courier} </th>
-          </tr>
-      </tbody>
-    </table>`;
-    const chartRow = div.querySelector('#chart-row');
+    div.innerHTML = `<canvas id="myChart_${index}"></canvas>`;
+    var ctx = document.getElementById(`myChart_${index}`).getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Negative', 'Neutral', 'Positive'],
+        datasets: [{
+          data: [12, 190, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        indexAxis: 'y'
+      }
+    });
     // get max length out of all bars
     const values = Object.keys(article.frequency).map(key => article.frequency[key]);
-    let maxLen = values.reduce(getMax);
-    values.forEach(value => {
-      constructOneBar(value, maxLen, chartRow);
-    });
     const cap = chartRow.parentElement.previousElementSibling;
     cap.innerHTML += ` - <i>${getResult(article.result_value)} article</i>`;
     insertAfter(div, chartTitle);
