@@ -147,7 +147,7 @@ class SentimentAnalysis:
         '''Return analysis_result and its value in tuple'''
         result = ''
         result_val = 0
-        if(self.pos_words == self.neg_words * 4 and self.pos_words<=10):
+        if(self.pos_words >= self.neg_words * 4 and self.pos_words<=10):
             result = "This article shows neutral sentiment."
             result_val = 0
         elif (self.pos_words >= self.neg_words * 4):
@@ -239,7 +239,7 @@ def identify_best_sentiment_company(result_list: list) -> dict:
             max = ratio
         word_count[courier]['ratio'] = ratio
     print(word_count)
-    formatted_ratio = "{:.2f}".format(ratio)
+    formatted_ratio = "{:.4f}".format(ratio)
     print(bestCourier+" has the best sentiment at ratio of positive word to negative word at "+str(formatted_ratio)+"\n")
 
 if __name__ == "__main__":
