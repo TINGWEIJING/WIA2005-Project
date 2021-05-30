@@ -12,7 +12,9 @@ const map_canvas_posLaju = document.getElementById('map_canvas_posLaju');
 const map_canvas_gdex = document.getElementById('map_canvas_gdex');
 const map_canvas_jnt = document.getElementById('map_canvas_jnt');
 const map_canvas_dhl = document.getElementById('map_canvas_dhl');
-const canvas = [map_canvas_cityLinkExpress,map_canvas_posLaju,map_canvas_gdex,map_canvas_jnt,map_canvas_dhl]
+const canvas = [map_canvas_cityLinkExpress, map_canvas_posLaju
+  , map_canvas_gdex, map_canvas_jnt, map_canvas_dhl
+]
 
 btns.forEach((btn, idx) => {
   console.log(btn);
@@ -27,30 +29,27 @@ btns.forEach((btn, idx) => {
   });
 });
 
-function displayNone(btnId){
-  canvas.forEach(div => {
-    div.classList.remove("d-none");
-    div.classList.add("d-none");
-  });
-  switch(btnId){
-    case "city-link-btn":{
-      map_canvas_cityLinkExpress.classList.remove("d-none");
+function displayNone(btnId) {
+  document.getElementsByClassName('custom-d-none')[0].classList.remove("custom-d-none");
+  switch (btnId) {
+    case "city-link-btn": {
+      canvas[0].classList.toggle("custom-d-none");
       break;
     }
-    case "pos-laju-btn":{
-      map_canvas_posLaju.classList.remove("d-none");
+    case "pos-laju-btn": {
+      canvas[1].classList.toggle("custom-d-none");
       break;
     }
-    case "gdex-btn":{
-      map_canvas_gdex.classList.remove("d-none");
+    case "gdex-btn": {
+      canvas[2].classList.toggle("custom-d-none");
       break;
     }
-    case "j-and-t-btn":{
-      map_canvas_jnt.classList.remove("d-none");
+    case "j-and-t-btn": {
+      canvas[3].classList.toggle("custom-d-none");
       break;
     }
-    case "dhl-btn":{
-      map_canvas_dhl.classList.remove("d-none");
+    case "dhl-btn": {
+      canvas[4].classList.toggle("custom-d-none");
       break;
     }
   }
@@ -84,22 +83,22 @@ const requiredFields = [
 ];
 function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinationLat, destinationLng) {
   var map = new google.maps.Map(mapCanvasEle, {
-      zoom: 18,
-      center: new google.maps.LatLng(hubLat, hubLng)
+    zoom: 3,
+    center: new google.maps.LatLng(hubLat, hubLng)
   });
 
   new google.maps.Polyline({
-      clickable: false,
-      geodesic: true,
-      strokeColor: "#6495ED",
-      strokeOpacity: 1.000000,
-      strokeWeight: 3,
-      map: map,
-      path: [
-          new google.maps.LatLng(originLat, originLng),
-          new google.maps.LatLng(hubLat, hubLng),
-          new google.maps.LatLng(destinationLat, destinationLng),
-      ]
+    clickable: false,
+    geodesic: true,
+    strokeColor: "#6495ED",
+    strokeOpacity: 1.000000,
+    strokeWeight: 3,
+    map: map,
+    path: [
+      new google.maps.LatLng(originLat, originLng),
+      new google.maps.LatLng(hubLat, hubLng),
+      new google.maps.LatLng(destinationLat, destinationLng),
+    ]
   });
 
   var origin = new google.maps.LatLng(originLat, originLng);
@@ -107,16 +106,16 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
   var destination = new google.maps.LatLng(destinationLat, destinationLng);
 
   var marker = new google.maps.Marker({
-      position: origin,
-      map: map
+    position: origin,
+    map: map
   });
   var marker = new google.maps.Marker({
-      position: hub,
-      map: map
+    position: hub,
+    map: map
   });
   var marker = new google.maps.Marker({
-      position: destination,
-      map: map
+    position: destination,
+    map: map
   });
 
   var bounds = new google.maps.LatLngBounds();
@@ -124,8 +123,8 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
   bounds.extend(hub);
   bounds.extend(destination);
   map.fitBounds(bounds);
+  return map;
 }
-
 
 form.addEventListener('submit', evt => {
   console.log('form submitted, initialise all map on canvas.');
@@ -153,12 +152,13 @@ form.addEventListener('submit', evt => {
       return response.json();
     }).then(data => {
       console.log(data);
-      canvas.forEach((single_canvas,index) => {
+      canvas.forEach((single_canvas, index) => {
         console.log(single_canvas);
         const courier = data.routes[index];
-        const {origin, hubLocation, destination} = courier;
+        const { origin, hubLocation, destination } = courier;
         console.log(courier);
-        initialize(single_canvas, origin[0], origin[1], hubLocation[0], hubLocation[1], destination[0], destination[1]);
+        const map = initialize(single_canvas, origin[0], origin[1], hubLocation[0], hubLocation[1], destination[0], destination[1]);
+        console.log('push map index ' + index);
       });
       displayNone('city-link-btn');
       return data;
@@ -193,7 +193,7 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
   ret.reverse().forEach((article, index) => {
     const { negative, neutral, positive } = article.frequency;
     const div = document.createElement('div');
-    div.setAttribute('class', 'px-4 py-2 col-12 col-lg-8');
+    div.setAttribute('class', 'px-4 pb-5 col-12 col-lg-8');
     div.setAttribute('style', 'height: 15rem;');
     div.innerHTML = `
     <div id="title_${index}"></div>
