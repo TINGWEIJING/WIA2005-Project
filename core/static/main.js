@@ -73,10 +73,12 @@ form.addEventListener('submit', evt => {
       return response.json();
     }).then(data => {
       console.log(data);
+      
       return data;
     });
   }
 });
+
 console.log('Load analysis');
 fetch('http://127.0.0.1:5000/api/getAnalysis', {
   method: 'GET',
@@ -105,52 +107,30 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     const { negative, neutral, positive } = article.frequency;
     const div = document.createElement('div');
     div.setAttribute('class', 'px-4 py-2 col-12 col-lg-8');
-    // div.setAttribute('style', 'height: 15rem;');
+    div.setAttribute('style', 'height: 15rem;');
     div.innerHTML = `
     <div id="title_${index}"></div>
     <canvas id="myChart_${index}"></canvas>`;
     var ctx = div.querySelector(`#myChart_${index}`).getContext('2d');
+    Chart.defaults.plugins.legend.display = false;
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ['Negative', 'Neutral', 'Positive'],
         datasets: [{
           // label: ['My','s', 't'],
-          label: 'Number of word',
-          lable: null,
+          label: "Number of word",
+          color: "white",
           data: [negative, neutral, positive],
           backgroundColor: [
             'rgba(54, 162, 235, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(54, 162, 235, 1)',
           ],
-          borderColor: [
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-          ],
-          borderWidth: 1
         }]
       },
       options: {
-        // legend: {
-        //   labels: {
-        //     color: "white",
-        //   },
-        //   title:{
-        //     color: "white",
-        //   }
-        // },
-        legend: {
-          display: false
-        },
-        tooltips: {
-          callbacks: {
-            label: function (tooltipItem) {
-              return tooltipItem.yLabel;
-            }
-          }
-        },
+        maintainAspectRatio: false,
         scales: {
           y: {
             beginAtZero: true,
@@ -178,6 +158,7 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     // get max length out of all bars
     const values = Object.keys(article.frequency).map(key => article.frequency[key]);
     const cap = div.querySelector(`#title_${index}`);
+    cap.setAttribute('class', 'mt-2');
     cap.innerHTML = article.title + ` - <i>${getResult(article.result_value)} article</i>`;
     insertAfter(div, chartTitle);
     // insert courier company name

@@ -10,6 +10,7 @@ from core import view, mongo_db
 from core.algorithm.SentimentAnalysis import SentimentAnalysis
 from bson import json_util
 import json
+from core.algorithm.travelInfo import GoogleDirectionsRouting
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 CORS(bp)
@@ -51,92 +52,20 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def obtainRoutesRequest():
     """Get all routes from src and dest"""
     error = None
-    # request.form
-    # request.json
-    # print(request.form)
-    print(request.json)
-    # for eachData in request.data:
-    #     print(eachData)
-    # srcLat = request.form.get('srcLat')
-    # srcLong = request.form.get('srcLong')
-    # destLat = request.form.get('destLat')
-    # destLong = request.form.get('destLong')
-    # try:
-        # print(float(srcLat))
-        # print(float(srcLong))
-        # print(float(destLat))
-        # print(float(destLong))
-    # except ValueError:
-    #     return "Unsuccessful", 501
+    # print(request.json)
+    source = request.json.get('start')
+    destination = request.json.get('end')
+    if source is None or destination is None:
+        error = 'Source or destination address is empty'
+        return error, 400
 
-    result = {
-        "routes": [
-            {
-                "hub": "City-link Express",
-                "distance": 10,
-                "legs": [
-                    {
-                        "point": [1, 2]
-                    },
-                    {
-                        "point": [3, 4]
-                    },
-                    {
-                        "point": [3, 4]
-                    },
-                    
-                ]
-            },
-            {
-                "hub": "Pos Laju",
-                "distance": 9,
-                "legs": [
-                    {
-                        "point": [1, 2]
-                    },
-                    {
-                        "point": [3, 4]
-                    }
-                ]
-            },
-            {
-                "hub": "GDEX",
-                "distance": 8,
-                "legs": [
-                    {
-                        "point": [1, 2]
-                    },
-                    {
-                        "point": [3, 4]
-                    }
-                ]
-            },
-            {
-                "hub": "J&T",
-                "distance": 7,
-                "legs": [
-                    {
-                        "point": [1, 2]
-                    },
-                    {
-                        "point": [3, 4]
-                    }
-                ]
-            },
-            {
-                "hub": "DHL",
-                "distance": 6,
-                "legs": [
-                    {
-                        "point": [1, 2]
-                    },
-                    {
-                        "point": [3, 4]
-                    }
-                ]
-            }
-        ]
-    }
+    newRoute = GoogleDirectionsRouting(source, destination)
+    result = newRoute.get_sorted_routes()
+    # print(json.dumps(result, indent = 4))
+
+    if len(result.get('routes')) == 0:
+        error = 'Source or destination address not found'
+        return error, 400
 
     return result, 200
 

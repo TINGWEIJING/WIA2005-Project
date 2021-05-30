@@ -12,7 +12,6 @@ class GoogleDirectionsRouting:
     API_KEY = "AIzaSyBKKRxcvNqrV1E89QKSEsvYAVHlJHJDEm8"
     HUB_LOCATION_JSON_FILE = os.getcwd()+'\\core\\storage\\hub_location.json'
     HUB_LOCATION = {}
-    ROUTES = []
 
     def __init__(self, origin, destination):
         # if HUB_LOCATION dict is empty
@@ -21,27 +20,19 @@ class GoogleDirectionsRouting:
 
         self.origin = origin
         self.destination = destination
+        self.routes = []
 
         for hub in self.__class__.HUB_LOCATION:
             # lat,long coordinate for waypoint
             waypointCoordinate = f'{self.__class__.HUB_LOCATION[hub]["lat"]},{self.__class__.HUB_LOCATION[hub]["long"]}'
 
             # get the response from google distance api
-            res = self.__class__.get_route(
-                origin, destination, waypointCoordinate)
+            res = self.__class__.get_route(origin, destination, waypointCoordinate)
 
-            # centre between the origin, hub and destination (FOR DISPLAYING MAP)
-            centre = []
-            # number of steps in each path
-            stepLength = len(res['routes'][0]['legs'][1]['steps'])
-            # append latitude of centre point (sum of 3 lat / 3)
-            centre.append((float(res['routes'][0]['legs'][0]['steps'][0]["start_location"]["lat"]) +
-                           self.__class__.HUB_LOCATION[hub]["lat"] +
-                           float(res['routes'][0]['legs'][1]['steps'][stepLength-1]["start_location"]["lat"]))/3)
-            # append longitude of centre point (sum of 3 long / 3)
-            centre.append((float(res['routes'][0]['legs'][0]['steps'][0]["start_location"]["lng"]) +
-                           self.__class__.HUB_LOCATION[hub]["long"] +
-                           float(res['routes'][0]['legs'][1]['steps'][stepLength-1]["start_location"]["lng"]))/3)
+            # if not result
+            if(res['status'] == "ZERO_RESULTS"):
+                self.routes = []
+                break
 
             # legs store all the steps for a hub
             legs = []
@@ -73,15 +64,15 @@ class GoogleDirectionsRouting:
                     })
 
             # add the travel information for each hub
-            self.__class__.ROUTES.append({
+            self.routes.append({
                 "hub": hub,
                 "origin": originLocation,
                 "hubLocation": [self.__class__.HUB_LOCATION[hub]["lat"], self.__class__.HUB_LOCATION[hub]["long"]],
                 "destination": destinationLocation,
                 "distance": distance,
-                "centre": centre,
                 "legs": legs
             })
+        
         self.introsort()
 
     @classmethod
@@ -89,17 +80,17 @@ class GoogleDirectionsRouting:
         # call the google distance api and return response body in json/dict
         req_url = 'https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&waypoints={waypoint}&key={API_KEY}'.format(
             origin=origin, destination=destination, waypoint=waypoint, API_KEY=cls.API_KEY)
-        return requests.get(req_url).json()
+        req = requests.get(req_url).json()
+        # print(json.dumps(req, indent=4))
+        return req
 
     def get_routes(self):
-        # file = open(os.getcwd()+'\\core\\storage\\waypointsForPloting.json', 'w')
-        # file.write(json.dumps({"routes": self.__class__.ROUTES}))
-        # file.close()
-        return {"routes": self.__class__.ROUTES}
+        return {"routes": self.routes}
 
     def get_sorted_routes(self):
         # return sorted Ordered Dict
-        return self.Distance
+        # print(self.sorted_routes)
+        return self.sorted_routes
 
     @classmethod
     def read_hub_location(cls) -> dict:
@@ -112,7 +103,7 @@ class GoogleDirectionsRouting:
     # Start for introsort
     def introsort(self) -> OrderedDict:
         # build a tester list so that can sort easier
-        self.temp = self.__class__.ROUTES
+        self.temp = self.routes
         self.tester = list()
         list1 = []
         for i in range(0, len(self.temp)):
@@ -193,34 +184,18 @@ class GoogleDirectionsRouting:
             self.max_heapify(largest, start, end)
 
     def build_Ordered_Dict(self) -> OrderedDict:
-        self.Distance = OrderedDict()
-        for i in range(0, len(self.tester)):
-            self.Distance[self.tester[i][0]] = self.tester[i][1]
-        return self.Distance
-
-
-class TravelInfoTEST:
-    def __init__(self):
-        self.getDirectionsAPI()
-
-    def getDirectionsAPI(self):
-        f = open(os.getcwd()+'\\sample.json')
-        self.JsonRes = json.loads(f.read())
-        self.getShortestRoute()
-
-    def getShortestRoute(self):
-        shortestDistance = sys.maxsize
-        for route in self.JsonRes['routes']:
-            if(route['legs'][0]['distance']['value'] < shortestDistance):
-                self.shortestRoute = route['legs'][0]
-                shortestDistance = route['legs'][0]['distance']['value']
-
-    def getShortestDistance(self):
-        return self.shortestRoute['distance']['text']
-
-    def getShortestSteps(self):
-        return self.shortestRoute['steps']
-
+        sorted_hub_index = { hub_name: i for i, (hub_name, distance) in enumerate(self.tester)}
+        routes = self.get_routes()
+        sorted_route_list = [0] * len(self.tester)
+        # file = open(os.getcwd()+'\\core\\storage\\temp.json', 'w')
+        # file.write(json.dumps(self.get_routes()))
+        # file.close()
+        # print(sorted_hub_index)
+        for hub_obj in routes.get('routes'):
+            hub_name = hub_obj.get('hub')
+            sorted_route_list[sorted_hub_index.get(hub_name)] = hub_obj
+        
+        self.sorted_routes = {'routes':sorted_route_list}
 
 # OpenRouteService api requires longlat but not latlong
 class HubRouting:
@@ -244,12 +219,6 @@ class HubRouting:
 
         # TODO: API request
         for hub in self.__class__.HUB_LOCATION:
-            centre = []
-            # center point between 3 three points
-            centre.append(
-                (oriLong+destLong+float(self.__class__.HUB_LOCATION[hub]['long']))/3)
-            centre.append(
-                (oriLat+destLat+float(self.__class__.HUB_LOCATION[hub]['lat']))/3)
             # get route
             first = self.__class__.getRoute(oriLong, oriLat, float(self.__class__.HUB_LOCATION[hub]['long']), float(
                 self.__class__.HUB_LOCATION[hub]['lat']), destLong, destLat)
@@ -263,7 +232,6 @@ class HubRouting:
             self.__class__.ROUTES.append({
                 "hub": hub,
                 "distance": distance,
-                "centre": centre,
                 "legs": legs
             })
         # TODO: sorting by distance using other algorithms
