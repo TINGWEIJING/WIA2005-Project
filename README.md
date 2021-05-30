@@ -73,25 +73,42 @@ flask run
 4. Ranking algorithm
 5. Video & audio analysis
 6. Dynamic Time Warping (DTW)
-   - https://www.youtube.com/watch?v=_K1OsqCicBY
-   - https://www.youtube.com/watch?v=tfOevFKQIjQ
-   - https://towardsdatascience.com/dynamic-time-warping-3933f25fcdd
-   - https://dynamictimewarping.github.io/python/
-   - https://betterprogramming.pub/how-to-do-speech-recognition-with-a-dynamic-time-warping-algorithm-159c2a1bb83c - Basic implementation rules reference & complexity of the algorithm:
-   - https://iopscience.iop.org/article/10.1088/1742-6596/1366/1/012091/pdf - Article Research on DWT:
-   - https://www.youtube.com/watch?v=XXusSAdHQ7U - Matlab needed?
-   - https://github.com/crawles/dtw - Implementation in python code (github)?
-   - github.com/pierre-rouanet/dtw - refering by ^
+   - Video
+     - [YT - How DTW (Dynamic Time Warping) algorithm works](https://www.youtube.com/watch?v=_K1OsqCicBY)
+     - [YT - Dynanmic Time Warping](https://www.youtube.com/watch?v=tfOevFKQIjQ)
+     - https://www.youtube.com/watch?v=XXusSAdHQ7U - Matlab needed?
+   - Paper
+     - [Dynamic Programming Algorithms in Speech Recognition Paper](https://www.researchgate.net/publication/26569937_Dynamic_Programming_Algorithms_in_Speech_Recognition)
+     - [Speech recognition using Dynamic Time Warping(DTW)](https://iopscience.iop.org/article/10.1088/1742-6596/1366/1/012091/pdf )
+   - Article
+     - [TD - Dynamic Time Warping](https://towardsdatascience.com/dynamic-time-warping-3933f25fcdd)
+     - [How to Do Speech Recognition With a Dynamic Time Warping Algorithm](https://betterprogramming.pub/how-to-do-speech-recognition-with-a-dynamic-time-warping-algorithm-159c2a1bb83c)
+     - [Understanding Dynamic Time Warping - Part 1](https://databricks.com/blog/2019/04/30/understanding-dynamic-time-warping.html)
+     - [An Illustrative Introduction to Dynamic Time Warping](https://towardsdatascience.com/an-illustrative-introduction-to-dynamic-time-warping-36aa98513b98)
+     - [Programatically understanding dynamic time warping (DTW)](https://nipunbatra.github.io/blog/ml/2014/05/01/dtw.html)
+     - [Speech.zone - Dynamic Time Warping (DTW) in Python](https://speech.zone/exercises/dtw-in-python/)
+   - Library
+     - [Lib - dtw-python: Dynamic Time Warping in Python](https://dynamictimewarping.github.io/python/)
+      - [GitHub - dtw Sample Code](https://github.com/crawles/dtw)
+      - [GitHub - Dynamic Time Warping Python Module](https://github.com/pierre-rouanet/dtw)
+      - [Dynamic Time Warping (DTW)](https://dtaidistance.readthedocs.io/en/latest/usage/dtw.html)
+      - [mlpy DTW](http://mlpy.sourceforge.net/docs/3.4/dtw.html#)
+      - [pyts](https://pyts.readthedocs.io/en/stable/generated/pyts.metrics.dtw.html)
+      - https://github.com/aishoot/DTWSpeech
+   - [Split speech audio file on words in python](https://stackoverflow.com/questions/36458214/split-speech-audio-file-on-words-in-python) 
+   - [Read an audio file / Split audio files using Python](https://dataunbox.com/split-audio-files-using-python/)
+   - [Simple Audio Processing in Python With Pydub](https://betterprogramming.pub/simple-audio-processing-in-python-with-pydub-c3a217dabf11)
+   - [Automatic splitting of audio files on silence in Python](https://walczak.org/2019/02/automatic-splitting-audio-files-silence-python/) 
 7. Billing infomation
    - [Google Cloud Billing Overview](https://developers.google.com/maps/billing/gmp-billing#billing-overview)
    - [Google Cloud Billing Credit](https://developers.google.com/maps/billing-credits)
    - [Google Cloud Billing Pricing](https://cloud.google.com/maps-platform/pricing/sheet/?_ga=2.42127266.622598182.1620895783-341686522.1608875911)
-9. MongoDB
+8. MongoDB
    - [Flask-PyMongo Official](https://flask-pymongo.readthedocs.io/en/latest/)
    - [Integrating MongoDB with Flask Using Flask-PyMongo](https://stackabuse.com/integrating-mongodb-with-flask-using-flask-pymongo/)
    - [How to Set Up Flask with MongoDB](https://pythonbasics.org/flask-mongodb/)
    - [Connecting to a MongoDB in Flask Using Flask-PyMongo (2019)](https://youtu.be/3ZS7LEH_XBg)
-
+   -https://www.youtube.com/watch?v=XT6rcN0O3as
 ### Frontend (Javascript)
 1. Address input field
    - Use Bootstrap [Form](https://getbootstrap.com/docs/4.6/components/forms/)
