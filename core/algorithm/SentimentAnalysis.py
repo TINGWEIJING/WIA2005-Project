@@ -5,7 +5,6 @@ import copy
 import re
 import warnings
 from datetime import datetime
-from bson import json_util
 warnings.filterwarnings('ignore')
 
 
@@ -148,10 +147,10 @@ class SentimentAnalysis:
         '''Return analysis_result and its value in tuple'''
         result = ''
         result_val = 0
-        if(self.pos_words >= self.neg_words * 3.5 and self.pos_words<=10):
+        if(self.pos_words >= self.neg_words * 4 and self.pos_words<=10):
             result = "This article shows neutral sentiment."
             result_val = 0
-        elif (self.pos_words >= self.neg_words * 3.5):
+        elif (self.pos_words >= self.neg_words * 4):
             result = "This article shows positive sentiment."
             result_val = 1
         else:
@@ -222,6 +221,26 @@ class SentimentAnalysis:
         # TODO: tries building
         pass
 
+def identify_best_sentiment_company(result_list: list) -> dict:
+    word_count = {}
+    # accumulate word count
+    for article in result_list:
+        if article['courier'] not in word_count:
+            word_count[article['courier']] = {'positive_word':0, 'negative_word':0}
+        word_count[article['courier']]['positive_word'] += article['frequency']['positive']
+        word_count[article['courier']]['negative_word'] += article['frequency']['negative']
+    # calculate positive to negative ratio 
+    max = 0
+    bestCourier = ''
+    for courier in word_count:
+        ratio = word_count[courier]['positive_word'] / word_count[courier]['negative_word']
+        if ratio > max:
+            bestCourier = courier
+            max = ratio
+        word_count[courier]['ratio'] = ratio
+    print(word_count)
+    formatted_ratio = "{:.4f}".format(ratio)
+    print(bestCourier+" has the best sentiment at ratio of positive word to negative word at "+str(formatted_ratio)+"\n")
 
 if __name__ == "__main__":
     # URL_LIST_JSON_FILE = r'core\storage\url_list.json'
@@ -232,8 +251,8 @@ if __name__ == "__main__":
     #         for url in urls:
     #             print(url)
     #         print('')
-
-    print(SentimentAnalysis.retrieve_all())
+    result_list = SentimentAnalysis.retrieve_all()
+    identify_best_sentiment_company(result_list)
 
     # SentimentAnalysis.read_compressed_trie()
     # ex = SentimentAnalysis(url="https://www.theborneopost.com/2020/07/08/poslaju-customers-urged-to-bear-with-longer-waiting-time/", text=None)
