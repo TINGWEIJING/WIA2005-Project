@@ -102,50 +102,89 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
   // use this data to render charts in html
   const titles = ['City-link Express', 'Pos Laju', 'GDEX', 'J&T', 'DHL'];
   ret.reverse().forEach((article, index) => {
-
+    const { negative, neutral, positive } = article.frequency;
     const div = document.createElement('div');
     div.setAttribute('class', 'px-4 py-2 col-12 col-lg-8');
-    div.setAttribute('style', 'height: 15rem;');
-    div.innerHTML = `<canvas id="myChart_${index}"></canvas>`;
-    var ctx = document.getElementById(`myChart_${index}`).getContext('2d');
+    // div.setAttribute('style', 'height: 15rem;');
+    div.innerHTML = `
+    <div id="title_${index}"></div>
+    <canvas id="myChart_${index}"></canvas>`;
+    var ctx = div.querySelector(`#myChart_${index}`).getContext('2d');
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ['Negative', 'Neutral', 'Positive'],
         datasets: [{
-          data: [12, 190, 3],
+          // label: ['My','s', 't'],
+          label: 'Number of word',
+          lable: null,
+          data: [negative, neutral, positive],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 1)',
           ],
           borderColor: [
-            'rgba(255, 99, 132, 1)',
             'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 1)',
           ],
           borderWidth: 1
         }]
       },
       options: {
-        scales: {
-          y: {
-            beginAtZero: true
+        // legend: {
+        //   labels: {
+        //     color: "white",
+        //   },
+        //   title:{
+        //     color: "white",
+        //   }
+        // },
+        legend: {
+          display: false
+        },
+        tooltips: {
+          callbacks: {
+            label: function (tooltipItem) {
+              return tooltipItem.yLabel;
+            }
           }
         },
-        indexAxis: 'y'
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: {
+              color: 'white',
+              borderColor: 'grey',
+            },
+            ticks: {
+              color: "white", // this here
+            },
+          },
+          x: {
+            grid: {
+              color: 'white',
+              borderColor: 'grey',
+            },
+            ticks: {
+              color: "white", // this here
+            },
+          }
+        },
+        indexAxis: 'y',
       }
     });
     // get max length out of all bars
     const values = Object.keys(article.frequency).map(key => article.frequency[key]);
-    const cap = chartRow.parentElement.previousElementSibling;
-    cap.innerHTML += ` - <i>${getResult(article.result_value)} article</i>`;
+    const cap = div.querySelector(`#title_${index}`);
+    cap.innerHTML = article.title + ` - <i>${getResult(article.result_value)} article</i>`;
     insertAfter(div, chartTitle);
     // insert courier company name
-    if((index-2)%3 === 0){
+    if ((index - 2) % 3 === 0) {
       const tempH6 = document.createElement('h4');
-      tempH6.setAttribute('class', 'text-white col-12 pl-4 pt-4');
-      tempH6.innerText = titles[titles.length-1];
+      tempH6.setAttribute('class', 'text-white col-12 pl-4 pt-4 d-flex justify-content-center');
+      tempH6.innerText = titles[titles.length - 1];
       titles.pop();
       insertAfter(tempH6, chartTitle);
     }
