@@ -7,17 +7,54 @@ const jAndTBtn = document.getElementById('j-and-t-btn');
 const dhlBtn = document.getElementById('dhl-btn');
 const btns = [cityLinkBtn, posLajuBtn, gdexBtn, jAndTBtn, dhlBtn];
 const maps = ['cityLinkMap.html', 'posLajuMap.html', 'gdexMap.html', 'jAndTMap.html', 'dhlMap.html'];
+const map_canvas_cityLinkExpress = document.getElementById('map_canvas_cityLinkExpress');
+const map_canvas_posLaju = document.getElementById('map_canvas_posLaju');
+const map_canvas_gdex = document.getElementById('map_canvas_gdex');
+const map_canvas_jnt = document.getElementById('map_canvas_jnt');
+const map_canvas_dhl = document.getElementById('map_canvas_dhl');
+const canvas = [map_canvas_cityLinkExpress,map_canvas_posLaju,map_canvas_gdex,map_canvas_jnt,map_canvas_dhl]
+
 btns.forEach((btn, idx) => {
   console.log(btn);
   btn.addEventListener('click', (event) => {
+    displayNone(event.currentTarget.id);
     event.preventDefault();
-    mapIframe.setAttribute('src', maps[idx]);
+    // mapIframe.setAttribute('src', maps[idx]);
     // deactive the active element
     const cur = document.getElementsByClassName('active');
     cur[0].className = cur[0].className.replace(' active', '');
     btn.classList.add('active');
   });
 });
+
+function displayNone(btnId){
+  canvas.forEach(div => {
+    div.classList.remove("d-none");
+    div.classList.add("d-none");
+  });
+  switch(btnId){
+    case "city-link-btn":{
+      map_canvas_cityLinkExpress.classList.remove("d-none");
+      break;
+    }
+    case "pos-laju-btn":{
+      map_canvas_posLaju.classList.remove("d-none");
+      break;
+    }
+    case "gdex-btn":{
+      map_canvas_gdex.classList.remove("d-none");
+      break;
+    }
+    case "j-and-t-btn":{
+      map_canvas_jnt.classList.remove("d-none");
+      break;
+    }
+    case "dhl-btn":{
+      map_canvas_dhl.classList.remove("d-none");
+      break;
+    }
+  }
+}
 
 function error(input, message) {
   input.classList.add('error');
@@ -26,7 +63,6 @@ function error(input, message) {
   error.innerText = message;
   return false;
 }
-
 function success(input) {
   input.classList.add('success');
   // hide the error message
@@ -34,7 +70,6 @@ function success(input) {
   error.innerText = '';
   return true;
 }
-
 function requireValue(input, message) {
   return input.value.trim() === '' ?
     error(input, message) :
@@ -47,8 +82,53 @@ const requiredFields = [
   { input: startEle, message: 'Start destination is required' },
   { input: endEle, message: 'End destination is required' }
 ];
+function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinationLat, destinationLng) {
+  var map = new google.maps.Map(mapCanvasEle, {
+      zoom: 18,
+      center: new google.maps.LatLng(hubLat, hubLng)
+  });
+
+  new google.maps.Polyline({
+      clickable: false,
+      geodesic: true,
+      strokeColor: "#6495ED",
+      strokeOpacity: 1.000000,
+      strokeWeight: 3,
+      map: map,
+      path: [
+          new google.maps.LatLng(originLat, originLng),
+          new google.maps.LatLng(hubLat, hubLng),
+          new google.maps.LatLng(destinationLat, destinationLng),
+      ]
+  });
+
+  var origin = new google.maps.LatLng(originLat, originLng);
+  var hub = new google.maps.LatLng(hubLat, hubLng);
+  var destination = new google.maps.LatLng(destinationLat, destinationLng);
+
+  var marker = new google.maps.Marker({
+      position: origin,
+      map: map
+  });
+  var marker = new google.maps.Marker({
+      position: hub,
+      map: map
+  });
+  var marker = new google.maps.Marker({
+      position: destination,
+      map: map
+  });
+
+  var bounds = new google.maps.LatLngBounds();
+  bounds.extend(origin);
+  bounds.extend(hub);
+  bounds.extend(destination);
+  map.fitBounds(bounds);
+}
+
+
 form.addEventListener('submit', evt => {
-  console.log('form submitted');
+  console.log('form submitted, initialise all map on canvas.');
   evt.preventDefault();
   let start = startEle.value;
   let end = endEle.value;
@@ -73,7 +153,14 @@ form.addEventListener('submit', evt => {
       return response.json();
     }).then(data => {
       console.log(data);
-      
+      canvas.forEach((single_canvas,index) => {
+        console.log(single_canvas);
+        const courier = data.routes[index];
+        const {origin, hubLocation, destination} = courier;
+        console.log(courier);
+        initialize(single_canvas, origin[0], origin[1], hubLocation[0], hubLocation[1], destination[0], destination[1]);
+      });
+      displayNone('city-link-btn');
       return data;
     });
   }

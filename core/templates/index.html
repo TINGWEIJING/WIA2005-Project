@@ -23,6 +23,9 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../static/main.css'>
     <!-- chart.js -->
     <script type="application/javascript" src='https://cdn.jsdelivr.net/npm/chart.js@3.3.0/dist/chart.min.js'></script>
+    <!-- google api -->
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyA6cAGqGi60aw4-sIFeKIj-JvtFfNV5X1c"></script>
 </head>
 
 <body>
@@ -35,13 +38,13 @@
                         <label for="start-destination">Origin (Address)</label>
                         <div></div>
                         <textarea rows="4" class="form-control" id="start-destination"
-                            aria-describedby="start destination"></textarea>
+                            aria-describedby="start destination">26, Jalan Kejora U5/121A, Taman Puteri Subang</textarea>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="end-destination">Destination (Address)</label>
                         <div></div>
                         <textarea rows="4" class="form-control" id="end-destination"
-                            aria-describedby="end destination"></textarea>
+                            aria-describedby="end destination">University of Malaya, Kuala Lumpur</textarea>
                     </div>
                 </div>
                 <div class="d-flex flex-row-reverse pb-3"><button type="submit" class="btn btn-primary" id="submit-input-btn">Submit</button>
@@ -104,7 +107,6 @@
                     </tbody>
                 </table>
             </div>
-            
 
             <h2 class="text-white col-12 d-flex justify-content-center pt-3 pb-2"> Map </h2>
             <div class="col-12 d-flex justify-content-center">
@@ -116,19 +118,19 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav m-auto h5">
                             <li class="nav-item px-4 active" id="city-link-btn">
-                                <a class="nav-link" href="#">City-link Express</span></a>
+                                <a id="city-link_express" class="nav-link" href="#">City-link Express</a>
                             </li>
                             <li class="nav-item px-4" id="pos-laju-btn">
-                                <a class="nav-link" href="#">Pos Laju</a>
+                                <a id="pos_laju" class="nav-link" href="#">Pos Laju</a>
                             </li>
                             <li class="nav-item px-4" id="gdex-btn">
-                                <a class="nav-link" href="#">GDEX</a>
+                                <a id="gdex" class="nav-link" href="#">GDEX</a>
                             </li>
                             <li class="nav-item px-4" id="j-and-t-btn">
-                                <a class="nav-link" href="#">J&T</a>
+                                <a id="j&t" class="nav-link" href="#">J&T</a>
                             </li>
                             <li class="nav-item px-4" id="dhl-btn">
-                                <a class="nav-link" href="#">DHL</a>
+                                <a id="dhl" class="nav-link" href="#">DHL</a>
                             </li>
                         </ul>
                     </div>
@@ -136,9 +138,14 @@
             </div>
             <div class="col-12">
                 <div class="bg-white text-dark d-flex justify-content-center align-items-center" style="height: 300px;">
-                    <!-- This is the map -->
-                    <!-- <iframe id="map-iframe" title="Inline Frame Example" width="100%" height="100%" src="gdexMapahhhh.html">
-                    </iframe> -->
+                    <!-- This are the maps -->
+                    <div id="map_canvas_cityLinkExpress" style="width: 100%; height: 100%;"></div>
+                    <div id="map_canvas_posLaju" style="width: 100%; height: 100%;" 
+                    ></div>
+                    <!-- class="d-none" -->
+                    <div id="map_canvas_gdex" style="width: 100%; height: 100%;" ></div>
+                    <div id="map_canvas_jnt" style="width: 100%; height: 100%;" ></div>
+                    <div id="map_canvas_dhl" style="width: 100%; height: 100%;" ></div>
                 </div>
             </div>
 
