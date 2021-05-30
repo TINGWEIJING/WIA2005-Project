@@ -147,16 +147,16 @@ form.addEventListener('submit', evt => {
   };
   if (valid) {
     // comment below block if not calling /getroutes
-    // fetch('http://127.0.0.1:5000/api/getroutes', {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(requestData),
-    // }).then(response => {
-    //   return response.json();
-    // }).then(data => {
+    fetch('http://127.0.0.1:5000/api/getroutes', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestData),
+    }).then(response => {
+      return response.json();
+    }).then(data => {
 
       console.log(data);
       // rearrange the route to in correct order within the array
@@ -180,17 +180,18 @@ form.addEventListener('submit', evt => {
       displayNone('city-link-btn');
 
     // comment below block if not calling /getroutes
-    // return data;
-    // });
+    return data;
+    });
+    
   }
 });
 // manually submit to speed up dev
-var event = new Event('submit', {
-    'bubbles': true,
-    'cancelable': true
-});
-form.dispatchEvent(event);
-form.submit();
+// var event = new Event('submit', {
+//     'bubbles': true,
+//     'cancelable': true
+// });
+// form.dispatchEvent(event);
+// form.submit();
 console.log('Load analysis');
 fetch('http://127.0.0.1:5000/api/getAnalysis', {
   method: 'GET',
