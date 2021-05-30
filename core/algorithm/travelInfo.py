@@ -6,6 +6,7 @@ import sys
 from collections import OrderedDict
 import math as math
 
+
 class GoogleDirectionsRouting:
     # set quota per minute per user to UNLIMITED
     API_KEY = "AIzaSyBKKRxcvNqrV1E89QKSEsvYAVHlJHJDEm8"
@@ -34,13 +35,13 @@ class GoogleDirectionsRouting:
             # number of steps in each path
             stepLength = len(res['routes'][0]['legs'][1]['steps'])
             # append latitude of centre point (sum of 3 lat / 3)
-            centre.append((float(res['routes'][0]['legs'][0]['steps'][0]["start_location"]["lat"])+
-            self.__class__.HUB_LOCATION[hub]["lat"]+
-            float(res['routes'][0]['legs'][1]['steps'][stepLength-1]["start_location"]["lat"]))/3)
+            centre.append((float(res['routes'][0]['legs'][0]['steps'][0]["start_location"]["lat"]) +
+                           self.__class__.HUB_LOCATION[hub]["lat"] +
+                           float(res['routes'][0]['legs'][1]['steps'][stepLength-1]["start_location"]["lat"]))/3)
             # append longitude of centre point (sum of 3 long / 3)
-            centre.append((float(res['routes'][0]['legs'][0]['steps'][0]["start_location"]["lng"])+
-            self.__class__.HUB_LOCATION[hub]["long"]+
-            float(res['routes'][0]['legs'][1]['steps'][stepLength-1]["start_location"]["lng"]))/3)
+            centre.append((float(res['routes'][0]['legs'][0]['steps'][0]["start_location"]["lng"]) +
+                           self.__class__.HUB_LOCATION[hub]["long"] +
+                           float(res['routes'][0]['legs'][1]['steps'][stepLength-1]["start_location"]["lng"]))/3)
 
             # legs store all the steps for a hub
             legs = []
@@ -55,17 +56,17 @@ class GoogleDirectionsRouting:
             for path in range(2):
                 # loop through all the available steps in each path
                 for i in range(len(res['routes'][0]['legs'][path]['steps'])-1):
-                    if(path==0 and i==0):
+                    if(path == 0 and i == 0):
                         originLocation = [res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lat"],
-                            res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lng"]]
-                    if(i==len(res['routes'][0]['legs'][path]['steps'])-2):
+                                          res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lng"]]
+                    if(i == len(res['routes'][0]['legs'][path]['steps'])-2):
                         destinationLocation = [res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lat"],
-                        res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lng"]]
+                                               res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lng"]]
 
                     start = [res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lat"],
-                            res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lng"]]
+                             res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lng"]]
                     end = [res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lat"],
-                        res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lng"]]
+                           res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lng"]]
                     legs.append({
                         "start": start,
                         "end": end
@@ -75,7 +76,7 @@ class GoogleDirectionsRouting:
             self.__class__.ROUTES.append({
                 "hub": hub,
                 "origin": originLocation,
-                "hubLocation":[self.__class__.HUB_LOCATION[hub]["lat"],self.__class__.HUB_LOCATION[hub]["long"]],
+                "hubLocation": [self.__class__.HUB_LOCATION[hub]["lat"], self.__class__.HUB_LOCATION[hub]["long"]],
                 "destination": destinationLocation,
                 "distance": distance,
                 "centre": centre,
@@ -84,7 +85,7 @@ class GoogleDirectionsRouting:
         self.introsort()
 
     @classmethod
-    def get_route(cls,origin,destination, waypoint)->dict:
+    def get_route(cls, origin, destination, waypoint) -> dict:
         # call the google distance api and return response body in json/dict
         req_url = 'https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&waypoints={waypoint}&key={API_KEY}'.format(
             origin=origin, destination=destination, waypoint=waypoint, API_KEY=cls.API_KEY)
@@ -97,7 +98,7 @@ class GoogleDirectionsRouting:
         return {"routes": self.__class__.ROUTES}
 
     def get_sorted_routes(self):
-        #return sorted Ordered Dict 
+        # return sorted Ordered Dict
         return self.Distance
 
     @classmethod
@@ -108,73 +109,73 @@ class GoogleDirectionsRouting:
 
         return cls.HUB_LOCATION
 
-    #Start for introsort
+    # Start for introsort
     def introsort(self) -> OrderedDict:
-        #build a tester list so that can sort easier
+        # build a tester list so that can sort easier
         self.temp = self.__class__.ROUTES
         self.tester = list()
         list1 = []
-        for i in range (0,len(self.temp)):
+        for i in range(0, len(self.temp)):
             list1.append(self.temp[i]['hub'])
         list2 = []
-        for i in range (0,len(self.temp)):
+        for i in range(0, len(self.temp)):
             list2.append(self.temp[i]['distance'])
-        for i in range (0,len(list1)):
-            self.tester.append([list1[i],list2[i]])
+        for i in range(0, len(list1)):
+            self.tester.append([list1[i], list2[i]])
 
         # calculate the maxdepth using the formula log(length(A)) × 2
         maxdepth = (len(self.tester).bit_length() - 1)*2
-        #call recursion method
-        self.introsort_recur( 0, len(self.tester), maxdepth)
+        # call recursion method
+        self.introsort_recur(0, len(self.tester), maxdepth)
         self.build_Ordered_Dict()
 
     def introsort_recur(self, start, end, maxdepth):
         if end - start <= 1:
-            #no need sort since only 0/1 element
+            # no need sort since only 0/1 element
             return
         elif maxdepth == 0:
             self.heapsort(start, end)
         else:
-            #find partition
+            # find partition
             p = self.partition(start, end)
-            #quick sort the left part
-            self.introsort_recur(start,p+1,maxdepth-1)
-            #quick sort the right part
-            self.introsort_recur(p+1,end,maxdepth-1)
+            # quick sort the left part
+            self.introsort_recur(start, p+1, maxdepth-1)
+            # quick sort the right part
+            self.introsort_recur(p+1, end, maxdepth-1)
 
-    def partition(self,start,end):
+    def partition(self, start, end):
         pivot = self.tester[start][1]
         i = start - 1
         j = end
 
         while True:
-            #bring the pivot to its appropiate position such that
+            # bring the pivot to its appropiate position such that
             i = i + 1
-            #left of the pivot is smaller 
+            # left of the pivot is smaller
             while self.tester[i][1] < pivot:
                 i = i + 1
             j = j - 1
-            #right of the pivot is larger
+            # right of the pivot is larger
             while self.tester[j][1] > pivot:
                 j = j - 1
-            
+
             if i >= j:
                 return j
             else:
                 self.tester[i], self.tester[j] = self.tester[j], self.tester[i]
 
     def heapsort(self, start, end):
-        self.build_max_heap(start,end)
-        for i in range(end-1,start,-1):
-            #swap the root node with last node
-           self.tester[i], self.tester[start] = self.tester[start], self.tester[i]
-           self.max_heapify(index=0, start=start, end=i)
+        self.build_max_heap(start, end)
+        for i in range(end-1, start, -1):
+            # swap the root node with last node
+            self.tester[i], self.tester[start] = self.tester[start], self.tester[i]
+            self.max_heapify(index=0, start=start, end=i)
 
-    def build_max_heap(self,start,end):
+    def build_max_heap(self, start, end):
         length = end - start
         index = (length-1)-1//2
         while index >= 0:
-            self.max_heapify(index, start,end)
+            self.max_heapify(index, start, end)
             index = index - 1
 
     def max_heapify(self, index, start, end):
@@ -191,11 +192,12 @@ class GoogleDirectionsRouting:
             self.tester[start + largest], self.tester[start + index] = self.tester[start + index], self.tester[start + largest]
             self.max_heapify(largest, start, end)
 
-    def build_Ordered_Dict(self) ->OrderedDict:
+    def build_Ordered_Dict(self) -> OrderedDict:
         self.Distance = OrderedDict()
-        for i in range(0,len(self.tester)):
-            self.Distance[self.tester[i][0]]=self.tester[i][1]
+        for i in range(0, len(self.tester)):
+            self.Distance[self.tester[i][0]] = self.tester[i][1]
         return self.Distance
+
 
 class TravelInfoTEST:
     def __init__(self):
