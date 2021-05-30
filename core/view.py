@@ -32,8 +32,32 @@ def sendData():
     # pass in the file path, default starting with "/templates/" path
     return render_template('send_data.html')
 
+@bp.route('/cityLinkMap.html', methods=(['GET']))
+def getCityLinkMap():
+    """Send data"""
+    # pass in the file path, default starting with "/templates/" path
+    return render_template('cityLinkMap.html')
+
+@bp.route('/posLajuMap.html', methods=(['GET']))
+def getPosLajuMap():
+    """Send data"""
+    # pass in the file path, default starting with "/templates/" path
+    return render_template('posLajuMap.html')
+
 @bp.route('/gdexMap.html', methods=(['GET']))
 def getGdexMap():
     """Send data"""
     # pass in the file path, default starting with "/templates/" path
     return render_template('gdexMap.html')
+
+@bp.route('/jAndTMap.html', methods=(['GET']))
+def getJAndTMap():
+    """Send data"""
+    # pass in the file path, default starting with "/templates/" path
+    return render_template('jAndTMap.html')
+
+@bp.route('/dhlMap.html', methods=(['GET']))
+def getDHLMap():
+    """Send data"""
+    # pass in the file path, default starting with "/templates/" path
+    return render_template('dhlMap.html')

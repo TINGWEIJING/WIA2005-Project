@@ -1,7 +1,23 @@
 // http://127.0.0.1:5000/api/getAnalysis
 const mapIframe = document.getElementById('map-iframe');
-
-const maps = ['./map1.html', './map2.html', './map3.html', './map4.html', './map5.html'];
+const cityLinkBtn = document.getElementById('city-link-btn');
+const posLajuBtn = document.getElementById('pos-laju-btn');
+const gdexBtn = document.getElementById('gdex-btn');
+const jAndTBtn = document.getElementById('j-and-t-btn');
+const dhlBtn = document.getElementById('dhl-btn');
+const btns = [cityLinkBtn, posLajuBtn, gdexBtn, jAndTBtn, dhlBtn];
+const maps = ['cityLinkMap.html', 'posLajuMap.html', 'gdexMap.html', 'jAndTMap.html', 'dhlMap.html'];
+btns.forEach((btn, idx) => {
+  console.log(btn);
+  btn.addEventListener('click', (event) => {
+    event.preventDefault();
+    mapIframe.setAttribute('src', maps[idx]);
+    // deactive the active element
+    const cur = document.getElementsByClassName('active');
+    cur[0].className = cur[0].className.replace(' active', '');
+    btn.classList.add('active');
+  });
+});
 
 function error(input, message) {
   input.classList.add('error');
@@ -36,8 +52,6 @@ form.addEventListener('submit', evt => {
   evt.preventDefault();
   let start = startEle.value;
   let end = endEle.value;
-  console.log(start);
-  console.log(end);
   // check required fields
   let valid = true;
   requiredFields.forEach((input) => {
@@ -53,7 +67,6 @@ form.addEventListener('submit', evt => {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify(data),
     }).then(response => {
@@ -63,4 +76,117 @@ form.addEventListener('submit', evt => {
       return data;
     });
   }
+});
+console.log('Load analysis');
+fetch('http://127.0.0.1:5000/api/getAnalysis', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+}).then(response => {
+  return response.json();
+}).then(data => {
+  const ret = data.result;
+  console.log(ret);
+  function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+  const chartTitle = document.getElementById('chart-title');
+  // get max for chart
+  // show whether the courier company is positive or negative
+  const getResult = (value) => {
+    if (value === 1) return "Positive";
+    else if (value === -1) return "Negative";
+    else return "Neutral";
+  };
+  // use this data to render charts in html
+  const titles = ['City-link Express', 'Pos Laju', 'GDEX', 'J&T', 'DHL'];
+  ret.reverse().forEach((article, index) => {
+    const { negative, neutral, positive } = article.frequency;
+    const div = document.createElement('div');
+    div.setAttribute('class', 'px-4 py-2 col-12 col-lg-8');
+    // div.setAttribute('style', 'height: 15rem;');
+    div.innerHTML = `
+    <div id="title_${index}"></div>
+    <canvas id="myChart_${index}"></canvas>`;
+    var ctx = div.querySelector(`#myChart_${index}`).getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Negative', 'Neutral', 'Positive'],
+        datasets: [{
+          // label: ['My','s', 't'],
+          label: 'Number of word',
+          lable: null,
+          data: [negative, neutral, positive],
+          backgroundColor: [
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 1)',
+          ],
+          borderColor: [
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(54, 162, 235, 1)',
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        // legend: {
+        //   labels: {
+        //     color: "white",
+        //   },
+        //   title:{
+        //     color: "white",
+        //   }
+        // },
+        legend: {
+          display: false
+        },
+        tooltips: {
+          callbacks: {
+            label: function (tooltipItem) {
+              return tooltipItem.yLabel;
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: {
+              color: 'white',
+              borderColor: 'grey',
+            },
+            ticks: {
+              color: "white", // this here
+            },
+          },
+          x: {
+            grid: {
+              color: 'white',
+              borderColor: 'grey',
+            },
+            ticks: {
+              color: "white", // this here
+            },
+          }
+        },
+        indexAxis: 'y',
+      }
+    });
+    // get max length out of all bars
+    const values = Object.keys(article.frequency).map(key => article.frequency[key]);
+    const cap = div.querySelector(`#title_${index}`);
+    cap.innerHTML = article.title + ` - <i>${getResult(article.result_value)} article</i>`;
+    insertAfter(div, chartTitle);
+    // insert courier company name
+    if ((index - 2) % 3 === 0) {
+      const tempH6 = document.createElement('h4');
+      tempH6.setAttribute('class', 'text-white col-12 pl-4 pt-4 d-flex justify-content-center');
+      tempH6.innerText = titles[titles.length - 1];
+      titles.pop();
+      insertAfter(tempH6, chartTitle);
+    }
+  });
 });
