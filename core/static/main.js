@@ -1,4 +1,4 @@
-// http://127.0.0.1:5000/api/getAnalysis
+import data from './routesSampleResponse.js';
 const mapIframe = document.getElementById('map-iframe');
 const cityLinkBtn = document.getElementById('city-link-btn');
 const posLajuBtn = document.getElementById('pos-laju-btn');
@@ -12,7 +12,8 @@ const map_canvas_posLaju = document.getElementById('map_canvas_posLaju');
 const map_canvas_gdex = document.getElementById('map_canvas_gdex');
 const map_canvas_jnt = document.getElementById('map_canvas_jnt');
 const map_canvas_dhl = document.getElementById('map_canvas_dhl');
-const canvas = [map_canvas_cityLinkExpress, map_canvas_posLaju
+const canvas = [map_canvas_cityLinkExpress
+  , map_canvas_posLaju
   , map_canvas_gdex, map_canvas_jnt, map_canvas_dhl
 ]
 
@@ -54,7 +55,6 @@ function displayNone(btnId) {
     }
   }
 }
-
 function error(input, message) {
   input.classList.add('error');
   // show the error message
@@ -81,10 +81,14 @@ const requiredFields = [
   { input: startEle, message: 'Start destination is required' },
   { input: endEle, message: 'End destination is required' }
 ];
-function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinationLat, destinationLng) {
+function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinationLat, destinationLng, legs) {
   var map = new google.maps.Map(mapCanvasEle, {
     zoom: 3,
     center: new google.maps.LatLng(hubLat, hubLng)
+  });
+  // parse legs
+  const googleLatLngLegs = legs.map(leg => {
+      return new google.maps.LatLng(leg.end[0], leg.end[1]);
   });
 
   new google.maps.Polyline({
@@ -96,8 +100,9 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
     map: map,
     path: [
       new google.maps.LatLng(originLat, originLng),
-      new google.maps.LatLng(hubLat, hubLng),
-      new google.maps.LatLng(destinationLat, destinationLng),
+      ...googleLatLngLegs
+      // new google.maps.LatLng(hubLat, hubLng),
+      // new google.maps.LatLng(destinationLat, destinationLng),
     ]
   });
 
@@ -136,36 +141,56 @@ form.addEventListener('submit', evt => {
   requiredFields.forEach((input) => {
     valid = requireValue(input.input, input.message);
   });
-  const data = {
+  const requestData = {
     start: start,
     end: end
   };
   if (valid) {
-    fetch('http://127.0.0.1:5000/api/getroutes', {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data),
-    }).then(response => {
-      return response.json();
-    }).then(data => {
+    // comment below block if not calling /getroutes
+    // fetch('http://127.0.0.1:5000/api/getroutes', {
+    //   method: 'POST',
+    //   mode: 'cors',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(requestData),
+    // }).then(response => {
+    //   return response.json();
+    // }).then(data => {
+
       console.log(data);
+      // rearrange the route to in correct order within the array
+      const cityInfo = data.routes.filter(route => route.hub === 'City-link Express')[0];
+      const posInfo = data.routes.filter(route => route.hub === 'Pos Laju')[0];
+      const gdexInfo = data.routes.filter(route => route.hub === 'GDEX')[0];
+      const jntInfo = data.routes.filter(route => route.hub === 'J&T')[0];
+      const dhlInfo = data.routes.filter(route => route.hub === 'DHL')[0];
+      const couriers = [cityInfo,posInfo,gdexInfo,jntInfo,dhlInfo];
+      console.log(couriers);
+      // console.log(JSON.stringify(data));
       canvas.forEach((single_canvas, index) => {
         console.log(single_canvas);
-        const courier = data.routes[index];
+        // const courier = data.routes[index];
+        const courier = couriers[index];
         const { origin, hubLocation, destination } = courier;
         console.log(courier);
-        const map = initialize(single_canvas, origin[0], origin[1], hubLocation[0], hubLocation[1], destination[0], destination[1]);
+        initialize(single_canvas, origin[0], origin[1], hubLocation[0], hubLocation[1], destination[0], destination[1], courier.legs);
         console.log('push map index ' + index);
       });
       displayNone('city-link-btn');
-      return data;
-    });
+
+    // comment below block if not calling /getroutes
+    // return data;
+    // });
   }
 });
-
+// manually submit to speed up dev
+var event = new Event('submit', {
+    'bubbles': true,
+    'cancelable': true
+});
+form.dispatchEvent(event);
+form.submit();
 console.log('Load analysis');
 fetch('http://127.0.0.1:5000/api/getAnalysis', {
   method: 'GET',
