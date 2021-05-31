@@ -46,11 +46,11 @@ class GoogleDirectionsRouting:
             # path 0 is (origin->hub), 1 is (hub->destination)
             for path in range(2):
                 # loop through all the available steps in each path
-                for i in range(len(res['routes'][0]['legs'][path]['steps'])-1):
+                for i in range(len(res['routes'][0]['legs'][path]['steps'])):
                     if(path == 0 and i == 0):
                         originLocation = [res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lat"],
                                           res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lng"]]
-                    if(i == len(res['routes'][0]['legs'][path]['steps'])-2):
+                    if(i == len(res['routes'][0]['legs'][path]['steps'])-1):
                         destinationLocation = [res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lat"],
                                                res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lng"]]
 
@@ -60,7 +60,8 @@ class GoogleDirectionsRouting:
                            res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lng"]]
                     legs.append({
                         "start": start,
-                        "end": end
+                        "end": end,
+                        "polyline": res['routes'][0]['legs'][path]['steps'][i]["polyline"]
                     })
 
             # add the travel information for each hub
@@ -81,7 +82,6 @@ class GoogleDirectionsRouting:
         req_url = 'https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&waypoints={waypoint}&key={API_KEY}'.format(
             origin=origin, destination=destination, waypoint=waypoint, API_KEY=cls.API_KEY)
         req = requests.get(req_url).json()
-        # print(json.dumps(req, indent=4))
         return req
 
     def get_routes(self):
