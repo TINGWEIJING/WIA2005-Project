@@ -23,6 +23,9 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../static/main.css'>
     <!-- chart.js -->
     <script type="application/javascript" src='https://cdn.jsdelivr.net/npm/chart.js@3.3.0/dist/chart.min.js'></script>
+    <!-- google api -->
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyA6cAGqGi60aw4-sIFeKIj-JvtFfNV5X1c"></script>
 </head>
 
 <body>
@@ -32,19 +35,19 @@
             <form class="col-12" id="generate-maps">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="start-destination">From (Coordinate or Address)</label>
+                        <label for="start-destination">Origin (Address)</label>
                         <div></div>
                         <textarea rows="4" class="form-control" id="start-destination"
-                            aria-describedby="start destination"></textarea>
+                            aria-describedby="start destination">26, Jalan Kejora U5/121A, Taman Puteri Subang</textarea>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="end-destination">Destination (Coordinate or Address)</label>
+                        <label for="end-destination">Destination (Address)</label>
                         <div></div>
                         <textarea rows="4" class="form-control" id="end-destination"
-                            aria-describedby="end destination"></textarea>
+                            aria-describedby="end destination">University of Malaya, Kuala Lumpur</textarea>
                     </div>
                 </div>
-                <div class="d-flex flex-row-reverse pb-3"><button type="submit" class="btn btn-primary">Submit</button>
+                <div class="d-flex flex-row-reverse pb-3"><button type="submit" class="btn btn-primary" id="submit-input-btn">Submit</button>
                 </div>
             </form>
             <div class="col-12">
@@ -104,7 +107,6 @@
                     </tbody>
                 </table>
             </div>
-            
 
             <h2 class="text-white col-12 d-flex justify-content-center pt-3 pb-2"> Map </h2>
             <div class="col-12 d-flex justify-content-center">
@@ -116,49 +118,104 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav m-auto h5">
                             <li class="nav-item px-4 active" id="city-link-btn">
-                                <a class="nav-link" href="#">City-link Express</span></a>
+                                <a id="city-link_express" class="nav-link" href="#">City-link Express</a>
                             </li>
                             <li class="nav-item px-4" id="pos-laju-btn">
-                                <a class="nav-link" href="#">Pos Laju</a>
+                                <a id="pos_laju" class="nav-link" href="#">Pos Laju</a>
                             </li>
                             <li class="nav-item px-4" id="gdex-btn">
-                                <a class="nav-link" href="#">GDEX</a>
+                                <a id="gdex" class="nav-link" href="#">GDEX</a>
                             </li>
                             <li class="nav-item px-4" id="j-and-t-btn">
-                                <a class="nav-link" href="#">J&T</a>
+                                <a id="j&t" class="nav-link" href="#">J&T</a>
                             </li>
                             <li class="nav-item px-4" id="dhl-btn">
-                                <a class="nav-link" href="#">DHL</a>
+                                <a id="dhl" class="nav-link" href="#">DHL</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </div>
-            <div class="col-12">
-                <div class="bg-white text-dark d-flex justify-content-center align-items-center" style="height: 300px;">
-                    <!-- This is the map -->
-                    <!-- <iframe id="map-iframe" title="Inline Frame Example" width="100%" height="100%" src="gdexMapahhhh.html">
-                    </iframe> -->
+            <div class="col-12 px-0">
+                <div class="container bg-white text-dark d-flex justify-content-center align-items-center" style="height: 300px;">
+                    <!-- This are the maps -->
+                    <div id="map_canvas_cityLinkExpress" style="width: 100%; height: 100%;"
+                    class="custom-d-none position-absolute"
+                    ></div>
+                    <div id="map_canvas_posLaju" style="width: 100%; height: 100%;" 
+                    class="position-absolute"
+                    ></div>
+                    <div id="map_canvas_gdex" style="width: 100%; height: 100%;" 
+                    class="position-absolute"
+                    ></div>
+                    <div id="map_canvas_jnt" style="width: 100%; height: 100%;" 
+                    class="position-absolute"
+                    ></div>
+                    <div id="map_canvas_dhl" style="width: 100%; height: 100%;" 
+                    class="position-absolute"
+                    ></div>
                 </div>
             </div>
 
             <h2 class="text-white col-12 d-flex justify-content-center pt-3" id="chart-title"> Chart Title </h2>
-            <!-- <tr id="pos-laju-row">
-                <th scope="row"> Pos Laju </th>
-                <h5>Pos Laju</h5>
-            </tr>
-            <tr id="gdex-row">
-                <th scope="row"> GDEX </th>
-                <h5>GDEX</h5>
-            </tr>
-            <tr id="j-and-t-row">
-                <th scope="row"> J&T </th>
-                <h5>J&T</h5>
-            </tr>
-            <tr id="dhl-row">
-                <th scope="row"> DHL </th>
-                <h5>DHL</h5>
-            </tr> -->
+            
+            <div class="col-12">
+                <h2 class="text-white col-12 d-flex justify-content-center pt-3"> Ranking </h2>
+                <table class="table table-striped table-dark table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Courier Company</th>
+                            <th scope="col">Delivery Hub</th>
+                            <th scope="col">Coordinate</th>
+                            <th scope="col">Distance (km)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>City-link Express</td>
+                            <td>Port Klang</td>
+                            <td>3.0319924887507144,
+                                101.37344116244806
+                            </td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Pos Laju</td>
+                            <td>Petaling Jaya</td>
+                            <td>3.112924170027219,
+                                101.63982650389863</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>GDEX</td>
+                            <td>Batu Caves</td>
+                            <td>3.265154613796736,
+                                101.68024844550233</td>
+                            <td>300</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>J&T</td>
+                            <td>Kajang</td>
+                            <td>2.9441205329488325,
+                                101.7901521759029</td>
+                            <td>400</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>DHL</td>
+                            <td>Sungai Buloh</td>
+                            <td>3.2127230893650065,
+                                101.57467295692778</td>
+                            <td>500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="col-12 py-3">
                 <h2 class="text-white col-12 d-flex justify-content-center pt-3"> Conclusion </h2>
                 <div class="bg-white text-dark d-flex justify-content-center align-items-center" style="height: 100px;">
@@ -177,7 +234,7 @@
         crossorigin="anonymous"></script>
         
     <!-- custom js files -->
-    <script src='../static/main.js'></script>
+    <script type="module" src='../static/main.js'></script>
 </body>
 
 </html>
