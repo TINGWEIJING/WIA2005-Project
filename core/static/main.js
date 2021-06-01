@@ -87,10 +87,15 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
     center: new google.maps.LatLng(hubLat, hubLng)
   });
   // parse legs
-  const googleLatLngLegs = legs.map(leg => {
-      return new google.maps.LatLng(leg.end[0], leg.end[1]);
+  const googleLatLngLegsArr = legs.map(leg => {
+    // console.log(leg.polyline.points);
+    console.log(google.maps.geometry.encoding.decodePath(leg.polyline.points));
+    return google.maps.geometry.encoding.decodePath(leg.polyline.points);
+    return new google.maps.LatLng(leg.end[0], leg.end[1]);
   });
-
+  const googleLatLngLegs = [];
+  googleLatLngLegsArr.forEach(arr => { arr.forEach(pt => googleLatLngLegs.push(pt)); });
+  console.log(googleLatLngLegs);
   new google.maps.Polyline({
     clickable: false,
     geodesic: true,
@@ -165,11 +170,11 @@ form.addEventListener('submit', evt => {
       const gdexInfo = data.routes.filter(route => route.hub === 'GDEX')[0];
       const jntInfo = data.routes.filter(route => route.hub === 'J&T')[0];
       const dhlInfo = data.routes.filter(route => route.hub === 'DHL')[0];
-      const couriers = [cityInfo,posInfo,gdexInfo,jntInfo,dhlInfo];
-      console.log(couriers);
+      const couriers = [cityInfo, posInfo, gdexInfo, jntInfo, dhlInfo];
+      // console.log(couriers);
       // console.log(JSON.stringify(data));
       canvas.forEach((single_canvas, index) => {
-        console.log(single_canvas);
+        // console.log(single_canvas);
         // const courier = data.routes[index];
         const courier = couriers[index];
         const { origin, hubLocation, destination } = courier;
@@ -179,10 +184,10 @@ form.addEventListener('submit', evt => {
       });
       displayNone('city-link-btn');
 
-    // comment below block if not calling /getroutes
-    return data;
+      // comment below block if not calling /getroutes
+      return data;
     });
-    
+
   }
 });
 // manually submit to speed up dev
