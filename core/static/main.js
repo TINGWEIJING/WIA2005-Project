@@ -1,20 +1,45 @@
 import data from './routesSampleResponse.js';
-const mapIframe = document.getElementById('map-iframe');
 const cityLinkBtn = document.getElementById('city-link-btn');
 const posLajuBtn = document.getElementById('pos-laju-btn');
 const gdexBtn = document.getElementById('gdex-btn');
 const jAndTBtn = document.getElementById('j-and-t-btn');
 const dhlBtn = document.getElementById('dhl-btn');
 const btns = [cityLinkBtn, posLajuBtn, gdexBtn, jAndTBtn, dhlBtn];
-const maps = ['cityLinkMap.html', 'posLajuMap.html', 'gdexMap.html', 'jAndTMap.html', 'dhlMap.html'];
 const map_canvas_cityLinkExpress = document.getElementById('map_canvas_cityLinkExpress');
 const map_canvas_posLaju = document.getElementById('map_canvas_posLaju');
 const map_canvas_gdex = document.getElementById('map_canvas_gdex');
 const map_canvas_jnt = document.getElementById('map_canvas_jnt');
 const map_canvas_dhl = document.getElementById('map_canvas_dhl');
 const canvas = [map_canvas_cityLinkExpress
-  , map_canvas_posLaju
-  , map_canvas_gdex, map_canvas_jnt, map_canvas_dhl
+  // , map_canvas_posLaju
+  // , map_canvas_gdex, map_canvas_jnt, map_canvas_dhl
+]
+const hubInfo = [
+  {
+    title: 'City-link Express',
+    deliveryHub: 'Port Klang',
+    coordinate: `3.0319924887507144, \n101.37344116244806`
+  },
+  {
+    title: 'Pos Laju',
+    deliveryHub: 'Petaling Jaya',
+    coordinate: `3.112924170027219, \n101.63982650389863 `
+  },
+  {
+    title: 'GDEX',
+    deliveryHub: 'Batu Caves',
+    coordinate: `3.265154613796736, \n101.68024844550233`
+  },
+  {
+    title: 'J&T',
+    deliveryHub: 'Kajang',
+    coordinate: `2.9441205329488325, \n101.7901521759029 `
+  },
+  {
+    title: 'DHL',
+    deliveryHub: 'Sungai Buloh',
+    coordinate: `3.2127230893650065, \n101.57467295692778`
+  },
 ]
 
 btns.forEach((btn, idx) => {
@@ -89,9 +114,9 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
   // parse legs
   const googleLatLngLegsArr = legs.map(leg => {
     // console.log(leg.polyline.points);
-    console.log(google.maps.geometry.encoding.decodePath(leg.polyline.points));
+    // console.log(google.maps.geometry.encoding.decodePath(leg.polyline.points));
     return google.maps.geometry.encoding.decodePath(leg.polyline.points);
-    return new google.maps.LatLng(leg.end[0], leg.end[1]);
+    // return new google.maps.LatLng(leg.end[0], leg.end[1]);
   });
   const googleLatLngLegs = [];
   googleLatLngLegsArr.forEach(arr => { arr.forEach(pt => googleLatLngLegs.push(pt)); });
@@ -162,7 +187,6 @@ form.addEventListener('submit', evt => {
     }).then(response => {
       return response.json();
     }).then(data => {
-
       console.log(data);
       // rearrange the route to in correct order within the array
       const cityInfo = data.routes.filter(route => route.hub === 'City-link Express')[0];
@@ -184,19 +208,27 @@ form.addEventListener('submit', evt => {
       });
       displayNone('city-link-btn');
 
+      // update result table
+      console.log('hi');
+      const resultTableTbody = document.getElementById('result-table-tbody');
+      // console.log(resultTableTbody);
+      const tbodyChildNode = resultTableTbody.querySelectorAll('tr');
+      // console.log(tbodyChildNode);
+      tbodyChildNode.forEach((row, index) => {
+        const tableDataArr = Array.from(row.querySelectorAll('td'));
+        // console.log(tableDataArr);
+        const tempHub = hubInfo.filter(hub => hub.title === data.routes[index]['hub'])[0];
+        tableDataArr[0].innerText = tempHub.title;
+        tableDataArr[1].innerText = tempHub.deliveryHub;
+        tableDataArr[2].innerText = tempHub.coordinate;
+        const distance = parseFloat(data.routes[index]['distance']);
+        tableDataArr[3].innerText = distance.toFixed(2);
+      })
       // comment below block if not calling /getroutes
       return data;
     });
-
   }
 });
-// manually submit to speed up dev
-// var event = new Event('submit', {
-//     'bubbles': true,
-//     'cancelable': true
-// });
-// form.dispatchEvent(event);
-// form.submit();
 console.log('Load analysis');
 fetch('http://127.0.0.1:5000/api/getAnalysis', {
   method: 'GET',
