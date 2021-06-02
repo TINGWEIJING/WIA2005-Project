@@ -321,3 +321,9 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     }
   });
 });
+
+// direct to analysis page
+const directBtn = document.getElementById('direct-to-analysis-page');
+directBtn.addEventListener('click', ()=> {
+  window.location.href = window.location.href + "/sentimentAnalysis.html";
+});

@@ -42,3 +42,8 @@ textarea.success {
   position: relative;
   z-index: 1000;
 }
+
+.audio-graph-height{
+  /* height: 10px; */
+  /* position: relative; */
+}
