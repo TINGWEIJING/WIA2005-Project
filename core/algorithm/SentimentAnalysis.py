@@ -6,7 +6,7 @@ import re
 import warnings
 from datetime import datetime
 warnings.filterwarnings('ignore')
-
+import numpy as np
 
 class AlgoException(Exception):
     pass
@@ -39,6 +39,7 @@ class SentimentAnalysis:
         self.neg_words = 0
         self.neu_words = 0
         self.stop_words = 0
+        self.ratio = 0
         self.processed_word_list = []
 
         if url:
@@ -136,6 +137,7 @@ class SentimentAnalysis:
             else:
                 self.result[word] = sentiment_value
                 self.stop_words += 1
+        self.ratio = self.neg_words / self.pos_words
 
     def get_sentiment_result(self) -> dict:
         '''
@@ -173,6 +175,7 @@ class SentimentAnalysis:
                 "negative": self.neg_words,
                 "neutral": self.neu_words,
             },
+            "ratio": self.ratio,
             "result": result,
             "result_value": result_value,
             "last_retrieve": datetime.now(),
@@ -222,25 +225,22 @@ class SentimentAnalysis:
         pass
 
 def identify_best_sentiment_company(result_list: list) -> dict:
-    word_count = {}
-    # accumulate word count
+    ratio_dict = {}
+    # accumulate ratio
     for article in result_list:
-        if article['courier'] not in word_count:
-            word_count[article['courier']] = {'positive_word':0, 'negative_word':0}
-        word_count[article['courier']]['positive_word'] += article['frequency']['positive']
-        word_count[article['courier']]['negative_word'] += article['frequency']['negative']
-    # calculate positive to negative ratio 
-    max = 0
+        if article['courier'] not in ratio_dict:
+            ratio_dict[article['courier']]= {'ratio':[]}
+        ratio_dict[article['courier']]['ratio'].append(article['ratio'])
+
+    # calculate mean of ratio and compare to the best
+    min, i = 0,0
     bestCourier = ''
-    for courier in word_count:
-        ratio = word_count[courier]['positive_word'] / word_count[courier]['negative_word']
-        if ratio > max:
+    for courier in ratio_dict:
+        ratio_dict[courier]['mean']=np.mean(ratio_dict[courier]['ratio'])
+        if i == 0 or ratio_dict[courier]['mean'] < max:
+            min = ratio_dict[courier]['mean']
             bestCourier = courier
-            max = ratio
-        word_count[courier]['ratio'] = ratio
-    print(word_count)
-    formatted_ratio = "{:.4f}".format(ratio)
-    print(bestCourier+" has the best sentiment at ratio of positive word to negative word at "+str(formatted_ratio)+"\n")
+    return bestCourier, min
 
 if __name__ == "__main__":
     # URL_LIST_JSON_FILE = r'core\storage\url_list.json'
@@ -252,7 +252,9 @@ if __name__ == "__main__":
     #             print(url)
     #         print('')
     result_list = SentimentAnalysis.retrieve_all()
-    identify_best_sentiment_company(result_list)
+    bestCourier, bestRatio = identify_best_sentiment_company(result_list)
+    formatted_ratio = "{:.4f}".format(bestRatio)
+    print(bestCourier+" has the best sentiment at the least ratio of negative word to positive word at "+str(formatted_ratio)+"\n")
 
     # SentimentAnalysis.read_compressed_trie()
     # ex = SentimentAnalysis(url="https://www.theborneopost.com/2020/07/08/poslaju-customers-urged-to-bear-with-longer-waiting-time/", text=None)
