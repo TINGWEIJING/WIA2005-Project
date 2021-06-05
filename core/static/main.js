@@ -11,8 +11,8 @@ const map_canvas_gdex = document.getElementById('map_canvas_gdex');
 const map_canvas_jnt = document.getElementById('map_canvas_jnt');
 const map_canvas_dhl = document.getElementById('map_canvas_dhl');
 const canvas = [map_canvas_cityLinkExpress
-  // , map_canvas_posLaju
-  // , map_canvas_gdex, map_canvas_jnt, map_canvas_dhl
+  , map_canvas_posLaju
+  , map_canvas_gdex, map_canvas_jnt, map_canvas_dhl
 ]
 const hubInfo = [
   {
@@ -112,15 +112,32 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
     center: new google.maps.LatLng(hubLat, hubLng)
   });
   // parse legs
-  const googleLatLngLegsArr = legs.map(leg => {
-    // console.log(leg.polyline.points);
-    // console.log(google.maps.geometry.encoding.decodePath(leg.polyline.points));
-    return google.maps.geometry.encoding.decodePath(leg.polyline.points);
-    // return new google.maps.LatLng(leg.end[0], leg.end[1]);
+  let hubIdx = -1, minLat = 100, minLng = 100;
+  legs.forEach((leg, index) => {
+    console.log(leg.start[0] + " " + leg.start[1]);
+    console.log(hubLat + " " + hubLng);
+    if (Math.abs(leg.start[0] - hubLat) <= minLat && Math.abs(leg.start[1] - hubLng) <= minLng) {
+      minLat = Math.abs(leg.start[0] - hubLat);
+      minLng = Math.abs(leg.start[1] - hubLng);
+      hubIdx = index;
+      console.log('found');
+    }
   });
-  const googleLatLngLegs = [];
-  googleLatLngLegsArr.forEach(arr => { arr.forEach(pt => googleLatLngLegs.push(pt)); });
-  console.log(googleLatLngLegs);
+  console.log(hubIdx);
+  const legsAfterHub = legs.splice(hubIdx);
+  console.log(legs);
+  console.log(legsAfterHub);
+  const googleLatLngLegsArr = legs.map(leg => {
+    return google.maps.geometry.encoding.decodePath(leg.polyline.points);
+  });
+  const googleLatLngLegsArr2 = legsAfterHub.map(leg => {
+    return google.maps.geometry.encoding.decodePath(leg.polyline.points);
+  });
+  const googleLatLngLegsBeforeHub = [];
+  const googleLatLngLegsAfterHub = [];
+  googleLatLngLegsArr.forEach(arr => { arr.forEach(pt => googleLatLngLegsBeforeHub.push(pt)); });
+  googleLatLngLegsArr2.forEach(arr => { arr.forEach(pt => googleLatLngLegsAfterHub.push(pt)); });
+
   new google.maps.Polyline({
     clickable: false,
     geodesic: true,
@@ -130,9 +147,19 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
     map: map,
     path: [
       new google.maps.LatLng(originLat, originLng),
-      ...googleLatLngLegs
-      // new google.maps.LatLng(hubLat, hubLng),
-      // new google.maps.LatLng(destinationLat, destinationLng),
+      ...googleLatLngLegsBeforeHub
+    ]
+  });
+  new google.maps.Polyline({
+    clickable: false,
+    geodesic: true,
+    strokeColor: "#fb0",
+    strokeOpacity: 1.000000,
+    strokeWeight: 3,
+    map: map,
+    path: [
+      // new google.maps.LatLng(originLat, originLng),
+      ...googleLatLngLegsAfterHub
     ]
   });
 
@@ -324,6 +351,6 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
 
 // direct to analysis page
 const directBtn = document.getElementById('direct-to-analysis-page');
-directBtn.addEventListener('click', ()=> {
+directBtn.addEventListener('click', () => {
   window.location.href = window.location.href + "/sentimentAnalysis.html";
 });
