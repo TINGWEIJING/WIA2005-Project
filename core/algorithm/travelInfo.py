@@ -21,7 +21,7 @@ class GoogleDirectionsRouting:
         self.origin = origin
         self.destination = destination
         self.routes = []
-
+        return
         for hub in self.__class__.HUB_LOCATION:
             # lat,long coordinate for waypoint
             waypointCoordinate = f'{self.__class__.HUB_LOCATION[hub]["lat"]},{self.__class__.HUB_LOCATION[hub]["long"]}'
@@ -29,14 +29,17 @@ class GoogleDirectionsRouting:
             # get the response from google distance api
             res = self.__class__.get_route(origin, destination, waypointCoordinate)
 
+
             # if not result
-            if(res['status'] == "ZERO_RESULTS"):
+            if(res['status'] == "ZERO_RESULTS" or res['status'] == "OVER_QUERY_LIMIT"):
                 self.routes = []
                 break
 
             # legs store all the steps for a hub
             legs = []
 
+            # DEBUG
+            # print(res['routes'])
             # store the distance of (origin->hub) and (hub->destination) in km
             distance = float(res['routes'][0]['legs'][0]['distance']['text'].replace(
                 ' km', '')) + float(res['routes'][0]['legs'][1]['distance']['text'].replace(' km', ''))
@@ -85,11 +88,19 @@ class GoogleDirectionsRouting:
         return req
 
     def get_routes(self):
-        return {"routes": self.routes}
+        res = {"routes": self.routes}
+        return res
 
     def get_sorted_routes(self):
         # return sorted Ordered Dict
         # print(self.sorted_routes)
+        
+        # DEBUG IN
+        with open('data.json', 'r') as outfile:
+            self.sorted_routes = json.load(outfile)
+        # DEBUG OUT
+        # with open('data.json', 'w') as outfile:
+        #     json.dump(self.sorted_routes, outfile, indent=4)
         return self.sorted_routes
 
     @classmethod

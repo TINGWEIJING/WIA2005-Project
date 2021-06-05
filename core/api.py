@@ -11,6 +11,7 @@ from core.algorithm.SentimentAnalysis import SentimentAnalysis
 from bson import json_util
 import json
 from core.algorithm.travelInfo import GoogleDirectionsRouting
+from core.algorithm.ranking import Ranking
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 CORS(bp)
@@ -50,7 +51,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 # The client and the server communication via json
 @bp.route('/getroutes', methods=(['POST']))
 def obtainRoutesRequest():
-    """Get all routes from src and dest"""
+    """Get all routes from src and dest, and rankings"""
     error = None
     # print(request.json)
     source = request.json.get('start')
@@ -60,12 +61,37 @@ def obtainRoutesRequest():
         return error, 400
 
     newRoute = GoogleDirectionsRouting(source, destination)
-    result = newRoute.get_sorted_routes()
+    routes_data = newRoute.get_sorted_routes()
     # print(json.dumps(result, indent = 4))
 
-    if len(result.get('routes')) == 0:
+    if len(routes_data.get('routes')) == 0:
         error = 'Source or destination address not found'
         return error, 400
+
+    # sentiment data from database
+    db = mongo_db
+    cursor = db.analysis.find({})
+    data_list = []
+    for document in cursor:
+        data = document
+        del data['_id']
+        del data['last_retrieve']
+        del data['ori_text']
+        del data['result']
+        del data['sentiment']
+        del data['title']
+        del data['url']
+        data_list.append(data)
+
+    sentiment_data = json.loads(json.dumps({"result":data_list}, default=json_util.default))
+
+    new_ranking = Ranking(routes_data, sentiment_data)
+    rankings_data = new_ranking.get_rankings()
+
+    result = {
+        'routing': routes_data.get('routes'),
+        'ranking': rankings_data,
+    }
 
     return result, 200
 
@@ -111,4 +137,6 @@ def getAllAnalysis():
         del data['_id']
         del data['last_retrieve']
         data_list.append(data)
-    return json.loads(json.dumps({"result":data_list}, default=json_util.default))
+    
+    result = json.loads(json.dumps({"result":data_list}, default=json_util.default))
+    return result
