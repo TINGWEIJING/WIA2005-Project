@@ -1,17 +1,53 @@
-// http://127.0.0.1:5000/api/getAnalysis
-const mapIframe = document.getElementById('map-iframe');
+import data from './routesSampleResponse.js';
 const cityLinkBtn = document.getElementById('city-link-btn');
 const posLajuBtn = document.getElementById('pos-laju-btn');
 const gdexBtn = document.getElementById('gdex-btn');
 const jAndTBtn = document.getElementById('j-and-t-btn');
 const dhlBtn = document.getElementById('dhl-btn');
 const btns = [cityLinkBtn, posLajuBtn, gdexBtn, jAndTBtn, dhlBtn];
-const maps = ['cityLinkMap.html', 'posLajuMap.html', 'gdexMap.html', 'jAndTMap.html', 'dhlMap.html'];
+const map_canvas_cityLinkExpress = document.getElementById('map_canvas_cityLinkExpress');
+const map_canvas_posLaju = document.getElementById('map_canvas_posLaju');
+const map_canvas_gdex = document.getElementById('map_canvas_gdex');
+const map_canvas_jnt = document.getElementById('map_canvas_jnt');
+const map_canvas_dhl = document.getElementById('map_canvas_dhl');
+const canvas = [map_canvas_cityLinkExpress
+  // , map_canvas_posLaju
+  // , map_canvas_gdex, map_canvas_jnt, map_canvas_dhl
+]
+const hubInfo = [
+  {
+    title: 'City-link Express',
+    deliveryHub: 'Port Klang',
+    coordinate: `3.0319924887507144, \n101.37344116244806`
+  },
+  {
+    title: 'Pos Laju',
+    deliveryHub: 'Petaling Jaya',
+    coordinate: `3.112924170027219, \n101.63982650389863 `
+  },
+  {
+    title: 'GDEX',
+    deliveryHub: 'Batu Caves',
+    coordinate: `3.265154613796736, \n101.68024844550233`
+  },
+  {
+    title: 'J&T',
+    deliveryHub: 'Kajang',
+    coordinate: `2.9441205329488325, \n101.7901521759029 `
+  },
+  {
+    title: 'DHL',
+    deliveryHub: 'Sungai Buloh',
+    coordinate: `3.2127230893650065, \n101.57467295692778`
+  },
+]
+
 btns.forEach((btn, idx) => {
   console.log(btn);
   btn.addEventListener('click', (event) => {
+    displayNone(event.currentTarget.id);
     event.preventDefault();
-    mapIframe.setAttribute('src', maps[idx]);
+    // mapIframe.setAttribute('src', maps[idx]);
     // deactive the active element
     const cur = document.getElementsByClassName('active');
     cur[0].className = cur[0].className.replace(' active', '');
@@ -19,6 +55,31 @@ btns.forEach((btn, idx) => {
   });
 });
 
+function displayNone(btnId) {
+  document.getElementsByClassName('custom-d-none')[0].classList.remove("custom-d-none");
+  switch (btnId) {
+    case "city-link-btn": {
+      canvas[0].classList.toggle("custom-d-none");
+      break;
+    }
+    case "pos-laju-btn": {
+      canvas[1].classList.toggle("custom-d-none");
+      break;
+    }
+    case "gdex-btn": {
+      canvas[2].classList.toggle("custom-d-none");
+      break;
+    }
+    case "j-and-t-btn": {
+      canvas[3].classList.toggle("custom-d-none");
+      break;
+    }
+    case "dhl-btn": {
+      canvas[4].classList.toggle("custom-d-none");
+      break;
+    }
+  }
+}
 function error(input, message) {
   input.classList.add('error');
   // show the error message
@@ -26,7 +87,6 @@ function error(input, message) {
   error.innerText = message;
   return false;
 }
-
 function success(input) {
   input.classList.add('success');
   // hide the error message
@@ -34,7 +94,6 @@ function success(input) {
   error.innerText = '';
   return true;
 }
-
 function requireValue(input, message) {
   return input.value.trim() === '' ?
     error(input, message) :
@@ -47,8 +106,63 @@ const requiredFields = [
   { input: startEle, message: 'Start destination is required' },
   { input: endEle, message: 'End destination is required' }
 ];
+function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinationLat, destinationLng, legs) {
+  var map = new google.maps.Map(mapCanvasEle, {
+    zoom: 3,
+    center: new google.maps.LatLng(hubLat, hubLng)
+  });
+  // parse legs
+  const googleLatLngLegsArr = legs.map(leg => {
+    // console.log(leg.polyline.points);
+    // console.log(google.maps.geometry.encoding.decodePath(leg.polyline.points));
+    return google.maps.geometry.encoding.decodePath(leg.polyline.points);
+    // return new google.maps.LatLng(leg.end[0], leg.end[1]);
+  });
+  const googleLatLngLegs = [];
+  googleLatLngLegsArr.forEach(arr => { arr.forEach(pt => googleLatLngLegs.push(pt)); });
+  console.log(googleLatLngLegs);
+  new google.maps.Polyline({
+    clickable: false,
+    geodesic: true,
+    strokeColor: "#6495ED",
+    strokeOpacity: 1.000000,
+    strokeWeight: 3,
+    map: map,
+    path: [
+      new google.maps.LatLng(originLat, originLng),
+      ...googleLatLngLegs
+      // new google.maps.LatLng(hubLat, hubLng),
+      // new google.maps.LatLng(destinationLat, destinationLng),
+    ]
+  });
+
+  var origin = new google.maps.LatLng(originLat, originLng);
+  var hub = new google.maps.LatLng(hubLat, hubLng);
+  var destination = new google.maps.LatLng(destinationLat, destinationLng);
+
+  var marker = new google.maps.Marker({
+    position: origin,
+    map: map
+  });
+  var marker = new google.maps.Marker({
+    position: hub,
+    map: map
+  });
+  var marker = new google.maps.Marker({
+    position: destination,
+    map: map
+  });
+
+  var bounds = new google.maps.LatLngBounds();
+  bounds.extend(origin);
+  bounds.extend(hub);
+  bounds.extend(destination);
+  map.fitBounds(bounds);
+  return map;
+}
+
 form.addEventListener('submit', evt => {
-  console.log('form submitted');
+  console.log('form submitted, initialise all map on canvas.');
   evt.preventDefault();
   let start = startEle.value;
   let end = endEle.value;
@@ -57,22 +171,60 @@ form.addEventListener('submit', evt => {
   requiredFields.forEach((input) => {
     valid = requireValue(input.input, input.message);
   });
-  const data = {
+  const requestData = {
     start: start,
     end: end
   };
   if (valid) {
+    // comment below block if not calling /getroutes
     fetch('http://127.0.0.1:5000/api/getroutes', {
       method: 'POST',
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(requestData),
     }).then(response => {
       return response.json();
     }).then(data => {
       console.log(data);
+      // rearrange the route to in correct order within the array
+      const cityInfo = data.routes.filter(route => route.hub === 'City-link Express')[0];
+      const posInfo = data.routes.filter(route => route.hub === 'Pos Laju')[0];
+      const gdexInfo = data.routes.filter(route => route.hub === 'GDEX')[0];
+      const jntInfo = data.routes.filter(route => route.hub === 'J&T')[0];
+      const dhlInfo = data.routes.filter(route => route.hub === 'DHL')[0];
+      const couriers = [cityInfo, posInfo, gdexInfo, jntInfo, dhlInfo];
+      // console.log(couriers);
+      // console.log(JSON.stringify(data));
+      canvas.forEach((single_canvas, index) => {
+        // console.log(single_canvas);
+        // const courier = data.routes[index];
+        const courier = couriers[index];
+        const { origin, hubLocation, destination } = courier;
+        console.log(courier);
+        initialize(single_canvas, origin[0], origin[1], hubLocation[0], hubLocation[1], destination[0], destination[1], courier.legs);
+        console.log('push map index ' + index);
+      });
+      displayNone('city-link-btn');
+
+      // update result table
+      console.log('hi');
+      const resultTableTbody = document.getElementById('result-table-tbody');
+      // console.log(resultTableTbody);
+      const tbodyChildNode = resultTableTbody.querySelectorAll('tr');
+      // console.log(tbodyChildNode);
+      tbodyChildNode.forEach((row, index) => {
+        const tableDataArr = Array.from(row.querySelectorAll('td'));
+        // console.log(tableDataArr);
+        const tempHub = hubInfo.filter(hub => hub.title === data.routes[index]['hub'])[0];
+        tableDataArr[0].innerText = tempHub.title;
+        tableDataArr[1].innerText = tempHub.deliveryHub;
+        tableDataArr[2].innerText = tempHub.coordinate;
+        const distance = parseFloat(data.routes[index]['distance']);
+        tableDataArr[3].innerText = distance.toFixed(2);
+      })
+      // comment below block if not calling /getroutes
       return data;
     });
   }
@@ -104,53 +256,31 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
   ret.reverse().forEach((article, index) => {
     const { negative, neutral, positive } = article.frequency;
     const div = document.createElement('div');
-    div.setAttribute('class', 'px-4 py-2 col-12 col-lg-8');
-    // div.setAttribute('style', 'height: 15rem;');
+    div.setAttribute('class', 'px-4 pb-5 col-12 col-lg-8');
+    div.setAttribute('style', 'height: 15rem;');
     div.innerHTML = `
     <div id="title_${index}"></div>
     <canvas id="myChart_${index}"></canvas>`;
     var ctx = div.querySelector(`#myChart_${index}`).getContext('2d');
+    Chart.defaults.plugins.legend.display = false;
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ['Negative', 'Neutral', 'Positive'],
         datasets: [{
           // label: ['My','s', 't'],
-          label: 'Number of word',
-          lable: null,
+          label: "Number of word",
+          color: "white",
           data: [negative, neutral, positive],
           backgroundColor: [
             'rgba(54, 162, 235, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(54, 162, 235, 1)',
           ],
-          borderColor: [
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-          ],
-          borderWidth: 1
         }]
       },
       options: {
-        // legend: {
-        //   labels: {
-        //     color: "white",
-        //   },
-        //   title:{
-        //     color: "white",
-        //   }
-        // },
-        legend: {
-          display: false
-        },
-        tooltips: {
-          callbacks: {
-            label: function (tooltipItem) {
-              return tooltipItem.yLabel;
-            }
-          }
-        },
+        maintainAspectRatio: false,
         scales: {
           y: {
             beginAtZero: true,
@@ -178,6 +308,7 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     // get max length out of all bars
     const values = Object.keys(article.frequency).map(key => article.frequency[key]);
     const cap = div.querySelector(`#title_${index}`);
+    cap.setAttribute('class', 'mt-2');
     cap.innerHTML = article.title + ` - <i>${getResult(article.result_value)} article</i>`;
     insertAfter(div, chartTitle);
     // insert courier company name
@@ -189,4 +320,10 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
       insertAfter(tempH6, chartTitle);
     }
   });
+});
+
+// direct to analysis page
+const directBtn = document.getElementById('direct-to-analysis-page');
+directBtn.addEventListener('click', ()=> {
+  window.location.href = window.location.href + "/sentimentAnalysis.html";
 });

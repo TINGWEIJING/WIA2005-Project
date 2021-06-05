@@ -17,7 +17,7 @@ body,
   --dark-purple: rgb(134, 75, 189);
   --light-purple: #834d9b;
   --light-gray: rgb(223, 223, 223);
-  --dark-gray: #3A3A3A;
+  --dark-gray: #3a3a3a;
   /* --dark-gray: rgb(141, 141, 141); */
 }
 
@@ -35,5 +35,15 @@ textarea.error {
 }
 
 textarea.success {
-  border-color: #c3e6cb
+  border-color: #c3e6cb;
+}
+
+.custom-d-none {
+  position: relative;
+  z-index: 1000;
+}
+
+.audio-graph-height{
+  /* height: 10px; */
+  /* position: relative; */
 }
