@@ -32,7 +32,7 @@
     <main class="container-fluid bg-dark text-white">
         <div class="row d-flex justify-content-center">
             <span class="h1 py-3">Project Title</span>
-            <form class="col-12" id="generate-maps">
+            <form class="col-12" id="generate-maps" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="start-destination">Origin (Address)</label>
@@ -157,7 +157,7 @@
                 </div>
             </div>
 
-            <h2 class="text-white col-12 d-flex justify-content-center pt-3" id="chart-title"> Chart Title </h2>
+            <h2 class="text-white col-12 d-flex justify-content-center pt-3" id="chart-title"> Sentiment Analysis Statistics </h2>
             <div class="col-12">
                 <div class="d-flex flex-row-reverse pb-3"><button type="button" class="btn btn-primary" id="direct-to-analysis-page">Enter Sentiment Analysis Page</button>
                 </div>
@@ -170,58 +170,52 @@
                             <th scope="col">#</th>
                             <th scope="col">Courier Company</th>
                             <th scope="col">Delivery Hub</th>
-                            <th scope="col">Coordinate</th>
                             <th scope="col">Distance (km)</th>
+                            <th scope="col">Overall Sentiment Value</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="ranking-table-tbody">
                         <tr>
                             <th scope="row">1</th>
                             <td>City-link Express</td>
                             <td>Port Klang</td>
-                            <td>3.0319924887507144,
-                                101.37344116244806
-                            </td>
-                            <td>100</td>
+                            <td>NA</td>
+                            <td>NA</td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Pos Laju</td>
                             <td>Petaling Jaya</td>
-                            <td>3.112924170027219,
-                                101.63982650389863</td>
-                            <td>200</td>
+                            <td>NA</td>
+                            <td>NA</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>GDEX</td>
                             <td>Batu Caves</td>
-                            <td>3.265154613796736,
-                                101.68024844550233</td>
-                            <td>300</td>
+                            <td>NA</td>
+                            <td>NA</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>J&T</td>
                             <td>Kajang</td>
-                            <td>2.9441205329488325,
-                                101.7901521759029</td>
-                            <td>400</td>
+                            <td>NA</td>
+                            <td>NA</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>DHL</td>
                             <td>Sungai Buloh</td>
-                            <td>3.2127230893650065,
-                                101.57467295692778</td>
-                            <td>500</td>
+                            <td>NA</td>
+                            <td>NA</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="col-12 py-3">
                 <h2 class="text-white col-12 d-flex justify-content-center pt-3"> Conclusion </h2>
-                <div class="bg-white text-dark d-flex justify-content-center align-items-center" style="height: 100px;">
+                <div class="bg-white text-dark d-flex justify-content-center align-items-center h4" style="height: 100px;" id="conclusion-text">
                     This is conclusion
                 </div>
             </div>

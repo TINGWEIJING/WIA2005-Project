@@ -11,8 +11,8 @@ const map_canvas_gdex = document.getElementById('map_canvas_gdex');
 const map_canvas_jnt = document.getElementById('map_canvas_jnt');
 const map_canvas_dhl = document.getElementById('map_canvas_dhl');
 const canvas = [map_canvas_cityLinkExpress
-  // , map_canvas_posLaju
-  // , map_canvas_gdex, map_canvas_jnt, map_canvas_dhl
+  , map_canvas_posLaju
+  , map_canvas_gdex, map_canvas_jnt, map_canvas_dhl
 ]
 const hubInfo = [
   {
@@ -112,15 +112,32 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
     center: new google.maps.LatLng(hubLat, hubLng)
   });
   // parse legs
-  const googleLatLngLegsArr = legs.map(leg => {
-    // console.log(leg.polyline.points);
-    // console.log(google.maps.geometry.encoding.decodePath(leg.polyline.points));
-    return google.maps.geometry.encoding.decodePath(leg.polyline.points);
-    // return new google.maps.LatLng(leg.end[0], leg.end[1]);
+  let hubIdx = -1, minLat = 100, minLng = 100;
+  legs.forEach((leg, index) => {
+    // console.log(leg.start[0] + " " + leg.start[1]);
+    // console.log(hubLat + " " + hubLng);
+    if (Math.abs(leg.start[0] - hubLat) <= minLat && Math.abs(leg.start[1] - hubLng) <= minLng) {
+      minLat = Math.abs(leg.start[0] - hubLat);
+      minLng = Math.abs(leg.start[1] - hubLng);
+      hubIdx = index;
+      console.log('found');
+    }
   });
-  const googleLatLngLegs = [];
-  googleLatLngLegsArr.forEach(arr => { arr.forEach(pt => googleLatLngLegs.push(pt)); });
-  console.log(googleLatLngLegs);
+  // console.log(hubIdx);
+  const legsAfterHub = legs.splice(hubIdx);
+  // console.log(legs);
+  // console.log(legsAfterHub);
+  const googleLatLngLegsArr = legs.map(leg => {
+    return google.maps.geometry.encoding.decodePath(leg.polyline.points);
+  });
+  const googleLatLngLegsArr2 = legsAfterHub.map(leg => {
+    return google.maps.geometry.encoding.decodePath(leg.polyline.points);
+  });
+  const googleLatLngLegsBeforeHub = [];
+  const googleLatLngLegsAfterHub = [];
+  googleLatLngLegsArr.forEach(arr => { arr.forEach(pt => googleLatLngLegsBeforeHub.push(pt)); });
+  googleLatLngLegsArr2.forEach(arr => { arr.forEach(pt => googleLatLngLegsAfterHub.push(pt)); });
+
   new google.maps.Polyline({
     clickable: false,
     geodesic: true,
@@ -130,9 +147,19 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
     map: map,
     path: [
       new google.maps.LatLng(originLat, originLng),
-      ...googleLatLngLegs
-      // new google.maps.LatLng(hubLat, hubLng),
-      // new google.maps.LatLng(destinationLat, destinationLng),
+      ...googleLatLngLegsBeforeHub
+    ]
+  });
+  new google.maps.Polyline({
+    clickable: false,
+    geodesic: true,
+    strokeColor: "#6A0DAD",
+    strokeOpacity: 1.000000,
+    strokeWeight: 3,
+    map: map,
+    path: [
+      // new google.maps.LatLng(originLat, originLng),
+      ...googleLatLngLegsAfterHub
     ]
   });
 
@@ -146,10 +173,16 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
   });
   var marker = new google.maps.Marker({
     position: hub,
+    icon: {
+      url: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+    },
     map: map
   });
   var marker = new google.maps.Marker({
     position: destination,
+    icon: {
+      url: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+    },
     map: map
   });
 
@@ -188,18 +221,19 @@ form.addEventListener('submit', evt => {
       return response.json();
     }).then(data => {
       console.log(data);
+      const routing = data.routing;
+      const ranking = data.ranking;
       // rearrange the route to in correct order within the array
-      const cityInfo = data.routes.filter(route => route.hub === 'City-link Express')[0];
-      const posInfo = data.routes.filter(route => route.hub === 'Pos Laju')[0];
-      const gdexInfo = data.routes.filter(route => route.hub === 'GDEX')[0];
-      const jntInfo = data.routes.filter(route => route.hub === 'J&T')[0];
-      const dhlInfo = data.routes.filter(route => route.hub === 'DHL')[0];
+      const cityInfo = routing.filter(route => route.hub === 'City-link Express')[0];
+      const posInfo = routing.filter(route => route.hub === 'Pos Laju')[0];
+      const gdexInfo = routing.filter(route => route.hub === 'GDEX')[0];
+      const jntInfo = routing.filter(route => route.hub === 'J&T')[0];
+      const dhlInfo = routing.filter(route => route.hub === 'DHL')[0];
       const couriers = [cityInfo, posInfo, gdexInfo, jntInfo, dhlInfo];
       // console.log(couriers);
       // console.log(JSON.stringify(data));
       canvas.forEach((single_canvas, index) => {
         // console.log(single_canvas);
-        // const courier = data.routes[index];
         const courier = couriers[index];
         const { origin, hubLocation, destination } = courier;
         console.log(courier);
@@ -209,21 +243,34 @@ form.addEventListener('submit', evt => {
       displayNone('city-link-btn');
 
       // update result table
-      console.log('hi');
       const resultTableTbody = document.getElementById('result-table-tbody');
-      // console.log(resultTableTbody);
       const tbodyChildNode = resultTableTbody.querySelectorAll('tr');
-      // console.log(tbodyChildNode);
       tbodyChildNode.forEach((row, index) => {
         const tableDataArr = Array.from(row.querySelectorAll('td'));
         // console.log(tableDataArr);
-        const tempHub = hubInfo.filter(hub => hub.title === data.routes[index]['hub'])[0];
+        const tempHub = hubInfo.filter(hub => hub.title === routing[index]['hub'])[0];
         tableDataArr[0].innerText = tempHub.title;
         tableDataArr[1].innerText = tempHub.deliveryHub;
         tableDataArr[2].innerText = tempHub.coordinate;
-        const distance = parseFloat(data.routes[index]['distance']);
+        const distance = parseFloat(routing[index]['distance']);
         tableDataArr[3].innerText = distance.toFixed(2);
+      });
+      // update ranking table
+      const rankingTableTbody = document.getElementById('ranking-table-tbody');
+      const rankingTbodyChildNode = rankingTableTbody.querySelectorAll('tr');
+      rankingTbodyChildNode.forEach((row, index) => {
+        const tableDataArr = Array.from(row.querySelectorAll('td'));
+        // console.log(tableDataArr);
+        const tempHub = hubInfo.filter(hub => hub.title === ranking[index]['hub'])[0];
+        tableDataArr[0].innerText = tempHub.title;
+        tableDataArr[1].innerText = tempHub.deliveryHub;
+        const distance = parseFloat(ranking[index]['distance']);
+        tableDataArr[2].innerText = distance.toFixed(2);
+        tableDataArr[3].innerText = ranking[index]['sentiment_value'];
       })
+      // conclusion
+      const conclusion = document.getElementById('conclusion-text');
+      conclusion.innerText = `The best courier company for you is ${ranking[0]['hub']}`;
       // comment below block if not calling /getroutes
       return data;
     });
@@ -254,7 +301,7 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
   // use this data to render charts in html
   const titles = ['City-link Express', 'Pos Laju', 'GDEX', 'J&T', 'DHL'];
   ret.reverse().forEach((article, index) => {
-    const { negative, neutral, positive } = article.frequency;
+    const { negative, neutral, positive, stop } = article.frequency;
     const div = document.createElement('div');
     div.setAttribute('class', 'px-4 pb-5 col-12 col-lg-8');
     div.setAttribute('style', 'height: 15rem;');
@@ -266,13 +313,13 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Negative', 'Neutral', 'Positive'],
+        labels: ['Negative', 'Neutral', 'Positive', 'Stop Word'],
         datasets: [{
-          // label: ['My','s', 't'],
           label: "Number of word",
           color: "white",
-          data: [negative, neutral, positive],
+          data: [negative, neutral, positive, stop],
           backgroundColor: [
+            'rgba(54, 162, 235, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(54, 162, 235, 1)',
@@ -309,7 +356,7 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     const values = Object.keys(article.frequency).map(key => article.frequency[key]);
     const cap = div.querySelector(`#title_${index}`);
     cap.setAttribute('class', 'mt-2');
-    cap.innerHTML = article.title + ` - <i>${getResult(article.result_value)} article</i>`;
+    cap.innerHTML = `<a href="${article.url}">${article.title}</a>` + ` - <i>${getResult(article.result_value)} article</i>`;
     insertAfter(div, chartTitle);
     // insert courier company name
     if ((index - 2) % 3 === 0) {
@@ -324,6 +371,11 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
 
 // direct to analysis page
 const directBtn = document.getElementById('direct-to-analysis-page');
-directBtn.addEventListener('click', ()=> {
-  window.location.href = window.location.href + "/sentimentAnalysis.html";
+directBtn.addEventListener('click', () => {
+  console.log(window.location.href);
+  window.open(
+    window.location.href + "sentimentAnalysis.html",
+    '_blank' // <- This is what makes it open in a new window.
+  );
+  // window.location.href = window.location.href + "sentimentAnalysis.html";
 });

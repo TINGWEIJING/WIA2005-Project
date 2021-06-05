@@ -174,6 +174,7 @@ class SentimentAnalysis:
                 "positive": self.pos_words,
                 "negative": self.neg_words,
                 "neutral": self.neu_words,
+                "stop": self.stop_words,
             },
             "ratio": self.ratio,
             "result": result,

@@ -60,6 +60,9 @@ def create_app(test_config=None):
     app.register_blueprint(api.bp)
     app.register_blueprint(view.bp)
 
+    # secure session data
+    app.config.update(SESSION_COOKIE_SAMESITE="None", SESSION_COOKIE_SECURE=True)
+
     return app
 
 
