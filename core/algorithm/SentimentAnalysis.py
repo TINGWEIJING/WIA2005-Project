@@ -238,9 +238,10 @@ def identify_best_sentiment_company(result_list: list) -> dict:
     bestCourier = ''
     for courier in ratio_dict:
         ratio_dict[courier]['mean']=np.mean(ratio_dict[courier]['ratio'])
-        if i == 0 or ratio_dict[courier]['mean'] < max:
+        if i == 0 or ratio_dict[courier]['mean'] < min:
             min = ratio_dict[courier]['mean']
             bestCourier = courier
+        i += 1
     return bestCourier, min
 
 if __name__ == "__main__":
