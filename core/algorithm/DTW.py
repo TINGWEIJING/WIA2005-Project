@@ -16,6 +16,8 @@ class AudioAnalysis:
     SAMPLE_FOLDER_2 = 'sample 2'
     GRAPH_FOLDER_1 = 'graph 1'
     GRAPH_FOLDER_2 = 'graph 2'
+    DETECTED_FOLDER_1 = 'detected 1'
+    DETECTED_FOLDER_2 = 'detected 2'
     AUDIO_SAMPLE_1 = []
     AUDIO_SAMPLE_2 = []
     TARGET_FULL_AUDIO = None

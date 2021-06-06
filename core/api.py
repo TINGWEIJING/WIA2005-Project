@@ -143,3 +143,11 @@ def getAllAnalysis():
     
     result = json.loads(json.dumps({"result":data_list}, default=json_util.default))
     return result
+
+@bp.route('/getAudio', methods=(['GET']))
+def getAllAudio():
+    '''Retrun json results of all audio analysis'''
+    with open(r'core\storage\data.json', 'r') as jsonFile:
+            result = json.load(jsonFile)
+    
+    return result
