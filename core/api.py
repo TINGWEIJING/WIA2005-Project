@@ -12,6 +12,7 @@ from bson import json_util
 import json
 from core.algorithm.travelInfo import GoogleDirectionsRouting
 from core.algorithm.ranking import Ranking
+from core.algorithm.DTW import AudioAnalysis
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 CORS(bp)
@@ -120,10 +121,12 @@ def hello():
     # todo = db.todos.find_one()
     # print(todo)
     # return json.loads(json.dumps(todo, default=json_util.default))
-    data_list = SentimentAnalysis.retrieve_all()
-    re_data = {
-        'data':data_list
-    }
+    # data_list = SentimentAnalysis.retrieve_all()
+    # re_data = {
+    #     'data':data_list
+    # }
+    re_data = 'Success'
+    audioAnalysis = AudioAnalysis()
     return re_data
 
 @bp.route('/getAnalysis', methods=(['GET']))
@@ -139,4 +142,12 @@ def getAllAnalysis():
         data_list.append(data)
     
     result = json.loads(json.dumps({"result":data_list}, default=json_util.default))
+    return result
+
+@bp.route('/getAudio', methods=(['GET']))
+def getAllAudio():
+    '''Retrun json results of all audio analysis'''
+    with open(r'core\storage\data.json', 'r') as jsonFile:
+            result = json.load(jsonFile)
+    
     return result

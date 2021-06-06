@@ -1,0 +1,312 @@
+{
+    "full_target_audio": {
+        "audio_title": "J&T Sistem Pengagihan Bonus Tak Jelas.mp3",
+        "source_link": "https://youtu.be/OnAA1dIG6iY",
+        "target_audio_path": "core\\storage\\full\\J&T Sistem Pengagihan Bonus Tak Jelas.mp3",
+        "transcript": "kurang jelas terhadap sistem pengagihan bonus dalam kalangan pegawai jabatan menjadi punca kepada kejadian mogok dan tindakan melempar barangan milik pelanggan oleh kakitangan J&T Express"
+    },
+    "sample_audio_1": [
+        {
+            "actual_word": "kurang",
+            "graph_img_path": "core\\storage\\graph 1\\1_kurang.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\1_kurang.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\1_kurang.wav"
+        },
+        {
+            "actual_word": "jelas",
+            "graph_img_path": "core\\storage\\graph 1\\2_jelas.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\2_jelas.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\2_jelas.wav"
+        },
+        {
+            "actual_word": "terhadap",
+            "graph_img_path": "core\\storage\\graph 1\\3_terhadap.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\3_terhadap.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\3_terhadap.wav"
+        },
+        {
+            "actual_word": "sistem",
+            "graph_img_path": "core\\storage\\graph 1\\4_sistem.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\4_sistem.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\4_sistem.wav"
+        },
+        {
+            "actual_word": "pengagihan",
+            "graph_img_path": "core\\storage\\graph 1\\5_pengagihan.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\5_pengagihan.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\5_pengagihan.wav"
+        },
+        {
+            "actual_word": "bonus",
+            "graph_img_path": "core\\storage\\graph 1\\6_bonus.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\6_bonus.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\6_bonus.wav"
+        },
+        {
+            "actual_word": "dalam",
+            "graph_img_path": "core\\storage\\graph 1\\7_dalam.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\7_dalam.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\7_dalam.wav"
+        },
+        {
+            "actual_word": "kalangan",
+            "graph_img_path": "core\\storage\\graph 1\\8_kalangan.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\8_kalangan.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\8_kalangan.wav"
+        },
+        {
+            "actual_word": "pegawai",
+            "graph_img_path": "core\\storage\\graph 1\\9_pegawai.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\9_pegawai.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\9_pegawai.wav"
+        },
+        {
+            "actual_word": "jabatan",
+            "graph_img_path": "core\\storage\\graph 1\\10_jabatan.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\10_jabatan.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\10_jabatan.wav"
+        },
+        {
+            "actual_word": "menjadi",
+            "graph_img_path": "core\\storage\\graph 1\\11_menjadi.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\11_menjadi.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\11_menjadi.wav"
+        },
+        {
+            "actual_word": "punca",
+            "graph_img_path": "core\\storage\\graph 1\\12_punca.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\12_punca.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\12_punca.wav"
+        },
+        {
+            "actual_word": "kepada",
+            "graph_img_path": "core\\storage\\graph 1\\13_kepada.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\13_kepada.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\13_kepada.wav"
+        },
+        {
+            "actual_word": "kejadian",
+            "graph_img_path": "core\\storage\\graph 1\\14_kejadian.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\14_kejadian.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\14_kejadian.wav"
+        },
+        {
+            "actual_word": "mogok",
+            "graph_img_path": "core\\storage\\graph 1\\15_mogok.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\15_mogok.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\15_mogok.wav"
+        },
+        {
+            "actual_word": "dan",
+            "graph_img_path": "core\\storage\\graph 1\\16_dan.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\16_dan.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\16_dan.wav"
+        },
+        {
+            "actual_word": "tindakan",
+            "graph_img_path": "core\\storage\\graph 1\\17_tindakan.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\17_tindakan.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\17_tindakan.wav"
+        },
+        {
+            "actual_word": "melempar",
+            "graph_img_path": "core\\storage\\graph 1\\18_melempar.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\18_melempar.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\18_melempar.wav"
+        },
+        {
+            "actual_word": "barangan",
+            "graph_img_path": "core\\storage\\graph 1\\19_barangan.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\19_barangan.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\19_barangan.wav"
+        },
+        {
+            "actual_word": "milik",
+            "graph_img_path": "core\\storage\\graph 1\\20_milik.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\20_milik.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\20_milik.wav"
+        },
+        {
+            "actual_word": "pelanggan",
+            "graph_img_path": "core\\storage\\graph 1\\21_pelanggan.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\21_pelanggan.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\21_pelanggan.wav"
+        },
+        {
+            "actual_word": "oleh",
+            "graph_img_path": "core\\storage\\graph 1\\22_oleh.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\22_oleh.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\22_oleh.wav"
+        },
+        {
+            "actual_word": "kakitangan",
+            "graph_img_path": "core\\storage\\graph 1\\23_kakitangan.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\23_kakitangan.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\23_kakitangan.wav"
+        },
+        {
+            "actual_word": "J&T",
+            "graph_img_path": "core\\storage\\graph 1\\24_J&T.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\24_J&T.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\24_J&T.wav"
+        },
+        {
+            "actual_word": "Express",
+            "graph_img_path": "core\\storage\\graph 1\\25_Express.jpg",
+            "actual_audio_path": "core\\storage\\sample 1\\25_Express.mp3",
+            "detected_audio_path": "core\\storage\\detected 1\\25_Express.wav"
+        }
+    ],
+    "sample_audio_2": [
+        {
+            "actual_word": "kurang",
+            "graph_img_path": "core\\storage\\graph 2\\1_kurang.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\1_kurang.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\1_kurang.wav"
+        },
+        {
+            "actual_word": "jelas",
+            "graph_img_path": "core\\storage\\graph 2\\2_jelas.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\2_jelas.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\2_jelas.wav"
+        },
+        {
+            "actual_word": "terhadap",
+            "graph_img_path": "core\\storage\\graph 2\\3_terhadap.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\3_terhadap.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\3_terhadap.wav"
+        },
+        {
+            "actual_word": "sistem",
+            "graph_img_path": "core\\storage\\graph 2\\4_sistem.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\4_sistem.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\4_sistem.wav"
+        },
+        {
+            "actual_word": "pengagihan",
+            "graph_img_path": "core\\storage\\graph 2\\5_pengagihan.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\5_pengagihan.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\5_pengagihan.wav"
+        },
+        {
+            "actual_word": "bonus",
+            "graph_img_path": "core\\storage\\graph 2\\6_bonus.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\6_bonus.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\6_bonus.wav"
+        },
+        {
+            "actual_word": "dalam",
+            "graph_img_path": "core\\storage\\graph 2\\7_dalam.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\7_dalam.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\7_dalam.wav"
+        },
+        {
+            "actual_word": "kalangan",
+            "graph_img_path": "core\\storage\\graph 2\\8_kalangan.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\8_kalangan.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\8_kalangan.wav"
+        },
+        {
+            "actual_word": "pegawai",
+            "graph_img_path": "core\\storage\\graph 2\\9_pegawai.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\9_pegawai.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\9_pegawai.wav"
+        },
+        {
+            "actual_word": "jabatan",
+            "graph_img_path": "core\\storage\\graph 2\\10_jabatan.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\10_jabatan.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\10_jabatan.wav"
+        },
+        {
+            "actual_word": "menjadi",
+            "graph_img_path": "core\\storage\\graph 2\\11_menjadi.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\11_menjadi.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\11_menjadi.wav"
+        },
+        {
+            "actual_word": "punca",
+            "graph_img_path": "core\\storage\\graph 2\\12_punca.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\12_punca.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\12_punca.wav"
+        },
+        {
+            "actual_word": "kepada",
+            "graph_img_path": "core\\storage\\graph 2\\13_kepada.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\13_kepada.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\13_kepada.wav"
+        },
+        {
+            "actual_word": "kejadian",
+            "graph_img_path": "core\\storage\\graph 2\\14_kejadian.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\14_kejadian.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\14_kejadian.wav"
+        },
+        {
+            "actual_word": "mogok",
+            "graph_img_path": "core\\storage\\graph 2\\15_mogok.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\15_mogok.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\15_mogok.wav"
+        },
+        {
+            "actual_word": "dan",
+            "graph_img_path": "core\\storage\\graph 2\\16_dan.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\16_dan.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\16_dan.wav"
+        },
+        {
+            "actual_word": "tindakan",
+            "graph_img_path": "core\\storage\\graph 2\\17_tindakan.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\17_tindakan.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\17_tindakan.wav"
+        },
+        {
+            "actual_word": "melempar",
+            "graph_img_path": "core\\storage\\graph 2\\18_melempar.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\18_melempar.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\18_melempar.wav"
+        },
+        {
+            "actual_word": "barangan",
+            "graph_img_path": "core\\storage\\graph 2\\19_barangan.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\19_barangan.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\19_barangan.wav"
+        },
+        {
+            "actual_word": "milik",
+            "graph_img_path": "core\\storage\\graph 2\\20_milik.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\20_milik.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\20_milik.wav"
+        },
+        {
+            "actual_word": "pelanggan",
+            "graph_img_path": "core\\storage\\graph 2\\21_pelanggan.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\21_pelanggan.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\21_pelanggan.wav"
+        },
+        {
+            "actual_word": "oleh",
+            "graph_img_path": "core\\storage\\graph 2\\22_oleh.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\22_oleh.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\22_oleh.wav"
+        },
+        {
+            "actual_word": "kakitangan",
+            "graph_img_path": "core\\storage\\graph 2\\23_kakitangan.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\23_kakitangan.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\23_kakitangan.wav"
+        },
+        {
+            "actual_word": "J&T",
+            "graph_img_path": "core\\storage\\graph 2\\24_J&T.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\24_J&T.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\24_J&T.wav"
+        },
+        {
+            "actual_word": "Express",
+            "graph_img_path": "core\\storage\\graph 2\\25_Express.jpg",
+            "actual_audio_path": "core\\storage\\sample 2\\25_Express.mp3",
+            "detected_audio_path": "core\\storage\\detected 2\\25_Express.wav"
+        }
+    ]
+}
