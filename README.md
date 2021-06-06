@@ -26,6 +26,10 @@ py -m pip install -r requirements.txt
 ```Shell
 pip freeze > requirements.txt
 ```
+- Anaconda (ignore)
+```Shell
+jupyter notebook --NotebookApp.iopub_data_rate_limit=1.0e10
+```
 
 ## Run
 - Using CMD
