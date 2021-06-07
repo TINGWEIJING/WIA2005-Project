@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet" />
+  <!-- icon - fontawesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!-- custom css files -->
+  <link rel='stylesheet' type='text/css' media='screen' href='../static/normalize.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../static/main.css'>
+  <!-- chart.js -->
+  <script type="application/javascript" src='https://cdn.jsdelivr.net/npm/chart.js@3.3.0/dist/chart.min.js'></script>
+
+  <title>Sentiment Analysis</title>
+</head>
+
+<body class="bg-dark">
+  <main class="container-fluid text-white">
+    <div class="row d-flex justify-content-center">
+      <span class="h1 py-3">Audio Analysis</span>
+      <div class="col-12">
+        <div class="col-12 d-flex justify-content-center py-2">
+          <div>
+            <a href="https://www.youtube.com/watch?v=QH2-TGUlwu4" class="h5" id="youtube-link" target="_blank">Youtube
+              Hyperlink</a>
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center pb-4">
+          <audio controls id="target-audio">
+            <source src="..\\static\\full\\jnt.mp3" type="audio/mpeg">
+            <source src="..\\static\\full\\jnt.mp3" type="audio/ogg">
+            Your browser does not support the audio element.
+          </audio>
+
+        </div>
+        <div class="col-12 jumbotron text-dark p-3" id="transcript">
+          Transcript
+        </div>
+        <div class="col-12 pt-4">
+          <div class="h3 d-flex justify-content-center">Using Resampled Audio</div>
+          <table class="table table-striped table-dark table-bordered table-hover overflow-auto d-block">
+            <thead>
+              <tr>
+                <th scope="col">Graph</th>
+                <th scope="col">Actual word</th>
+                <th scope="col">Detected word</th>
+              </tr>
+            </thead>
+            <tbody id="result-sample-1-table-tbody">
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 pt-4">
+          <div class="h3 d-flex justify-content-center">Using Own Sample Audio</div>
+          <table class="table table-striped table-dark table-bordered table-hover overflow-auto d-block">
+            <thead>
+              <tr>
+                <th scope="col">Graph</th>
+                <th scope="col">Actual word</th>
+                <th scope="col">Detected word</th>
+              </tr>
+            </thead>
+            <tbody id="result-sample-2-table-tbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="text/javascript" src="../static/sentimentAnalysis.js"></script>
+</body>
+
+</html>
