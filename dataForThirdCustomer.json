@@ -1,0 +1,2941 @@
+{
+    "routes": [
+        {
+            "hub": "J&T",
+            "origin": [
+                3.13856,
+                101.7627227
+            ],
+            "hubLocation": [
+                2.9441205329488325,
+                101.7901521759029
+            ],
+            "destination": [
+                2.9109129,
+                101.6433268
+            ],
+            "distance": 56.0,
+            "legs": [
+                {
+                    "start": [
+                        3.13856,
+                        101.7627227
+                    ],
+                    "end": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "polyline": {
+                        "points": "__dR_pblRCCYMSGa@Gi@Mq@M"
+                    }
+                },
+                {
+                    "start": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "end": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "polyline": {
+                        "points": "oddR}qblRBYDEBCLORUXST[R]R_A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "end": [
+                        3.1350826,
+                        101.7647046
+                    ],
+                    "polyline": {
+                        "points": "g`dRuxblRb@Nr@P`@HPCVIjAa@hBw@f@QTIHCVGNCLAJAP?n@Ct@CR?xACT@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1350826,
+                        101.7647046
+                    ],
+                    "end": [
+                        3.1342549,
+                        101.7678923
+                    ],
+                    "polyline": {
+                        "points": "gicRk|blRXSJIJCDAHAFKFQ@I?GAICMEMc@}@[m@GMOWa@e@CE]e@GOCCAGAK?K@KHYV}@Pc@@C@CFIFGHIHETILERE`@I~@SPC"
+                    }
+                },
+                {
+                    "start": [
+                        3.1342549,
+                        101.7678923
+                    ],
+                    "end": [
+                        3.133509,
+                        101.7657027
+                    ],
+                    "polyline": {
+                        "points": "adcRipclRPAAhAAdB?N?N@HDLDLHL?@NXVd@Zj@@BP\\Tb@"
+                    }
+                },
+                {
+                    "start": [
+                        3.133509,
+                        101.7657027
+                    ],
+                    "end": [
+                        3.132774,
+                        101.7603201
+                    ],
+                    "polyline": {
+                        "points": "m_cRsbclR@DBH@DHRFPTd@n@pAR^?@FJHRP\\d@|@FNHLb@~@Tn@DHHZ@L@NAT?FCLIVYt@Sl@CFK\\ABOl@K~@E\\Eb@Gj@I`B"
+                    }
+                },
+                {
+                    "start": [
+                        3.132774,
+                        101.7603201
+                    ],
+                    "end": [
+                        3.1319701,
+                        101.7464196
+                    ],
+                    "polyline": {
+                        "points": "yzbR_ablRYjCWxBa@nDG`@S~AkBvIIf@Gb@Ej@ARA`@?j@Bf@B|@?D@JB\\B\\VdBD^DT@LFf@F\\H^DRDTj@|C@FJf@Ll@^pB^fBH`@\\hBZtARjARrAd@|CP`ALjA"
+                    }
+                },
+                {
+                    "start": [
+                        3.1319701,
+                        101.7464196
+                    ],
+                    "end": [
+                        3.1299405,
+                        101.7466097
+                    ],
+                    "polyline": {
+                        "points": "yubRcj_lRRJB@HBD?L?|AWvAS~@Iz@Gl@D"
+                    }
+                },
+                {
+                    "start": [
+                        3.1299405,
+                        101.7466097
+                    ],
+                    "end": [
+                        3.122562,
+                        101.7469473
+                    ],
+                    "polyline": {
+                        "points": "cibRik_lRd@Ah@EpCMjCUxCMrACnHUtA?jDC`@?rCF~BJ"
+                    }
+                },
+                {
+                    "start": [
+                        3.122562,
+                        101.7469473
+                    ],
+                    "end": [
+                        3.1029656,
+                        101.7400706
+                    ],
+                    "polyline": {
+                        "points": "_{`Rmm_lRXBnETN@vGXN@N@j@BL?\\BdAFP@P?L@`FHf@@b@?f@@jCBr@@f@DTBxCp@bBf@~GlBbAXrF|AtExAhFbB|Ar@d@R~Av@TNt@^TLHDDBZTlAt@TPtB|ALJZTpBvAvA`AnAp@|@\\XL`A\\r@R\\H`@HbAP"
+                    }
+                },
+                {
+                    "start": [
+                        3.1029656,
+                        101.7400706
+                    ],
+                    "end": [
+                        3.0999217,
+                        101.7383349
+                    ],
+                    "polyline": {
+                        "points": "q`}Qmb~kRVEDAD?NBr@F^FRBnA\\DBx@Xb@RZNDBTLPJVPVTFFPLHHNP^b@f@f@Zf@"
+                    }
+                },
+                {
+                    "start": [
+                        3.0999217,
+                        101.7383349
+                    ],
+                    "end": [
+                        3.086385,
+                        101.7418586
+                    ],
+                    "polyline": {
+                        "points": "om|Qqw}kR~@p@TLRFRBN?R?ZGd@Kf@MTAzAe@VKTG^MNGzA_@fB]XGd@?ZIz@UdBa@z@UpB_@rBc@x@OdDs@xCq@ZG|D}@z@WvCm@b@Kb@KjGoA\\GJEFC@ABCtAM|BWHALATE\\E"
+                    }
+                },
+                {
+                    "start": [
+                        3.086385,
+                        101.7418586
+                    ],
+                    "end": [
+                        3.0726477,
+                        101.7620442
+                    ],
+                    "polyline": {
+                        "points": "{xyQsm~kR|BEbBI`B?dACB?hA?hD?vA?ZAH?FAh@Bv@GJ?ZCJAH?r@GNC`@ITEREVGJE`@S`BeAPMNUV]Zc@Xi@NWHUJc@Ps@L{@J_B^cEP_DJsAP}A@a@`@iEVqCJq@L{@Nw@n@sC^{ALc@^yAvAuEj@sBV_AbAoD@Cb@aBH]HYNm@Lo@RsAJe@NeAZoCVmBDo@F]DSHQXq@n@}A|EkFf@o@nAkAf@]r@c@l@["
+                    }
+                },
+                {
+                    "start": [
+                        3.0726477,
+                        101.7620442
+                    ],
+                    "end": [
+                        3.0036909,
+                        101.7806611
+                    ],
+                    "polyline": {
+                        "points": "acwQwkblRh@[JIx@k@TQRSX[FIZa@V_@TYfBcCPUT[f@q@jBeC|B_DvI{LpB_CbAeAt@s@dAw@nCoBnBoAb@[\\U|G}EpA_A\\Yx@k@dAu@f@_@ZUZSZQ^Ql@Wn@Ur@Q|@QrGu@hBO^AZAb@AxCElGFxE@fDCrA@VCf@Cf@Kz@Wd@QFAl@]j@_@ROXQNMvDmCx@g@nBm@dCc@nAK`BBnCPlATp@PdBd@dAh@z@^LF`Bn@nG~Bp@Xh@Rf@Pf@Pr@X|Ad@jBd@B@t@Pr@Px@P`B`@pAZfBd@lA^vCfArAl@`A`@b@RpDtAdBp@vAh@zBh@~@X~Af@^Jz@Tt@TpCv@\\J~@T^JhAN^Bb@DjAFx@@`AA`AEZEFCRCPCDA^K|@U|Aa@dA_@v@SRGjCu@FAzBq@zAa@^KjCs@t@U`GgBpA_@n@WvDaAPENEPGJCTId@KlASZE^GRCXCxAO`CKRAjBGfEMzCM~BMVEv@Qv@Or@QPEz@WbC}@fBy@~B{@l@UBA^MbA_@z@YdAYj@Sf@Q`DaA|@W|DkAnDgA|DkAx@Yr@S|@Wn@Sn@W`@Uj@]f@[l@g@f@e@V]Za@`@i@b@y@b@_AVu@@GRo@VsA"
+                    }
+                },
+                {
+                    "start": [
+                        3.0036909,
+                        101.7806611
+                    ],
+                    "end": [
+                        3.0039781,
+                        101.7824387
+                    ],
+                    "polyline": {
+                        "points": "atiQc`flRAy@@e@Aa@Ck@?EG_@Ie@]yACO"
+                    }
+                },
+                {
+                    "start": [
+                        3.0039781,
+                        101.7824387
+                    ],
+                    "end": [
+                        3.0031642,
+                        101.7827464
+                    ],
+                    "polyline": {
+                        "points": "{uiQgkflRCUdAOdAQZE"
+                    }
+                },
+                {
+                    "start": [
+                        3.0031642,
+                        101.7827464
+                    ],
+                    "end": [
+                        2.9932825,
+                        101.7878237
+                    ],
+                    "polyline": {
+                        "points": "wpiQemflRr@O\\EXETEj@MTEbAULE\\MVM\\SRMNKLKXW\\[XUn@i@RQt@k@NKXWj@c@^YZWLKHGFE^[j@e@j@e@f@c@JIXU\\]LOj@q@h@o@RUd@i@n@q@NSPMVKHEFEHAFCF?nBIv@CbAAlBA`CAhDE"
+                    }
+                },
+                {
+                    "start": [
+                        2.9932825,
+                        101.7878237
+                    ],
+                    "end": [
+                        2.9496125,
+                        101.7875761
+                    ],
+                    "polyline": {
+                        "points": "_sgQ{lglRLAB@VDB?X@bB?L?hBAJ@HBFBHBJETOj@]BAn@i@|@s@ZQVK^Mp@ShBi@lFcBNGHMPGNEFARCNAXATAN@ZAj@C^?r@@d@@T?f@?t@?FAtCIhAAtAIZCXClAENAf@AP?x@@Z?^?R?bBBvA@J?n@?Z@p@@bABD?jABzA?H?`CB^@J?f@?r@AN?`@?h@@`@?`@CLA`ACj@Ez@IXAX?J@T?zADd@@h@?^@lABlADlABPHn@?D?T?T?bA@dB?nA?\\?Z?x@@bB?BC?A@?DAF?lB@Z?H?L?d@?hDGbAGr@C^CHCLAf@IrBg@xA[j@Md@KzBk@t@SRCb@G|@YxA[ZGREJCVIf@K~A]b@IdCk@pBc@lBc@nA[^Ib@IJEf@Ml@ObAQDAPCHAJAH?RA|@@l@?hA@p@?zADT@t@@T@B@J?PBR@^FZHl@Ld@P^NlAb@LDPHLN^NvAj@n@Xf@Z\\Vj@`@p@f@^TLLLHZVlA~@`Al@JHZTlBrAJJJFjClBZTlAz@DDJHl@R|DbB"
+                    }
+                },
+                {
+                    "start": [
+                        2.9496125,
+                        101.7875761
+                    ],
+                    "end": [
+                        2.9480946,
+                        101.7884973
+                    ],
+                    "polyline": {
+                        "points": "ab_QkkglRLOFIBCDCXMnBg@xA_@JCDADEBCBCBG@CBG@I?M"
+                    }
+                },
+                {
+                    "start": [
+                        2.9480946,
+                        101.7884973
+                    ],
+                    "end": [
+                        2.9465049,
+                        101.7896955
+                    ],
+                    "polyline": {
+                        "points": "qx~PcqglR?A@EDK@AB?@AB?B?D?B?JDJDJDB@D?F?B?B?DABABCNOX_@`@_@fAqAf@k@RU"
+                    }
+                },
+                {
+                    "start": [
+                        2.9465049,
+                        101.7896955
+                    ],
+                    "end": [
+                        2.9452579,
+                        101.7887918
+                    ],
+                    "polyline": {
+                        "points": "sn~PsxglRZV|BbB|Ax@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9452579,
+                        101.7887918
+                    ],
+                    "end": [
+                        2.9445705,
+                        101.7900836
+                    ],
+                    "polyline": {
+                        "points": "{f~P}rglRx@uB`A{BHIBE"
+                    }
+                },
+                {
+                    "start": [
+                        2.9445705,
+                        101.7900836
+                    ],
+                    "end": [
+                        2.9441348,
+                        101.7900414
+                    ],
+                    "polyline": {
+                        "points": "qb~P_{glR\\@h@BN@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9441348,
+                        101.7900414
+                    ],
+                    "end": [
+                        2.9445705,
+                        101.7900836
+                    ],
+                    "polyline": {
+                        "points": "y_~PwzglROAi@C]A"
+                    }
+                },
+                {
+                    "start": [
+                        2.9445705,
+                        101.7900836
+                    ],
+                    "end": [
+                        2.9452579,
+                        101.7887918
+                    ],
+                    "polyline": {
+                        "points": "qb~P_{glRCDIHaAzBy@tB"
+                    }
+                },
+                {
+                    "start": [
+                        2.9452579,
+                        101.7887918
+                    ],
+                    "end": [
+                        2.9411897,
+                        101.7891175
+                    ],
+                    "polyline": {
+                        "points": "{f~P}rglRdAh@l@PTDXF\\B`@F\\DL@x@@|@?J?N?tA?J?x@ALAJCVOh@g@bAs@d@Yf@S"
+                    }
+                },
+                {
+                    "start": [
+                        2.9411897,
+                        101.7891175
+                    ],
+                    "end": [
+                        2.9402272,
+                        101.7867912
+                    ],
+                    "polyline": {
+                        "points": "mm}P_uglR@V@RVlA`@pATr@\\v@DLb@bA?@FLFL@@N^@F"
+                    }
+                },
+                {
+                    "start": [
+                        2.9402272,
+                        101.7867912
+                    ],
+                    "end": [
+                        2.940822,
+                        101.7864104
+                    ],
+                    "polyline": {
+                        "points": "mg}PmfglRKFw@`@c@ZMD"
+                    }
+                },
+                {
+                    "start": [
+                        2.940822,
+                        101.7864104
+                    ],
+                    "end": [
+                        2.9179272,
+                        101.7597923
+                    ],
+                    "polyline": {
+                        "points": "ck}PadglRAD?BCBEDEDOJIFEFMLCFCD?B?B?D@@B@FDHB^Jp@GTARAP?N?J?J?L@H?LB^F\\HJB\\JPFVJPFRJ`@R\\T^Vp@d@z@l@PLBBl@b@dBpAJFbBlADBZTf@^f@VTP`@Xd@\\v@n@JHPNVRXT\\ZVVj@l@`AlA`AnAhB`Cf@r@h@t@X^d@n@`@f@XZRTXXvAnATTp@p@b@^dA`AZXj@f@XRp@f@l@b@f@^`@^XV`@b@\\`@LNt@fAV^vDxGh@|@r@jAdAlBd@v@Vb@Xb@b@t@Xd@bCnE`@~@Xt@L\\N`@R|@Hr@LjB@HB`@F`@D^H^?DH\\LZHRV^TVHJDFPTVXPXDHBFBL@R@N?BATAVEPQv@I`@EXCVAP@N@P@HBFBFFNJNPXVPBB`@Nx@Tp@P|@R^HPD~@Tf@Nf@Nt@\\p@`@VNPJZTPPb@b@VXt@~@hAfBRVT\\LPj@|@Xb@d@r@h@v@NXFJt@jAJNHNBF"
+                    }
+                },
+                {
+                    "start": [
+                        2.9179272,
+                        101.7597923
+                    ],
+                    "end": [
+                        2.9184414,
+                        101.7589139
+                    ],
+                    "polyline": {
+                        "points": "a|xPu}alR?l@MRS\\cAnA"
+                    }
+                },
+                {
+                    "start": [
+                        2.9184414,
+                        101.7589139
+                    ],
+                    "end": [
+                        2.9221561,
+                        101.7472308
+                    ],
+                    "polyline": {
+                        "points": "g_yPexalRFHDDDFBDDHBHDLBN@L@N@\\?N?N?BANAR?@E`@Gf@MbACRAH?H?F?@?D?@@F@HBFDNBL@F?B@DDt@?HDfADd@@PDVDRDZ@TBXB^Db@HvA@P@H@P@R?VKZMb@k@dBABOb@Oh@CFALERAJ?N?P@XZxBHn@BP?N?L?JCHABEHILURGBu@n@EBgBvAuAjAWTw@t@QNA@m@x@e@l@a@`@KFIHKJGDKDSJSFEBQDa@P_@TSNOJc@n@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9221561,
+                        101.7472308
+                    ],
+                    "end": [
+                        2.9221332,
+                        101.7469237
+                    ],
+                    "polyline": {
+                        "points": "ovyPeo_lR@??@?@?@?@?@?@?@A@?@Dj@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9221332,
+                        101.7469237
+                    ],
+                    "end": [
+                        2.9220463,
+                        101.7328408
+                    ],
+                    "polyline": {
+                        "points": "ivyPgm_lRDVB\\?r@?D?b@?B@^@\\?D@b@?P@J?DFjB@\\?D@T?j@?D?D?bA?LAR?\\GzF?h@?DA`AAR?H?D?H@`B?b@?H?R?zB@p@L~ABN@NA\\?@@`@?L?Z?`A?lA?`@?vB?NAbCCr@AtA@fA?b@?`@A^EvAAXIbC?JCfAA`AF\\"
+                    }
+                },
+                {
+                    "start": [
+                        2.9220463,
+                        101.7328408
+                    ],
+                    "end": [
+                        2.9034679,
+                        101.7205758
+                    ],
+                    "polyline": {
+                        "points": "yuyPgu|kRLJJDF@F?HAV?rACb@?~@A~AA`C@nB?vBB\\?r@@b@AR?@?rDBfA@b@?fA@rCBj@DN?v@?v@@J?~A@X?ZAF?D?J?b@AN@J?V@\\BD@XBH?b@FF@ZD`@D`@Hd@J^JbBb@NDNFl@^\\TLHXR@@r@h@TPTPJJHHTRVVPPTZDFFHJPJPDFNTDDBBZd@RZJNJJ?@JLNTFHp@bATZR\\JLt@dAT\\TZTZ@Dh@r@jAbBd@r@~@jAJNZ`@BFDHBJDR?FBXDh@Hx@@FNjAFb@`@bDBPBNFVHT@BHPFL`@x@Rb@JPDH?@PZLV?@BDNX@B@?RZNVBD`@p@BFVb@NVNZ@@?@@BNVBBLXJRj@dA"
+                    }
+                },
+                {
+                    "start": [
+                        2.9034679,
+                        101.7205758
+                    ],
+                    "end": [
+                        2.9038341,
+                        101.7187613
+                    ],
+                    "polyline": {
+                        "points": "uavPshzkRPXIj@GZABG\\m@bDObA"
+                    }
+                },
+                {
+                    "start": [
+                        2.9038341,
+                        101.7187613
+                    ],
+                    "end": [
+                        2.9039028,
+                        101.7183937
+                    ],
+                    "polyline": {
+                        "points": "}cvPg}ykRIt@CR"
+                    }
+                },
+                {
+                    "start": [
+                        2.9039028,
+                        101.7183937
+                    ],
+                    "end": [
+                        2.8943422,
+                        101.6576876
+                    ],
+                    "polyline": {
+                        "points": "kdvP}zykRKh@C^Bz@Hp@VdAp@lCd@vBH\\DRNh@J\\Tn@Tb@R^X\\VXLLJHb@\\bBjA~@v@b@b@TVBBNLVXh@j@d@j@TZRXt@`Aj@~@n@jA`AxAv@lAb@n@nMxQ`ApAt@hAt@hAHP^r@Zt@Xr@J`@L`@DRDLXtANlA@HFx@Bp@@b@B|B?fA@lC?vA?fAJrGF`CHlDL|BDx@?FJxBHhAp@dJBVHxABfA?~@CnCAfA?b@?VEtE?LDb@@TF\\DXJb@DLVl@l@bARVNP@@XTp@d@JHjE~C|CrCTRj@l@lAtAbAjAN\\R^d@t@\\h@dAhBBDp@vAtBbFj@dBZrAb@dBHXTzA\\|BBLPxAPlCBf@HxBF`A@jBAjACvBI~AI`BQzAGr@Ib@_@dBa@|A_CxH[|@g@dAS^a@j@i@n@m@h@s@f@oClAsCpAwAx@aBtA{@p@w@v@u@bAILw@nAk@lAu@~Ba@~B[hDGjCErAEzAE|AGzCCtAUbKC~AAt@At@CdB"
+                    }
+                },
+                {
+                    "start": [
+                        2.8943422,
+                        101.6576876
+                    ],
+                    "end": [
+                        2.8936393,
+                        101.6586213
+                    ],
+                    "polyline": {
+                        "points": "shtPq_nkRD`@Jb@@NDN@BNVJLNJXLL@F@T@d@G`@KZOr@m@@ATg@H[DU?G@K?Q?UCQAIAAEQKQMQQMOIA?SIOAa@Aq@E"
+                    }
+                },
+                {
+                    "start": [
+                        2.8936393,
+                        101.6586213
+                    ],
+                    "end": [
+                        2.8948993,
+                        101.6583372
+                    ],
+                    "polyline": {
+                        "points": "gdtPkenkRiBRe@HkBX"
+                    }
+                },
+                {
+                    "start": [
+                        2.8948993,
+                        101.6583372
+                    ],
+                    "end": [
+                        2.9064823,
+                        101.6586657
+                    ],
+                    "polyline": {
+                        "points": "cltPscnkRoBPiAJyCRyAHqAF_BDo@@sAB_B@k@?k@AgA?A?a@AI?W?yB?aEIe@A[A[As@?]AK@u@A}ABcACm@CmAG_AGu@K{@MwA[gAY}@WEA"
+                    }
+                },
+                {
+                    "start": [
+                        2.9064823,
+                        101.6586657
+                    ],
+                    "end": [
+                        2.9111524,
+                        101.6600102
+                    ],
+                    "polyline": {
+                        "points": "otvPuenkRa@CSCIAc@Ms@Qg@Mu@Qq@Ok@MoCi@]GCAaAOiAQ_AQgB[GAcB]"
+                    }
+                },
+                {
+                    "start": [
+                        2.9111524,
+                        101.6600102
+                    ],
+                    "end": [
+                        2.9111652,
+                        101.656622
+                    ],
+                    "polyline": {
+                        "points": "uqwPannkRo@?K@MBMDKDA?IHCBIJSPGf@CTAL?L?X?\\@TBXBXF^J`@J\\HVJVHTJTBDJTFLFJJXJd@D\\Fz@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9111652,
+                        101.656622
+                    ],
+                    "end": [
+                        2.897143,
+                        101.6452923
+                    ],
+                    "polyline": {
+                        "points": "yqwP{xmkRDDBF@DTlADJBFBDDDDBDBHDxBMNARAhB[PAp@OJCtDy@rBe@r@Qr@Mn@MTCXEd@EtAOd@Cv@ArAAr@Bd@@^Bj@BPBZBlBLv@HRB`@F\\DlAT\\H@?^LTHx@\\x@^x@f@x@j@fA`ALJJJj@l@pArAr@z@j@~@j@~@|@~Ad@bAb@bA^~@?@Z`Aj@nBVfA\\jBPhAD\\l@`F@NHx@@L@TBb@DfA@fA?fAEjBAb@IpCIz@"
+                    }
+                },
+                {
+                    "start": [
+                        2.897143,
+                        101.6452923
+                    ],
+                    "end": [
+                        2.9067795,
+                        101.6368636
+                    ],
+                    "polyline": {
+                        "points": "cztParkkRCRMx@m@hDGZADKn@GTK`@IZWz@Sl@O`@M\\CFYr@a@x@Yf@Wf@c@p@k@v@EFw@dAk@l@mApAQRo@r@MNoAlAKHWTMHMLWRg@`@g@\\yAx@q@\\oAf@eA^u@RqAZoATo@HkALm@Fq@BiADkBD}AD]@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9067795,
+                        101.6368636
+                    ],
+                    "end": [
+                        2.9116482,
+                        101.6375253
+                    ],
+                    "polyline": {
+                        "points": "kvvPk}ikRgADU?a@@W@aBDoBDE?c@?u@@Q?o@AWCi@Cq@KMCa@IcAYi@Oy@YKCSIcA_@QG"
+                    }
+                },
+                {
+                    "start": [
+                        2.9116482,
+                        101.6375253
+                    ],
+                    "end": [
+                        2.911954,
+                        101.6376583
+                    ],
+                    "polyline": {
+                        "points": "ytwPqajkR{@Y"
+                    }
+                },
+                {
+                    "start": [
+                        2.911954,
+                        101.6376583
+                    ],
+                    "end": [
+                        2.9109129,
+                        101.6433268
+                    ],
+                    "polyline": {
+                        "points": "uvwPkbjkRQGJSRs@L_@Ng@Ja@H_@Jg@@QDUDk@@q@?[?S?IAa@A[CU?AKeAK_AWqCCa@?a@?E@WB]FUFSHSJQ@CDELQRQPOXSZQNI"
+                    }
+                }
+            ]
+        },
+        {
+            "hub": "Pos Laju",
+            "origin": [
+                3.13856,
+                101.7627227
+            ],
+            "hubLocation": [
+                3.112924170027219,
+                101.63982650389863
+            ],
+            "destination": [
+                2.9109129,
+                101.6433268
+            ],
+            "distance": 57.099999999999994,
+            "legs": [
+                {
+                    "start": [
+                        3.13856,
+                        101.7627227
+                    ],
+                    "end": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "polyline": {
+                        "points": "__dR_pblRCCYMSGa@Gi@Mq@M"
+                    }
+                },
+                {
+                    "start": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "end": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "polyline": {
+                        "points": "oddR}qblRBYDEBCLORUXST[R]R_A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "end": [
+                        3.137565,
+                        101.7641344
+                    ],
+                    "polyline": {
+                        "points": "g`dRuxblRb@Nr@P`@HPCVIjAa@"
+                    }
+                },
+                {
+                    "start": [
+                        3.137565,
+                        101.7641344
+                    ],
+                    "end": [
+                        3.136819,
+                        101.7623896
+                    ],
+                    "polyline": {
+                        "points": "wxcRyxblRf@|APh@`@lAXv@LXFNBHBL?J"
+                    }
+                },
+                {
+                    "start": [
+                        3.136819,
+                        101.7623896
+                    ],
+                    "end": [
+                        3.139252,
+                        101.7594568
+                    ],
+                    "polyline": {
+                        "points": "ctcR}mblRCDCDGFeA~@EDIJUh@}@fBQb@GLEHGDCBE@GBWDEBG@CDGFGHe@~@EJKPILONm@d@QRQPSX"
+                    }
+                },
+                {
+                    "start": [
+                        3.139252,
+                        101.7594568
+                    ],
+                    "end": [
+                        3.1428151,
+                        101.754868
+                    ],
+                    "polyline": {
+                        "points": "icdRs{alRKTKXKPORWXEDw@bAe@j@iBxBg@r@W\\SXSXs@fA_AvAED[`@IJEFq@`Ag@p@ORw@jA"
+                    }
+                },
+                {
+                    "start": [
+                        3.1428151,
+                        101.754868
+                    ],
+                    "end": [
+                        3.1411205,
+                        101.7532882
+                    ],
+                    "polyline": {
+                        "points": "sydR}~`lRBl@h@^bAr@h@`@zAdAl@b@\\XNR"
+                    }
+                },
+                {
+                    "start": [
+                        3.1411205,
+                        101.7532882
+                    ],
+                    "end": [
+                        3.1369184,
+                        101.7440218
+                    ],
+                    "polyline": {
+                        "points": "_odRau`lRh@hAv@~A~@fBpB`DJNzBvDLPtCvEPZzAhCpAxBlBdDV`@v@|Av@zAj@jALTNZ@B@DBJ@F?J?H?@?RSFo@R}DpA"
+                    }
+                },
+                {
+                    "start": [
+                        3.1369184,
+                        101.7440218
+                    ],
+                    "end": [
+                        3.1366596,
+                        101.7425965
+                    ],
+                    "polyline": {
+                        "points": "wtcRc{~kR[PC@CBAFADCLXv@Xx@\\fALl@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1366596,
+                        101.7425965
+                    ],
+                    "end": [
+                        3.1191752,
+                        101.720116
+                    ],
+                    "polyline": {
+                        "points": "cscRgr~kRDTBNHVJ\\J\\JXHVDLNb@Tx@Ph@XdAXz@FNDNPb@Ph@Pb@d@pADNFN?@FRBD@DBFFPLb@Vx@DLL`@Nf@JXDP\\dAPh@HRJPRVB@HJJHJFPF@@D@JBFBD@@?@?PBF@D@@?@?F?H?H?B?F?F?fAa@REv@W@?FCVI`A]XKr@UFAVMbBm@~Am@vAe@l@MFAJATATAR@R@^FPFVJZNNLPPNRNVT`@\\r@jA`CdBjD|@nBR\\P\\nAdCZj@h@bAxAdCHLR\\h@z@v@hAHHTZPVDBd@j@HHLLJJVVZ^TXRVLNHJ`ArAt@dAPXLTZZrA~ANVVb@h@`AJVL\\JXH\\Nj@ZrBLr@Jd@Nh@Z`Ad@dAdAdC|@tBd@hAb@pABJL`@HVRt@@@Jf@FRDRDR@RFd@LvAP~A?DDb@Hn@J|A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1191752,
+                        101.720116
+                    ],
+                    "end": [
+                        3.1239033,
+                        101.7035109
+                    ],
+                    "polyline": {
+                        "points": "{e`RwezkRBn@LnAFn@BRBPL~@Lh@x@`DLh@Rx@Lh@Hb@@BDj@Bj@@j@?f@A@?ZEf@CVGZG^GVCLGRIRQd@KRU`@e@t@_AtAs@dA[`@Yd@sAlB]f@mC~DSd@Ud@IPO^CBQj@_@nAMh@Kf@O~@OtAOrAM~@K`AANAFC`@Aj@?^?X@^At@C^AHEXCPGVKb@M`@ADK^Qb@Uf@[n@Wd@]h@EDU\\[`@QT]Z_@^EBAB?B?D"
+                    }
+                },
+                {
+                    "start": [
+                        3.1239033,
+                        101.7035109
+                    ],
+                    "end": [
+                        3.1282449,
+                        101.7021457
+                    ],
+                    "polyline": {
+                        "points": "kcaR}}vkRc@\\e@ZGDMJC?YROHk@Xa@RYJ{@XUHWFg@Li@J}@NWB[Dm@DG?iED_A?"
+                    }
+                },
+                {
+                    "start": [
+                        3.1282449,
+                        101.7021457
+                    ],
+                    "end": [
+                        3.1341071,
+                        101.6972204
+                    ],
+                    "polyline": {
+                        "points": "o~aRmuvkR_@?]?eACE?]@G@_@@[DUB_@DMBOBWHA?QFMBQHMDMF]NUNWNSNIFEB]ZMPKJQV[d@QZIPM\\Up@GXALANGXE\\Kj@Ib@Kf@Oh@CHa@|@INSVSTc@^[RKHIDYN[Na@L_@NeBt@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1341071,
+                        101.6972204
+                    ],
+                    "end": [
+                        3.1334313,
+                        101.6946478
+                    ],
+                    "polyline": {
+                        "points": "eccRsvukR@DAB?DABA@GFONWTIJCDCFCHALAJ?J@L@LDXF\\RbBBN?BBHBNDJHNHJDHHFNJ@@VLVNB@JFJBLHLN"
+                    }
+                },
+                {
+                    "start": [
+                        3.1334313,
+                        101.6946478
+                    ],
+                    "end": [
+                        3.1179623,
+                        101.6795661
+                    ],
+                    "polyline": {
+                        "points": "}~bRqfukRFBHDNHTNVPJJNLNPHLJLNVFJDJHPFRJ`@FVDXLrABRBRFRDPFNFLHNFFDDFHPLTNLFRHXHNBZF`Cf@bEt@`@JNFh@RLFPLNJTTZ`@d@l@t@fA^p@t@jAv@jAb@l@\\f@j@v@f@p@NXP\\P\\JRFN\\|@Xz@dAnDb@xATx@FNN^Pd@h@`An@fA|C~Ex@nAzAbCPXlApBJPRZPRX^\\f@JLDFXTf@b@LHRJPJTJVJXJRFVFTDXD\\DJ@F?T?d@@`BCn@?H?DAL?t@Ar@?bAAdACP@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1179623,
+                        101.6795661
+                    ],
+                    "end": [
+                        3.1147505,
+                        101.6753056
+                    ],
+                    "polyline": {
+                        "points": "g~_RihrkR\\Bh@Db@Db@FbARlAh@b@Rh@^\\ZBDTVTXBBx@xALXJ\\DVDPHZNv@DP@JLt@BXPvBF|@BNBRHX"
+                    }
+                },
+                {
+                    "start": [
+                        3.1147505,
+                        101.6753056
+                    ],
+                    "end": [
+                        3.1043642,
+                        101.6426161
+                    ],
+                    "polyline": {
+                        "points": "ej_RumqkRBp@NhEFtC@~A?TAT@t@@l@?rBOfGAlAElB?f@ErBA^AZAd@CnACpACl@EhBCrBCdAKpFGvBEvB@jBFxALfAZ|ADRDNFTLb@Nb@Rj@|@nBpAlC`AlBlAjCDFxBpELVLTLVXl@dAvBd@|@p@nAFJnBrDV`@dBxC|AjCfAhBpCvFf@`ALXd@|@l@tAbAvBbBnDbA~Bf@|AL^bB~FL`@^nAJ\\dCtFzAnC"
+                    }
+                },
+                {
+                    "start": [
+                        3.1043642,
+                        101.6426161
+                    ],
+                    "end": [
+                        3.1026288,
+                        101.640014
+                    ],
+                    "polyline": {
+                        "points": "gi}QkakkRFBB@BDTXhAjB^p@Zh@Xd@^p@NNBDP^\\t@JRb@bA"
+                    }
+                },
+                {
+                    "start": [
+                        3.1026288,
+                        101.640014
+                    ],
+                    "end": [
+                        3.1029768,
+                        101.6397973
+                    ],
+                    "polyline": {
+                        "points": "m~|QaqjkRq@^SH"
+                    }
+                },
+                {
+                    "start": [
+                        3.1029768,
+                        101.6397973
+                    ],
+                    "end": [
+                        3.1075874,
+                        101.6396515
+                    ],
+                    "polyline": {
+                        "points": "s`}QwojkROH]POHMFIBGDQDq@LYDQBUB[BI?K@a@DU@I@y@P_@Bs@@qAEq@Cm@GEA_@Ec@Ea@IQCKEMEGA{@YMEWG"
+                    }
+                },
+                {
+                    "start": [
+                        3.1075874,
+                        101.6396515
+                    ],
+                    "end": [
+                        3.1081153,
+                        101.6398602
+                    ],
+                    "polyline": {
+                        "points": "m}}QynjkRE?KCMEICWIOGKECAA?EA"
+                    }
+                },
+                {
+                    "start": [
+                        3.1081153,
+                        101.6398602
+                    ],
+                    "end": [
+                        3.1090662,
+                        101.6385243
+                    ],
+                    "polyline": {
+                        "points": "w`~QcpjkRC?AAI?C?C?C?A@EBGFILs@xAMZeAzB"
+                    }
+                },
+                {
+                    "start": [
+                        3.1090662,
+                        101.6385243
+                    ],
+                    "end": [
+                        3.1127454,
+                        101.64042
+                    ],
+                    "polyline": {
+                        "points": "uf~QwgjkRELYKi@K_Ba@[KWIuCw@s@QaAc@OISI{@c@QMq@k@_@_@q@y@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1127454,
+                        101.64042
+                    ],
+                    "end": [
+                        3.1131012,
+                        101.6400899
+                    ],
+                    "polyline": {
+                        "points": "u}~QssjkRQPs@n@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1131012,
+                        101.6400899
+                    ],
+                    "end": [
+                        3.1127454,
+                        101.64042
+                    ],
+                    "polyline": {
+                        "points": "{__RqqjkRr@o@PQ"
+                    }
+                },
+                {
+                    "start": [
+                        3.1127454,
+                        101.64042
+                    ],
+                    "end": [
+                        3.1184007,
+                        101.6432422
+                    ],
+                    "polyline": {
+                        "points": "u}~QssjkRGMMUQ[a@_AcAcC?AYk@MQKOKMg@k@SOYWa@Ui@Uc@Og@MOCKCUCSCYCa@Ae@?sDImCGyBEiAE"
+                    }
+                },
+                {
+                    "start": [
+                        3.1184007,
+                        101.6432422
+                    ],
+                    "end": [
+                        3.1183598,
+                        101.6468553
+                    ],
+                    "polyline": {
+                        "points": "_a`RgekkRc@A@QB}A?Q@kADgBHgDDkB@e@@i@@Y?M@E?ADG"
+                    }
+                },
+                {
+                    "start": [
+                        3.1183598,
+                        101.6468553
+                    ],
+                    "end": [
+                        3.1104906,
+                        101.6523762
+                    ],
+                    "polyline": {
+                        "points": "w``R{{kkR@u@Ds@Ba@Fa@Ji@H[Ni@J[N_@N_@Vc@n@_ANUPQd@a@x@m@RKr@_@v@]~Ai@j@Sf@Q\\KpBk@FAHChBa@d@MPG\\GrA[v@SvBo@~Cu@fCw@RG^K"
+                    }
+                },
+                {
+                    "start": [
+                        3.1104906,
+                        101.6523762
+                    ],
+                    "end": [
+                        3.1148613,
+                        101.673814
+                    ],
+                    "polyline": {
+                        "points": "qo~Qk~lkRJIHGHIDKDK@K?G?GQc@Q]EKQ]_BcDO[GQAEAE?G?IwBeEwBkEw@}AcBoDs@{Ag@gAKYUi@GOGQ{AyCe@}@[y@AAKWMc@S}@W{BO_CEoA@_ADkDDqB@m@@uBBw@@iAD}@@aABaB@e@?a@@c@?YJmF?a@@w@DcC@CDqC?I@W@w@@m@@i@Am@Ac@?GAw@AUASCmBGcB"
+                    }
+                },
+                {
+                    "start": [
+                        3.1148613,
+                        101.673814
+                    ],
+                    "end": [
+                        3.1139752,
+                        101.6803579
+                    ],
+                    "polyline": {
+                        "points": "{j_RidqkRK[COAQGcBKeAQsBAUKkAG}@?CGc@E_@Ii@U{A?E?IBQd@}Ab@iAb@kADIDIHOFQBE@EFMp@{ANWR]v@{A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1139752,
+                        101.6803579
+                    ],
+                    "end": [
+                        3.0990955,
+                        101.7012172
+                    ],
+                    "polyline": {
+                        "points": "ke_RgmrkRj@q@T]T_@j@iALUP_@N]b@oAPo@Pq@VqAJi@F_@Do@Fo@Ba@?GB]HyDBc@@]BcAFaAHq@Fe@Hm@Py@Pm@Vs@^s@@EP[P[LQDIRYn@}@hA}A@CbAuALSTYdAwAt@eA@?TYTWPSNSX[PSd@_@b@c@bCgBhBeAZMj@YjDiBh@Yf@[h@UPKdBcA|@g@TM^YTQj@e@f@g@\\WZKNQLGLGNCNANATEXMTQRQZWZ[TSZe@Ta@n@oAb@{@b@}@`BaDnBgEd@_AdEuI"
+                    }
+                },
+                {
+                    "start": [
+                        3.0990955,
+                        101.7012172
+                    ],
+                    "end": [
+                        3.0980556,
+                        101.69858
+                    ],
+                    "polyline": {
+                        "points": "kh|QsovkRAE?C?C?C?A?ADMBML_@AI@G@GDM\\iAPi@FY@G@I?GAC?AEIEGEEGCECI?EAE?A@A?E@GBEBGFONGH_@`@WXOVGLAHAD?@?J?L?FBH@JDHFNNVb@r@R\\JTV`@LRZj@Xl@Xn@L\\L^Nf@?BJTLh@?BDN@HFV@BDX?D?HAV"
+                    }
+                },
+                {
+                    "start": [
+                        3.0980556,
+                        101.69858
+                    ],
+                    "end": [
+                        2.9458737,
+                        101.6517806
+                    ],
+                    "polyline": {
+                        "points": "{a|Qc_vkR\\fB`@vBJf@HZ@DHVRj@\\l@^b@RRDBRNZNXLZJ\\FTDXBh@@H?R?`@Cz@GJAJAh@G@?jAMvFk@tAKd@EVCVClC]`@E@?j@IXCZEF?PCTARAVAX?L?N@@?R@l@NZHb@RRHd@^FDb@b@^`@Zd@LPLRpA`BJNVZPNLLPLNJPHRJPFPHPFhARtARL@`ANvA^`@LZLFDb@PZNNJf@RvBdA\\LTJb@LdAV~ATrBNlAHfAJVB^Fv@LZFj@Lb@J`@JLD`@Jj@PxAb@vCbAn@Rj@RxH|C@@\\N~B`ArCjAl@Vz@`@TLvAz@bC~APJPNPFtCpBlBrA|@l@ZRXT~@n@tA|@`@V`@TNJb@RNHVJPHRHTH\\NJDVHFBZFj@NNBTHVHTDRHXHXFb@LTFjAX|@TnD~@f@Lj@NTDLDB?^FZDLBL@N@R@L@P?P@b@?T?RAXATCTCPC\\GZGPEB?PGJEHCRKLERKRMZS`@[VQTS`@e@TYLQNY@A@APYLWf@cAl@oA@EXo@Te@LUJOLSJMLQHKNMTW\\YZUZUNI^Sn@WRGRGRGTGTEPCXGLC\\GTANCNAHATAVAf@Ah@Cd@?^?z@?V?vA@n@?R?R?v@@pC?X?X?N?zA?fA?H?P?P?`B?jA?xA?H?~@B`@DV@VDVDb@HHD`@Jb@L`@RXPDB\\TXTZVHHNNl@l@l@n@FFrAbBB@r@r@f@^hAl@zAf@vAXr@DR@T@XBt@Bd@BjCJjABvEJlFPzMT~ADtADb@@b@@b@Bd@@pDHX@H?b@?b@@fC@lA@b@@x@@L?b@@n@@V@b@BT@L?nCNv@Fl@B~BJpDJb@@`BDjCHL?N@P?bDJ\\@`BD|@BR@jADT@h@BbBFP@dABtEHb@@z@@hABbBJt@FP@N@fDJrAJXBp@B\\?L?t@?|ACt@@P?`CH`@BbCLB?t@@xA?rBDvGFlFHnABlADtAFb@@b@@rDNfJd@bGLbDBb@AB?^A`@C|AAR?b@?b@?n@A@?nF@rD?N?b@?fAA@?hBClBA`@?b@?B?^@b@?jBBfA@P@xA@b@@b@?b@@lA@`AAb@Ab@?LAT?b@CnCIpDKn@Ar@?p@?ZAF?P?lC@`A?pC?t@?\\?h@BlCF@?dA?d@?xBE~EKDAj@?d@?bC?jB?b@?b@?b@?b@?fA?b@?Z?F?b@?b@Ab@?b@Ah@?\\?h@AZ?@?J?zA?fA?dA@D@xBDx@BhA@jBHF?hAL|APRB`BVx@NXFd@N@?b@L~Aj@jA^XHzAn@z@b@z@b@tA|@TRd@Zx@t@n@n@v@v@VXVXB@RVVZRRr@`An@bA^n@Zh@\\n@LVd@bA|@`CjAnChFrMr@dBBDp@`BpB~ENb@zA`EJXrBfFN^N`@pE`LN^N^t@hBt@jBpIpTtC`HHPN\\@@JTh@bAf@z@?@Vd@l@~@l@z@r@dALRx@~@PPDD?@j@j@z@t@LLdA~@j@\\FF@@ZTXTTN`Al@@?z@f@ZRVN`@V^T@@tCxA@@^PVLtAh@~Ah@t@Rj@PfB`@RDnATz@PdALdANzBVfAL`@H^H^JZNB@VLHDn@d@xAdATPdBjA@@^Vp@d@TLVLVJHDVDb@FXBF@X@l@EZ@F?n@BnDDlBEfACf@A`CCjFBT@z@BjBFzCHfK@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9458737,
+                        101.6517806
+                    ],
+                    "end": [
+                        2.9454869,
+                        101.6483508
+                    ],
+                    "polyline": {
+                        "points": "uj~PszlkRjAFJ?VBF?NB^HVFVFFBJDRHVLTJ`@RRJXNp@\\TH\\RD@t@^XLHBTJTHTDL@P?XADAVG\\OPOJMLWFa@BU?Y?AEYIWQUOMQKUIUEUCW?WDSFSJUP]ZY^{CxDs@z@MRa@l@m@dAg@~@m@fAS^GJILEFE@E@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9454869,
+                        101.6483508
+                    ],
+                    "end": [
+                        2.943476,
+                        101.6319195
+                    ],
+                    "polyline": {
+                        "points": "ih~PeelkR_@dAWf@GVWh@u@zBc@dBYdAKp@S~@a@lCUhBK`AQzBEz@EnAAf@CjC@vAFtCHlBNhBLvABJFf@Fd@BLPjAFXr@nDb@`BJ^tAbEXv@~@tBn@nA@@^n@\\n@T`@lAhBh@v@p@|@|@pA"
+                    }
+                },
+                {
+                    "start": [
+                        2.943476,
+                        101.6319195
+                    ],
+                    "end": [
+                        2.9411169,
+                        101.6326946
+                    ],
+                    "polyline": {
+                        "points": "w{}Po~hkRXFTPB@JFPFRDN@L?^Ed@QPMz@g@vA}@zAy@JG"
+                    }
+                },
+                {
+                    "start": [
+                        2.9411169,
+                        101.6326946
+                    ],
+                    "end": [
+                        2.9368227,
+                        101.6334733
+                    ],
+                    "polyline": {
+                        "points": "_m}PicikR?A?C?A?A?A?A?A?A@A?A@A?A@A@A?A@A@?@A@?@A@?@A@?@?@?@?@?B?@?@?@@@?@@@?@@@??@@@@@@@?@@@?@?@@@?@?@?@?@?@?@?BA@?@?@A@A@A@A@A@A@Jr@Jp@FVJRBDPPJHj@Xr@Xd@\\Z\\@BLPDJBFN\\F\\HXN`@R`@PZXZ`@`@f@T\\NRBZF\\Dd@BX?PAXCRCXGRGRIVMDATOTQVWHMDGPYLWLg@F[Dg@?c@?EA]AKCSAOEYI[Oi@Qg@KUM_@I_@Mg@G]A_@Be@AAAA?AA??AAA?A?AA??A?A?A?A?A?A?A@A?A?A@??A?A@?@A"
+                    }
+                },
+                {
+                    "start": [
+                        2.9368227,
+                        101.6334733
+                    ],
+                    "end": [
+                        2.9365923,
+                        101.6334284
+                    ],
+                    "polyline": {
+                        "points": "cr|PehikR?A@??A@?@A@??A@?@?@?@A@?@?@?@?@@@?@?@@@??@@?@@@@@??@@@?@@@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9365923,
+                        101.6334284
+                    ],
+                    "end": [
+                        2.9342976,
+                        101.6335633
+                    ],
+                    "polyline": {
+                        "points": "up|P}gikR|BGhGM`AC"
+                    }
+                },
+                {
+                    "start": [
+                        2.9342976,
+                        101.6335633
+                    ],
+                    "end": [
+                        2.9141097,
+                        101.634991
+                    ],
+                    "polyline": {
+                        "points": "kb|PwhikRTAr@ArBErACfAC^AZAJ?nCGrACVA|@Al@Ad@?z@BVBT@b@Bf@B^Dp@Hp@LxDl@n@Jx@LhCb@fAPnEt@l@Hl@JR@`@DT@b@@n@@n@AN?L?\\AZCd@E\\EVCVGPCj@Mb@Md@OVKf@U|@c@z@e@LGRMb@UrAu@TMnBm@jAS`BUd@C`@Az@Cb@Ab@A~FO~AEl@CbAI`@Cl@IZILCtBk@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9141097,
+                        101.634991
+                    ],
+                    "end": [
+                        2.9121707,
+                        101.6373917
+                    ],
+                    "polyline": {
+                        "points": "edxPuqikRf@Qb@QXQPKVQTSVU\\a@Xc@T]Pa@Ti@HWVu@l@cB"
+                    }
+                },
+                {
+                    "start": [
+                        2.9121707,
+                        101.6373917
+                    ],
+                    "end": [
+                        2.9109129,
+                        101.6433268
+                    ],
+                    "polyline": {
+                        "points": "axwPu`jkRX}@JSRs@L_@Ng@Ja@H_@Jg@@QDUDk@@q@?[?S?IAa@A[CU?AKeAK_AWqCCa@?a@?E@WB]FUFSHSJQ@CDELQRQPOXSZQNI"
+                    }
+                }
+            ]
+        },
+        {
+            "hub": "GDEX",
+            "origin": [
+                3.13856,
+                101.7627227
+            ],
+            "hubLocation": [
+                3.265154613796736,
+                101.68024844550233
+            ],
+            "destination": [
+                2.9109129,
+                101.6433268
+            ],
+            "distance": 74.9,
+            "legs": [
+                {
+                    "start": [
+                        3.13856,
+                        101.7627227
+                    ],
+                    "end": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "polyline": {
+                        "points": "__dR_pblRCCYMSGa@Gi@Mq@M"
+                    }
+                },
+                {
+                    "start": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "end": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "polyline": {
+                        "points": "oddR}qblRBYDEBCLORUXST[R]R_A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "end": [
+                        3.1443565,
+                        101.7643978
+                    ],
+                    "polyline": {
+                        "points": "g`dRuxblRwAw@a@MMAYA{@AsBBE?KCSICCGGk@_AEEECMEOAS@}@J]F]Ba@Aa@EMCKCeA[[Kk@Q[Gc@Fm@Ni@VQJQJKFUPMPKVMXEJ"
+                    }
+                },
+                {
+                    "start": [
+                        3.1443565,
+                        101.7643978
+                    ],
+                    "end": [
+                        3.1470811,
+                        101.7660293
+                    ],
+                    "polyline": {
+                        "points": "gceRozblRu@Y{@i@aAq@cAw@SOUOAAOKQMiDcAo@W"
+                    }
+                },
+                {
+                    "start": [
+                        3.1470811,
+                        101.7660293
+                    ],
+                    "end": [
+                        3.1572836,
+                        101.7505673
+                    ],
+                    "polyline": {
+                        "points": "gteRudclR[@M@K@IB[No@pC_@bAg@jASf@GNKXO^GJEHEFSb@Wf@KPQVMRk@t@GFMLEDYj@E`@CLAFUZKHMFSDWDOHEDaAx@q@l@_@^STUTQPi@j@MNGHGHGTEPYf@Sb@A@Yr@Uj@k@rA[r@Uf@EJ_@p@s@rB_@dASVKXg@pAaB~Dc@`Ay@rBe@~@MT[`@ORONyC~CEFq@r@_@j@ILOXi@dACHKTEHMX[t@Q^aAbC"
+                    }
+                },
+                {
+                    "start": [
+                        3.1572836,
+                        101.7505673
+                    ],
+                    "end": [
+                        3.1580605,
+                        101.7486474
+                    ],
+                    "polyline": {
+                        "points": "_tgRad`lRGb@ETERGT_@hAITYz@K`@Yl@IPELEN"
+                    }
+                },
+                {
+                    "start": [
+                        3.1580605,
+                        101.7486474
+                    ],
+                    "end": [
+                        3.163411,
+                        101.7522042
+                    ],
+                    "polyline": {
+                        "points": "{xgRax_lREPGTAH]SMGo@a@OKKIYWw@y@yDeEUWYWu@i@_@UCAIEQKm@[[KeA]}@YSI_@OaA]WIeCmAQW"
+                    }
+                },
+                {
+                    "start": [
+                        3.163411,
+                        101.7522042
+                    ],
+                    "end": [
+                        3.17677,
+                        101.7565747
+                    ],
+                    "polyline": {
+                        "points": "izhRgn`lRcAc@OEs@[qAi@_Bm@e@Qa@M_@MWEWG_@Em@Eg@AQAm@CmAG}CQo@CyCSQEw@UYIECKE_@Q_Bs@gAm@{H_EgAe@s@_@WKYMUKWIQEQEQCk@GgAMoBUqBSy@Ik@C_@C[CoACc@Cc@AU?"
+                    }
+                },
+                {
+                    "start": [
+                        3.17677,
+                        101.7565747
+                    ],
+                    "end": [
+                        3.1785314,
+                        101.7561395
+                    ],
+                    "polyline": {
+                        "points": "ymkRqialR]DA?S?WA[E[CEAKAQAG?G?W?A?U@KBA?MBODC@IFIFMHKLYf@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1785314,
+                        101.7561395
+                    ],
+                    "end": [
+                        3.1887904,
+                        101.7006907
+                    ],
+                    "polyline": {
+                        "points": "yxkR{falRORgBvBU`@]h@S^OTw@rA]h@U`@Yd@SVW`@cAvA]b@_BpBOP[`@W^]b@W^S\\MTQ^EJGNMh@EXGXIl@Cn@Ch@CRCRAZCT?NCjACxAANAhAC`AErA?@A\\A^Cf@Cb@Ep@CTAHCVKjAKtAMvAObBCd@E^ARAJI|@?@MtAIfAANSlBMpACRMbAEf@G`@e@xEWvBCPANCRAFO|A[jCG`@ADG^?BYrACHwAjEQ^Q\\eAzBs@`B[t@Ql@IZETGh@Cf@?j@Bv@Hd@DZ@FJ`@Nb@Tf@^r@fAfB`@r@dCfEPZr@pAp@pAZn@FNHRf@|@x@xAn@pANXJRLVJVJXJZHVFXH\\F\\BRBRDTBX@b@@d@@L?P?JAxA?t@C`CCrDAd@Ad@AxAAnA?D?JAf@ANC~@Ef@Ed@[~AQr@Od@e@pAYl@MXWd@a@n@}CjEQVEHEHa@n@U\\INIPc@z@Sf@MZi@bB?@QdAGz@IrA?@OpDEv@GdAE|@Ct@GlBE`BCh@A`@A`@Az@E|@Ev@QdEK`DOtDGnCKrEE|@?@Gn@CNId@Mb@M`@Q`@Q`@ABQ\\i@v@GFEJGHORQVQVY`@kBlC_@j@w@dAMRMPKNKLKNGJ"
+                    }
+                },
+                {
+                    "start": [
+                        3.1887904,
+                        101.7006907
+                    ],
+                    "end": [
+                        3.1923161,
+                        101.6992448
+                    ],
+                    "polyline": {
+                        "points": "}xmRilvkRE^CJENABMTIZGTaAtC}@`CMZABKVMROPQNOFKDIBI@I@I?G?GAI?SEEAKEKGIIQOEGKMs@eAWYSQGGA?e@[_AYMEg@C"
+                    }
+                },
+                {
+                    "start": [
+                        3.1923161,
+                        101.6992448
+                    ],
+                    "end": [
+                        3.2338025,
+                        101.7014844
+                    ],
+                    "polyline": {
+                        "points": "_onRgcvkRk@EmDUeAIyAKqBIa@A}AC[?o@CkABcCVmB\\mBl@ODUHuAf@}@\\uAp@u@^u@`@ULa@PuCzA_Ad@OH}BhA]PuAp@eAh@c@Ta@Vs@\\_Af@a@TQH]REBIDo@XqDbBIDUJg@TiErBe@R]NUHaA^cAZaBb@wBZS@cBLS?{@?O?uBCcBEq@EaBGsAIuBMkBG}AKiACsAA_EIyBIsDOwAE_AEq@EoDQkAGeCKgAIw@IwB[}@SiAYaAYYMaBq@mBaAgBaAg@Y{CgBmFaDOI]SwBoAg@WmAu@{@e@uEoCw@e@mAs@wDyBqBiA_@U]OcAa@{@]u@WGCwCcA}By@"
+                    }
+                },
+                {
+                    "start": [
+                        3.2338025,
+                        101.7014844
+                    ],
+                    "end": [
+                        3.2357959,
+                        101.7011115
+                    ],
+                    "polyline": {
+                        "points": "grvRgqvkRQ@A?A?MCA?c@Kg@Oc@IWCW?o@CkAAc@HE@EBEFCHABAD?LMN?RAJ?P"
+                    }
+                },
+                {
+                    "start": [
+                        3.2357959,
+                        101.7011115
+                    ],
+                    "end": [
+                        3.2357646,
+                        101.6996027
+                    ],
+                    "polyline": {
+                        "points": "w~vR}nvkRFPBL?@?^?B?V?JAp@AlA?bA"
+                    }
+                },
+                {
+                    "start": [
+                        3.2357646,
+                        101.6996027
+                    ],
+                    "end": [
+                        3.254074,
+                        101.6871496
+                    ],
+                    "polyline": {
+                        "points": "o~vRoevkR?JG?e@?c@@U?C?E?eA@gA@E?aA@oCDqG?mBAK?uBAaC?c@?gA?kBAgA?U?I?O?OGkHAaG@_A@a@FUDMDK@UHSH_@LWN[PSTILKLILOPqBvC]f@g@n@]X[Vk@d@OLSNyAdA[TOPMPGJEFMTMRMb@AHCT?BEjC?RAfAC^?BCb@?BC^?DAj@GjED`BBp@@R?RAp@ALANCLGT]P[Nm@RKFGHEHEHADAHIv@UxBIv@QrBObCAXAL?JKTKLILML[HUFWFODO@G@G?K?G?i@?M@KMCEECECEAIAM@A?K?KBQDQDs@Ve@No@LC@"
+                    }
+                },
+                {
+                    "start": [
+                        3.254074,
+                        101.6871496
+                    ],
+                    "end": [
+                        3.2540947,
+                        101.6877425
+                    ],
+                    "polyline": {
+                        "points": "}pzRuwskRCuB"
+                    }
+                },
+                {
+                    "start": [
+                        3.2540947,
+                        101.6877425
+                    ],
+                    "end": [
+                        3.2557607,
+                        101.6868446
+                    ],
+                    "polyline": {
+                        "points": "aqzRk{skRo@BM?K@_AAm@DKBI@KDMJIJs@|@MTKRGNEL"
+                    }
+                },
+                {
+                    "start": [
+                        3.2557607,
+                        101.6868446
+                    ],
+                    "end": [
+                        3.2565451,
+                        101.6871066
+                    ],
+                    "polyline": {
+                        "points": "o{zRwuskR}Cu@"
+                    }
+                },
+                {
+                    "start": [
+                        3.2565451,
+                        101.6871066
+                    ],
+                    "end": [
+                        3.2650321,
+                        101.6827075
+                    ],
+                    "polyline": {
+                        "points": "m`{RmwskRcAtAi@v@A@OTEDi@t@KLs@`ASXABo@t@ORUV]\\AB_Az@YTKHu@n@GDSNWTs@VMDUFA?w@Na@FsARIBiARs@LQBeAL}@Jm@Fa@Dc@Bc@D_@DC?c@BeADqAJiAHkBN"
+                    }
+                },
+                {
+                    "start": [
+                        3.2650321,
+                        101.6827075
+                    ],
+                    "end": [
+                        3.2649535,
+                        101.6806398
+                    ],
+                    "polyline": {
+                        "points": "mu|R}{rkR?NBhA@\\@^BfABjA@`A?F?@AZ?H"
+                    }
+                },
+                {
+                    "start": [
+                        3.2649535,
+                        101.6806398
+                    ],
+                    "end": [
+                        3.265266,
+                        101.6802803
+                    ],
+                    "polyline": {
+                        "points": "}t|R_orkRQBEBE@GDEHADGTCDCFAB"
+                    }
+                },
+                {
+                    "start": [
+                        3.265266,
+                        101.6802803
+                    ],
+                    "end": [
+                        3.265603,
+                        101.6799322
+                    ],
+                    "polyline": {
+                        "points": "}v|RwlrkR?@?D?B?B?@?@A@?@A@A@A@A?E@C?C?I?EAE?CAC?A?A@A?A@ABA`@"
+                    }
+                },
+                {
+                    "start": [
+                        3.265603,
+                        101.6799322
+                    ],
+                    "end": [
+                        3.264988,
+                        101.6797851
+                    ],
+                    "polyline": {
+                        "points": "_y|RqjrkRZDf@JN@d@F"
+                    }
+                },
+                {
+                    "start": [
+                        3.264988,
+                        101.6797851
+                    ],
+                    "end": [
+                        3.2504357,
+                        101.6752854
+                    ],
+                    "polyline": {
+                        "points": "eu|RuirkRjAPZ@T@N@l@BZBB@NBPLDDFFX`@NXVZJPLTDDDDJLHLd@n@\\b@FHTZFPBHNb@BHLl@PbABNP~@Nr@RhA^hBJVDNFLBFJNj@v@TX`@l@RHzA|AJPh@z@\\d@NN^Zr@`@dAh@NDXDT@TAhCUdCWh@Gh@GVAZCP@\\?TBXBb@BxAR\\FH@L@V@\\?NA\\ARERCRIZO\\UPOPUHOHMp@uAf@{@V_@DEf@k@`@e@Za@VYRWHKHGLEPEN?T?^Bd@Dt@Fj@Bh@?~@?pAC"
+                    }
+                },
+                {
+                    "start": [
+                        3.2504357,
+                        101.6752854
+                    ],
+                    "end": [
+                        3.2351117,
+                        101.6737657
+                    ],
+                    "polyline": {
+                        "points": "gzyRqmqkRvA@bAEf@BV@RDL@LD\\LLBJDPH~@h@n@ZHD^PFBLDJBj@JVDXB~BNv@DJ@`CNtBBb@@b@@^@`@BzBHh@Fz@Rl@VXLXJNDD@f@LRBj@Bf@?n@BV?`@@v@B\\?J?\\@RBN@p@R~Ah@VDZDXB\\BP@L?\\AX?v@KHCNCRETI^OXMfAk@bAc@NGTGRELCNAz@?R@V@dALTBL@N?h@?nA@"
+                    }
+                },
+                {
+                    "start": [
+                        3.2351117,
+                        101.6737657
+                    ],
+                    "end": [
+                        3.2347299,
+                        101.6721582
+                    ],
+                    "polyline": {
+                        "points": "mzvRadqkRV@?VJ|ALjBHt@BLBJFL"
+                    }
+                },
+                {
+                    "start": [
+                        3.2347299,
+                        101.6721582
+                    ],
+                    "end": [
+                        3.1788322,
+                        101.6728745
+                    ],
+                    "polyline": {
+                        "points": "axvR_zpkRNNHFLDJBJBX@`BMv@If@CbBIrBEhBA|AAnB@jDJF?vEJrFNzBDlBFdDHrA@tBBzA@V?t@?T?d@?pAAx@C~AEfAEl@AvEQ|@Eb@Cn@Al@CR?xACbB?~@?b@?t@@z@@jBD|@@xBBxADbBBb@@vABbBBxABz@B~CD~ABhBBvADlB@hHHtCD\\@XB\\Bb@DhBT|@PhDh@RBPBh@DJ@rC^zBVpARrAPpC^D?jC^xDh@~ARnH|@rJlAf@FfEb@d@F^Dv@J~@JfAFj@@tABfB@p@?nBC`@CjAEhCWn@KlAQz@O~@MjAShCa@dBYd@EBAHC~B]nAQhBY`F}@lB[\\G^EhBY`Fs@VETCj@I|@M@?b@GnBYPA|@M|@Ol@MZGZILG^MZQb@UVSVQNS`@k@LQFITa@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1788322,
+                        101.6728745
+                    ],
+                    "end": [
+                        3.1757844,
+                        101.6768793
+                    ],
+                    "polyline": {
+                        "points": "uzkRm~pkRCQ?E?G@GDODQBSDU@Q@UB_@@c@?Q?c@?c@?k@@eB@c@@kB?y@@qA?C@K?KDSBIBODIBGFKDIHKLMLMFEDCLGLGXILCNCJAF?LAJ?H?L@NBPBv@PJBNBRDVDVFd@Nn@T@@NFHDDB@@BB@BJR"
+                    }
+                },
+                {
+                    "start": [
+                        3.1757844,
+                        101.6768793
+                    ],
+                    "end": [
+                        3.1486072,
+                        101.6762591
+                    ],
+                    "polyline": {
+                        "points": "sgkRowqkRj@ZBBz@d@\\RnDbCHFjAp@HDXR^Tr@d@^ZTVB@Z\\|@fAPRRRdD`ELPFJRT\\X^b@\\`@VZPPVRTN^VNHHDTLB@RHZN@@d@RVHD@BBB@F@LDDBD@FBPDN@XBnBb@n@Rb@Ph@\\BB`@\\z@r@JHbB~A~AbBFHHFFFDDXVf@ZZPD@FBD@RHD@D@PD\\FJ@@?NBL@B@P?`@?H?H?\\CTCJALCRG@?\\OVKj@UNKFCVQlDyBh@[z@c@RKDALGZM^Ob@MZQbASnB_@vAYTGJAlBa@`AQjAQn@I~BS|@Al@C`BM@?d@E\\Cn@KNCNE^IRGXKXKp@[^OrAu@`Am@t@c@zBsA~CkBPKn@]jB_Ab@WjBaA`@UJGxAy@`Au@pAyAPURSX[X]"
+                    }
+                },
+                {
+                    "start": [
+                        3.1486072,
+                        101.6762591
+                    ],
+                    "end": [
+                        3.1474743,
+                        101.6774115
+                    ],
+                    "polyline": {
+                        "points": "y}eRssqkRn@o@VWd@i@~@eARS@AFEVQ"
+                    }
+                },
+                {
+                    "start": [
+                        3.1474743,
+                        101.6774115
+                    ],
+                    "end": [
+                        3.1428567,
+                        101.6789667
+                    ],
+                    "polyline": {
+                        "points": "uveRyzqkRn@SbAi@XK~@g@^QxAu@fAi@JGFCdA_@JCHCZCNAHA@?N?R?@?L@dABb@BR?L?TADALAVCz@QHAHANA"
+                    }
+                },
+                {
+                    "start": [
+                        3.1428567,
+                        101.6789667
+                    ],
+                    "end": [
+                        3.134065,
+                        101.697379
+                    ],
+                    "polyline": {
+                        "points": "{ydRqdrkRxAm@ZSPMJI`@[^]n@s@xAuA^_@VUPQPOn@s@|@}@\\YX[NUb@q@P[Zo@Vo@Rg@Ne@Rw@DQFWFa@D_@BM@Q@IHq@@S@Q@Q?O?K@U?[?u@CeAAy@A_@Cy@G_C?g@Ao@?i@?]Bk@?KBWB_@BOBSHc@Ha@H_@Rq@@AL]@EFODIHQLWHMJQNWPUJOJMFIFIp@q@`@a@`@c@DGFEPURSTUVWTUTWRUFIJOLQJQJQTm@FOH[H[FYHc@BSLuADi@Fo@@M@MJ_BBa@@a@Fo@?EBMB[Hm@BM@KHYDSJWHSLULQHMNURUVSZWVQd@Y"
+                    }
+                },
+                {
+                    "start": [
+                        3.134065,
+                        101.697379
+                    ],
+                    "end": [
+                        3.122458,
+                        101.7060072
+                    ],
+                    "polyline": {
+                        "points": "{bcRswukR`Ag@^Q~@_@f@WPKTQPMNMVYNSJOTg@HWJYH]@KBOX{ANaALe@L_@@ETi@P[Ve@^g@BCVYDCPQ@AHIPMRO`@U`@SZOB?^MBAZK@?B?^Kb@G`@G^CZAN?LAN?d@A|A?fA@b@?l@Ar@?NAj@Cb@E\\Cb@Gt@MBAf@K`@K\\KXIXKZM^Oj@W@APIJGLGZSb@YNMRORQPOf@g@X[FGDGLOJOLSLSd@w@Tg@\\w@L]Ne@Ni@Jc@"
+                    }
+                },
+                {
+                    "start": [
+                        3.122458,
+                        101.7060072
+                    ],
+                    "end": [
+                        3.1203679,
+                        101.7083707
+                    ],
+                    "polyline": {
+                        "points": "kz`RqmwkRBCBCDMVeA?AFSBMBO@O@CBc@BY@_@Be@Be@BUDSJYHOFINK?ANIJGFEHCDCHCRCJAJ?H?N?R?R@z@HV?R?H?"
+                    }
+                },
+                {
+                    "start": [
+                        3.1203679,
+                        101.7083707
+                    ],
+                    "end": [
+                        3.1145629,
+                        101.7059599
+                    ],
+                    "polyline": {
+                        "points": "im`Ri|wkRb@C\\CXCf@Gf@EZCTAVAH?H?L@L?VBn@Hr@JPFJBXHLDNFVJLHPHLHTNb@^ZXd@b@ZVb@`@RN`@Xb@Rf@T\\LZLh@V^RnAr@XP^N"
+                    }
+                },
+                {
+                    "start": [
+                        3.1145629,
+                        101.7059599
+                    ],
+                    "end": [
+                        3.1050759,
+                        101.6997641
+                    ],
+                    "polyline": {
+                        "points": "_i_RgmwkRfBt@t@^ZNRJ`@TfB`AjDtBxBpAl@^f@XVLTHv@\\d@N|Af@^L\\JTHb@PVLh@V|A`A~ChBpChBlBtAXR`@ZbDrCPP"
+                    }
+                },
+                {
+                    "start": [
+                        3.1050759,
+                        101.6997641
+                    ],
+                    "end": [
+                        3.0975502,
+                        101.6955593
+                    ],
+                    "polyline": {
+                        "points": "wm}QofvkRt@r@xAlA\\XjC`BrDpBn@\\`BbA`Aj@b@VrAp@NH`Ab@ZLrAd@nDfAdBb@|A\\XDZB\\B\\D"
+                    }
+                },
+                {
+                    "start": [
+                        3.0975502,
+                        101.6955593
+                    ],
+                    "end": [
+                        3.0890272,
+                        101.6958638
+                    ],
+                    "polyline": {
+                        "points": "u~{QglukRLEJCR?\\DXBz@D|@D|AFP?@?RCTENCTEPGLKNOHSFML_@Li@Lg@J_@N[X]h@a@VMJELENCLC\\C^A@?V@d@Bl@LTHb@Lz@`@f@Hn@Bd@?RCfAMDA@?NCJA@?JATC^AB?N@RBn@LZHt@T\\LXH\\PJD\\RZVFF\\`@HJDFHV"
+                    }
+                },
+                {
+                    "start": [
+                        3.0890272,
+                        101.6958638
+                    ],
+                    "end": [
+                        2.9458737,
+                        101.6517806
+                    ],
+                    "polyline": {
+                        "points": "mizQcnukRZd@LPLRpA`BJNVZPNLLPLNJPHRJPFPHPFhARtARL@`ANvA^`@LZLFDb@PZNNJf@RvBdA\\LTJb@LdAV~ATrBNlAHfAJVB^Fv@LZFj@Lb@J`@JLD`@Jj@PxAb@vCbAn@Rj@RxH|C@@\\N~B`ArCjAl@Vz@`@TLvAz@bC~APJPNPFtCpBlBrA|@l@ZRXT~@n@tA|@`@V`@TNJb@RNHVJPHRHTH\\NJDVHFBZFj@NNBTHVHTDRHXHXFb@LTFjAX|@TnD~@f@Lj@NTDLDB?^FZDLBL@N@R@L@P?P@b@?T?RAXATCTCPC\\GZGPEB?PGJEHCRKLERKRMZS`@[VQTS`@e@TYLQNY@A@APYLWf@cAl@oA@EXo@Te@LUJOLSJMLQHKNMTW\\YZUZUNI^Sn@WRGRGRGTGTEPCXGLC\\GTANCNAHATAVAf@Ah@Cd@?^?z@?V?vA@n@?R?R?v@@pC?X?X?N?zA?fA?H?P?P?`B?jA?xA?H?~@B`@DV@VDVDb@HHD`@Jb@L`@RXPDB\\TXTZVHHNNl@l@l@n@FFrAbBB@r@r@f@^hAl@zAf@vAXr@DR@T@XBt@Bd@BjCJjABvEJlFPzMT~ADtADb@@b@@b@Bd@@pDHX@H?b@?b@@fC@lA@b@@x@@L?b@@n@@V@b@BT@L?nCNv@Fl@B~BJpDJb@@`BDjCHL?N@P?bDJ\\@`BD|@BR@jADT@h@BbBFP@dABtEHb@@z@@hABbBJt@FP@N@fDJrAJXBp@B\\?L?t@?|ACt@@P?`CH`@BbCLB?t@@xA?rBDvGFlFHnABlADtAFb@@b@@rDNfJd@bGLbDBb@AB?^A`@C|AAR?b@?b@?n@A@?nF@rD?N?b@?fAA@?hBClBA`@?b@?B?^@b@?jBBfA@P@xA@b@@b@?b@@lA@`AAb@Ab@?LAT?b@CnCIpDKn@Ar@?p@?ZAF?P?lC@`A?pC?t@?\\?h@BlCF@?dA?d@?xBE~EKDAj@?d@?bC?jB?b@?b@?b@?b@?fA?b@?Z?F?b@?b@Ab@?b@Ah@?\\?h@AZ?@?J?zA?fA?dA@D@xBDx@BhA@jBHF?hAL|APRB`BVx@NXFd@N@?b@L~Aj@jA^XHzAn@z@b@z@b@tA|@TRd@Zx@t@n@n@v@v@VXVXB@RVVZRRr@`An@bA^n@Zh@\\n@LVd@bA|@`CjAnChFrMr@dBBDp@`BpB~ENb@zA`EJXrBfFN^N`@pE`LN^N^t@hBt@jBpIpTtC`HHPN\\@@JTh@bAf@z@?@Vd@l@~@l@z@r@dALRx@~@PPDD?@j@j@z@t@LLdA~@j@\\FF@@ZTXTTN`Al@@?z@f@ZRVN`@V^T@@tCxA@@^PVLtAh@~Ah@t@Rj@PfB`@RDnATz@PdALdANzBVfAL`@H^H^JZNB@VLHDn@d@xAdATPdBjA@@^Vp@d@TLVLVJHDVDb@FXBF@X@l@EZ@F?n@BnDDlBEfACf@A`CCjFBT@z@BjBFzCHfK@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9458737,
+                        101.6517806
+                    ],
+                    "end": [
+                        2.9454869,
+                        101.6483508
+                    ],
+                    "polyline": {
+                        "points": "uj~PszlkRjAFJ?VBF?NB^HVFVFFBJDRHVLTJ`@RRJXNp@\\TH\\RD@t@^XLHBTJTHTDL@P?XADAVG\\OPOJMLWFa@BU?Y?AEYIWQUOMQKUIUEUCW?WDSFSJUP]ZY^{CxDs@z@MRa@l@m@dAg@~@m@fAS^GJILEFE@E@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9454869,
+                        101.6483508
+                    ],
+                    "end": [
+                        2.943476,
+                        101.6319195
+                    ],
+                    "polyline": {
+                        "points": "ih~PeelkR_@dAWf@GVWh@u@zBc@dBYdAKp@S~@a@lCUhBK`AQzBEz@EnAAf@CjC@vAFtCHlBNhBLvABJFf@Fd@BLPjAFXr@nDb@`BJ^tAbEXv@~@tBn@nA@@^n@\\n@T`@lAhBh@v@p@|@|@pA"
+                    }
+                },
+                {
+                    "start": [
+                        2.943476,
+                        101.6319195
+                    ],
+                    "end": [
+                        2.9411169,
+                        101.6326946
+                    ],
+                    "polyline": {
+                        "points": "w{}Po~hkRXFTPB@JFPFRDN@L?^Ed@QPMz@g@vA}@zAy@JG"
+                    }
+                },
+                {
+                    "start": [
+                        2.9411169,
+                        101.6326946
+                    ],
+                    "end": [
+                        2.9368227,
+                        101.6334733
+                    ],
+                    "polyline": {
+                        "points": "_m}PicikR?A?C?A?A?A?A?A?A@A?A@A?A@A@A?A@A@?@A@?@A@?@A@?@?@?@?@?B?@?@?@@@?@@@?@@@??@@@@@@@?@@@?@?@@@?@?@?@?@?@?@?BA@?@?@A@A@A@A@A@A@Jr@Jp@FVJRBDPPJHj@Xr@Xd@\\Z\\@BLPDJBFN\\F\\HXN`@R`@PZXZ`@`@f@T\\NRBZF\\Dd@BX?PAXCRCXGRGRIVMDATOTQVWHMDGPYLWLg@F[Dg@?c@?EA]AKCSAOEYI[Oi@Qg@KUM_@I_@Mg@G]A_@Be@AAAA?AA??AAA?A?AA??A?A?A?A?A?A?A@A?A?A@??A?A@?@A"
+                    }
+                },
+                {
+                    "start": [
+                        2.9368227,
+                        101.6334733
+                    ],
+                    "end": [
+                        2.9365923,
+                        101.6334284
+                    ],
+                    "polyline": {
+                        "points": "cr|PehikR?A@??A@?@A@??A@?@?@?@A@?@?@?@?@@@?@?@@@??@@?@@@@@??@@@?@@@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9365923,
+                        101.6334284
+                    ],
+                    "end": [
+                        2.9342976,
+                        101.6335633
+                    ],
+                    "polyline": {
+                        "points": "up|P}gikR|BGhGM`AC"
+                    }
+                },
+                {
+                    "start": [
+                        2.9342976,
+                        101.6335633
+                    ],
+                    "end": [
+                        2.9141097,
+                        101.634991
+                    ],
+                    "polyline": {
+                        "points": "kb|PwhikRTAr@ArBErACfAC^AZAJ?nCGrACVA|@Al@Ad@?z@BVBT@b@Bf@B^Dp@Hp@LxDl@n@Jx@LhCb@fAPnEt@l@Hl@JR@`@DT@b@@n@@n@AN?L?\\AZCd@E\\EVCVGPCj@Mb@Md@OVKf@U|@c@z@e@LGRMb@UrAu@TMnBm@jAS`BUd@C`@Az@Cb@Ab@A~FO~AEl@CbAI`@Cl@IZILCtBk@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9141097,
+                        101.634991
+                    ],
+                    "end": [
+                        2.9121707,
+                        101.6373917
+                    ],
+                    "polyline": {
+                        "points": "edxPuqikRf@Qb@QXQPKVQTSVU\\a@Xc@T]Pa@Ti@HWVu@l@cB"
+                    }
+                },
+                {
+                    "start": [
+                        2.9121707,
+                        101.6373917
+                    ],
+                    "end": [
+                        2.9109129,
+                        101.6433268
+                    ],
+                    "polyline": {
+                        "points": "axwPu`jkRX}@JSRs@L_@Ng@Ja@H_@Jg@@QDUDk@@q@?[?S?IAa@A[CU?AKeAK_AWqCCa@?a@?E@WB]FUFSHSJQ@CDELQRQPOXSZQNI"
+                    }
+                }
+            ]
+        },
+        {
+            "hub": "DHL",
+            "origin": [
+                3.13856,
+                101.7627227
+            ],
+            "hubLocation": [
+                3.2127230893650065,
+                101.57467295692778
+            ],
+            "destination": [
+                2.9109129,
+                101.6433268
+            ],
+            "distance": 81.1,
+            "legs": [
+                {
+                    "start": [
+                        3.13856,
+                        101.7627227
+                    ],
+                    "end": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "polyline": {
+                        "points": "__dR_pblRCCYMSGa@Gi@Mq@M"
+                    }
+                },
+                {
+                    "start": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "end": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "polyline": {
+                        "points": "oddR}qblRBYDEBCLORUXST[R]R_A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "end": [
+                        3.1443565,
+                        101.7643978
+                    ],
+                    "polyline": {
+                        "points": "g`dRuxblRwAw@a@MMAYA{@AsBBE?KCSICCGGk@_AEEECMEOAS@}@J]F]Ba@Aa@EMCKCeA[[Kk@Q[Gc@Fm@Ni@VQJQJKFUPMPKVMXEJ"
+                    }
+                },
+                {
+                    "start": [
+                        3.1443565,
+                        101.7643978
+                    ],
+                    "end": [
+                        3.1470811,
+                        101.7660293
+                    ],
+                    "polyline": {
+                        "points": "gceRozblRu@Y{@i@aAq@cAw@SOUOAAOKQMiDcAo@W"
+                    }
+                },
+                {
+                    "start": [
+                        3.1470811,
+                        101.7660293
+                    ],
+                    "end": [
+                        3.1572836,
+                        101.7505673
+                    ],
+                    "polyline": {
+                        "points": "gteRudclR[@M@K@IB[No@pC_@bAg@jASf@GNKXO^GJEHEFSb@Wf@KPQVMRk@t@GFMLEDYj@E`@CLAFUZKHMFSDWDOHEDaAx@q@l@_@^STUTQPi@j@MNGHGHGTEPYf@Sb@A@Yr@Uj@k@rA[r@Uf@EJ_@p@s@rB_@dASVKXg@pAaB~Dc@`Ay@rBe@~@MT[`@ORONyC~CEFq@r@_@j@ILOXi@dACHKTEHMX[t@Q^aAbC"
+                    }
+                },
+                {
+                    "start": [
+                        3.1572836,
+                        101.7505673
+                    ],
+                    "end": [
+                        3.1580605,
+                        101.7486474
+                    ],
+                    "polyline": {
+                        "points": "_tgRad`lRGb@ETERGT_@hAITYz@K`@Yl@IPELEN"
+                    }
+                },
+                {
+                    "start": [
+                        3.1580605,
+                        101.7486474
+                    ],
+                    "end": [
+                        3.163411,
+                        101.7522042
+                    ],
+                    "polyline": {
+                        "points": "{xgRax_lREPGTAH]SMGo@a@OKKIYWw@y@yDeEUWYWu@i@_@UCAIEQKm@[[KeA]}@YSI_@OaA]WIeCmAQW"
+                    }
+                },
+                {
+                    "start": [
+                        3.163411,
+                        101.7522042
+                    ],
+                    "end": [
+                        3.17677,
+                        101.7565747
+                    ],
+                    "polyline": {
+                        "points": "izhRgn`lRcAc@OEs@[qAi@_Bm@e@Qa@M_@MWEWG_@Em@Eg@AQAm@CmAG}CQo@CyCSQEw@UYIECKE_@Q_Bs@gAm@{H_EgAe@s@_@WKYMUKWIQEQEQCk@GgAMoBUqBSy@Ik@C_@C[CoACc@Cc@AU?"
+                    }
+                },
+                {
+                    "start": [
+                        3.17677,
+                        101.7565747
+                    ],
+                    "end": [
+                        3.1785314,
+                        101.7561395
+                    ],
+                    "polyline": {
+                        "points": "ymkRqialR]DA?S?WA[E[CEAKAQAG?G?W?A?U@KBA?MBODC@IFIFMHKLYf@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1785314,
+                        101.7561395
+                    ],
+                    "end": [
+                        3.1921563,
+                        101.6745145
+                    ],
+                    "polyline": {
+                        "points": "yxkR{falRORgBvBU`@]h@S^OTw@rA]h@U`@Yd@SVW`@cAvA]b@_BpBOP[`@W^]b@W^S\\MTQ^EJGNMh@EXGXIl@Cn@Ch@CRCRAZCT?NCjACxAANAhAC`AErA?@A\\A^Cf@Cb@Ep@CTAHCVKjAKtAMvAObBCd@E^ARAJI|@?@MtAIfAANSlBMpACRMbAEf@G`@e@xEWvBCPANCRAFO|A[jCG`@ADG^?BYrACHwAjEQ^Q\\eAzBs@`B[t@Ql@IZETGh@Cf@?j@Bv@Hd@DZ@FJ`@Nb@Tf@^r@fAfB`@r@dCfEPZr@pAp@pAZn@FNHRf@|@x@xAn@pANXJRLVJVJXJZHVFXH\\F\\BRBRDTBX@b@@d@@L?P?JAxA?t@C`CCrDAd@Ad@AxAAnA?D?JAf@ANC~@Ef@Ed@[~AQr@Od@e@pAYl@MXWd@a@n@}CjEQVEHEHa@n@U\\INIPc@z@Sf@MZi@bB?@QdAGz@IrA?@OpDEv@GdAE|@Ct@GlBE`BCh@A`@A`@Az@E|@Ev@QdEK`DOtDGnCKrEE|@?@Gn@CNId@Mb@M`@Q`@Q`@ABQ\\i@v@GFEJGHORQVQVY`@kBlC_@j@w@dAMRMPKNKLKNGJYj@QZaAlBi@hA?@KRwAhDe@jAIPGPQh@M^[jAGTGf@Kx@ETE\\SnBGr@ADIx@ObB_@fEEp@MxAKjAEd@?RAXAB?l@@x@?ZDjAFz@B^@NBl@?B@`@?F?xAAd@GhA?BWtBKz@c@pDCH?@AHAHAHMbACf@A`@AN?F?H@LB\\BTF`JDrB?dBKbC]hDAPUhBCVCNGb@CTC\\KvBCb@EbAEbAG`BEpCTnCHz@D\\L~ADrG"
+                    }
+                },
+                {
+                    "start": [
+                        3.1921563,
+                        101.6745145
+                    ],
+                    "end": [
+                        3.1912657,
+                        101.6669109
+                    ],
+                    "polyline": {
+                        "points": "_nnRuhqkRUdEBpC?T?RDzADnDNfIDhABHBLDNLv@Lv@Hb@Lf@?BDNFTPt@L`@Pf@^`A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1912657,
+                        101.6669109
+                    ],
+                    "end": [
+                        3.1884797,
+                        101.6617729
+                    ],
+                    "polyline": {
+                        "points": "mhnReyokR\\TNP\\\\XTv@n@ZT^VNVHT@N?@JTJPx@~@^^`BhBnAhA\\R\\R@?RLDF@@HHHNBDHR@DL`@@BFV@D@T?L@P?P?DC\\EREJGPILOTEDi@j@KJIFOF"
+                    }
+                },
+                {
+                    "start": [
+                        3.1884797,
+                        101.6617729
+                    ],
+                    "end": [
+                        3.1970409,
+                        101.6291176
+                    ],
+                    "polyline": {
+                        "points": "_wmRaynkRoBrCcAzAc@r@e@r@mBbDm@xA_@bBMx@Gp@Ad@?D?f@BVNj@HV@FH\\Jd@j@|BR~@b@pBNx@PpABPBN@N@HAL?NCTALAHCFCLSp@GPELGPELGRGNO`@Sn@GP]`AM\\?@M^ITY~@ELCFIXO^CHIV?@IXCDM^M`@KXADKXCDAFYbAOd@GTM^M`@CJIR[bAK^CFo@lBUl@W|@y@hC?@M^M^ADw@|BGTEJCJELCLANGl@AHCTEl@Cf@A\\?B?@?`@?@AvB?r@AFAb@?FEx@?@ABC^?B?@Gl@CPI^GZ_@jAKXk@`Bq@lBETERCN?@AJCT?@CXG`@E`@CR[|C?HEXKdAEb@ShBAFI~@E`@Gb@MpASnBARAJCTE^Gp@MhACTE\\?DCNCPE`@?@MnAI|@Eb@Cb@c@rE?BE^QhB?@CTWv@OXOVQ^S\\y@|A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1970409,
+                        101.6291176
+                    ],
+                    "end": [
+                        3.1983827,
+                        101.6266901
+                    ],
+                    "polyline": {
+                        "points": "oloR_mhkRqBvDw@zAQ^CBi@dAA@ABAFADKh@Mh@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1983827,
+                        101.6266901
+                    ],
+                    "end": [
+                        3.1988381,
+                        101.6256393
+                    ],
+                    "polyline": {
+                        "points": "{toRy}gkRg@hBa@~@?@Qd@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1988381,
+                        101.6256393
+                    ],
+                    "end": [
+                        3.1994025,
+                        101.616546
+                    ],
+                    "polyline": {
+                        "points": "wwoRgwgkRGHCFCHCHAN?VHb@HPJPNPVXj@z@T\\T^P^N`@Lr@|@zCZ`BTjBBdAJjB@X?\\Ab@AN?BCRAHETI\\KXO`@QXOXINS\\GHU`@U`@GJQ^i@~@aAjBo@jAkAxB"
+                    }
+                },
+                {
+                    "start": [
+                        3.1994025,
+                        101.616546
+                    ],
+                    "end": [
+                        3.1982706,
+                        101.6076134
+                    ],
+                    "polyline": {
+                        "points": "g{oRm~ekR_@r@_@r@Yn@ABIPGTKZYjAI~@KtBDhA?D?FF|@Z~AV|@t@hB@@\\n@TXv@tAT^Vl@Th@X|@HZH\\Hb@PfADh@@X?H@F?\\Bb@D|CBfA"
+                    }
+                },
+                {
+                    "start": [
+                        3.1982706,
+                        101.6076134
+                    ],
+                    "end": [
+                        3.2054119,
+                        101.58062
+                    ],
+                    "polyline": {
+                        "points": "etoRqfdkRJpDClACXCj@MjAE\\Kv@WpBObAe@lD]vCQnAGh@G\\ETIXIXCJsAdCy@zA[v@IZU~@CVE`@Ev@?f@Br@Fv@LbAn@tDLt@@FJv@Db@Dr@@r@Aj@E`ACPGb@OdAy@rE[fBm@dDk@dDI`@QjAe@fDk@hD[tACLSv@]fAm@|AABc@dAc@|@a@x@}@hBwAzCoBtDsCzF]n@[p@Sh@Uv@UxBQjBMr@"
+                    }
+                },
+                {
+                    "start": [
+                        3.2054119,
+                        101.58062
+                    ],
+                    "end": [
+                        3.2054187,
+                        101.580309
+                    ],
+                    "polyline": {
+                        "points": "y`qR{}~jRBd@EV"
+                    }
+                },
+                {
+                    "start": [
+                        3.2054187,
+                        101.580309
+                    ],
+                    "end": [
+                        3.207132,
+                        101.5768853
+                    ],
+                    "polyline": {
+                        "points": "{`qR}{~jRMdAGb@Gb@]jCA\\ExA?fA?b@?b@@BAd@APCLKXUl@EJGJMNEBOHOBOAC?MAOE]OECWM[K]I"
+                    }
+                },
+                {
+                    "start": [
+                        3.207132,
+                        101.5768853
+                    ],
+                    "end": [
+                        3.2101001,
+                        101.5768743
+                    ],
+                    "polyline": {
+                        "points": "qkqRqf~jRK@MAa@Di@Li@LYHu@RWDO@O@M?M?GAK?G?MA_@EYCMEICaDm@"
+                    }
+                },
+                {
+                    "start": [
+                        3.2101001,
+                        101.5768743
+                    ],
+                    "end": [
+                        3.2128207,
+                        101.5747801
+                    ],
+                    "polyline": {
+                        "points": "c~qRmf~jR[AS@QBY@IHQPy@r@_BrAc@^e@`@}AtAWVEDURQP_@Z"
+                    }
+                },
+                {
+                    "start": [
+                        3.2128207,
+                        101.5747801
+                    ],
+                    "end": [
+                        3.2106999,
+                        101.5766981
+                    ],
+                    "polyline": {
+                        "points": "corRky}jR^[PQTSDEVW|AuAd@a@b@_@~AsAx@s@"
+                    }
+                },
+                {
+                    "start": [
+                        3.2106999,
+                        101.5766981
+                    ],
+                    "end": [
+                        3.2187978,
+                        101.5815503
+                    ],
+                    "polyline": {
+                        "points": "{arRke~jR@S?KAIAGCIGKA?y@Mi@K_@KAA[Mc@WWS]YgByAyAkAgAg@]G[Cc@AC@]BS@KAM?a@?C?CAOCICA?MGQKECKIIIMOISGUCOGU?EG[Ka@Me@GUGSISIOEKCCCGEEMUSW[]EEOOKIMIGEAAIEKEEAICGEE?A?A?A?CAGASEMCMAYC]EKAm@EU?i@COAuDEO@IAG?"
+                    }
+                },
+                {
+                    "start": [
+                        3.2187978,
+                        101.5815503
+                    ],
+                    "end": [
+                        3.2262082,
+                        101.5793709
+                    ],
+                    "polyline": {
+                        "points": "otsRuc_kRQNKHCDM^AV?XA\\ARCRAHCLCJEHELGHGJGFIJIHKHKJm@ZgAf@w@^i@Tg@RE@YHE@]De@@WA[CUEOEOGIEGAQKIIKKIIOQyAmBcAwAeAsAiA}AUYMMQQMKECQMMIUIUGEAMEOCMAMAM?S?S@S@KBK@UHSHOHQHOLMLCBGHILCBEHINCHGPEREVATAN?L?N?BBfC@f@@fA?\\"
+                    }
+                },
+                {
+                    "start": [
+                        3.2262082,
+                        101.5793709
+                    ],
+                    "end": [
+                        3.1847764,
+                        101.5943311
+                    ],
+                    "polyline": {
+                        "points": "ybuRav~jRBD@D@HFVLjBF\\Nn@BHHRPV\\`@XT`@TPFRFRD^DX@F?R?b@Gn@Kl@OrB]pBOhAGx@Gh@G^ITIfBi@PGp@[r@YvFaCFCVK`@QlAOhDwAbC_A~CqAbAc@d@Qd@ShD{ARI~BaA|@_@@ApDgA|A_@hASNCFA~AS~AOrAIl@Cb@AZCJ?tB@f@BpAAvKBdBFt@?L?H?V?@?H?Z?Z@\\?X?~B@rDDzBDb@@nCDtB@bA@|@ArGFrB?bB@jFDpABbBDN?rA@jBBt@?fA@F?Z?t@@~@E`ACn@Ex@Kn@Iz@MnBm@PERGLIr@Yh@Wt@a@`As@`Aw@b@e@HIz@iAn@eA|@mBlCaH`@gAfB{EfD_JDK\\{@|@oCxCeIv@uBRe@Zu@Zw@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1847764,
+                        101.5943311
+                    ],
+                    "end": [
+                        3.0933475,
+                        101.554162
+                    ],
+                    "polyline": {
+                        "points": "{_mRqsakR@S?GBMN_@b@_A@C?ALYBCRg@HSh@yADKj@{A^_ANa@\\{@`@cAb@{@f@gAl@}@X]^_@l@o@ZWZUb@]b@[TKr@]\\Op@SBAr@[`AW~@YhB[x@Gb@ERCLAPAPAp@CnAG`ACl@Cz@EnAGH?hAHdCX^DrAX`Bf@zAb@z@\\v@Zb@RNFRHbC`AhA`@@?RHJDRHfBp@bEdBv@\\j@X\\P\\NdA`@|@^p@Vb@LRFj@N@?TDj@HVBF@|A@r@@vABn@BVCJAD?rACnGo@~JeAxD_@jAKB?d@ENAl@GNAd@E@?jC_@`@G^Et@Gz@Eb@AVAn@ElAA`AEpAAh@A`ABbAAzAApBJ|AFr@BxAJ~ANbAHhAL`AJrBNtFj@tBRn@DhAH~ANTBL@tALz@Fd@DN@RBjAHrBP~@HpE^`Mh@~E@xD@fAAN?J@B?T?bHAlDAlAAdLK`BAH?rAAjB@b@?@?~CBlA?z@DhHf@@?`@D~BRbHp@D?~@LRBTDH@J@h@JzB`@hAR`@HtGlA`@Hb@Hz@NlAXNBdAT`ANdFz@`@HbG`AlInATBz@Lv@Nb@Dz@Ff@@r@DVB^F|BR~Ij@vFZ`AFjBNzCPRBl@Fn@FpALf@Hl@JB?VDJBd@FbAXdAZdAXjAb@hB|@tCbBjE~CjApAJNlAxAnApBpA~BzCbGXd@fGfLpAhCDFBFBDBDDFDFJRJTHL?@FJDJDHBJFJFLRb@JRTh@Tj@X~@R|@P~@Fb@D\\Ft@Fr@PnDTlF@RJrBNhDH`BJxCF~APzDHtAF|@Bp@FxAFtAHfBDr@PvBHt@F^DVHd@f@hCBLDJ`@bBZ`AXz@h@pAfA`CrAxCHRlAxClFrMdBhEdEnKl@dBJ`@J`@Pr@DN^lBZ`CT|Dr@~M"
+                    }
+                },
+                {
+                    "start": [
+                        3.0933475,
+                        101.554162
+                    ],
+                    "end": [
+                        3.0875504,
+                        101.550696
+                    ],
+                    "polyline": {
+                        "points": "md{QoxyjRR`@@BD\\Hv@LrADTFb@@LJv@Db@BNDd@H^H^?@Vx@DFLX@DT\\DHNPRXd@d@ZVNJ`@VXNDBd@Tj@P`@HHBVDNDh@Fx@BX?H@XAH?jAKTGv@Qj@SvAk@j@Sn@[h@ULALC"
+                    }
+                },
+                {
+                    "start": [
+                        3.0875504,
+                        101.550696
+                    ],
+                    "end": [
+                        2.9268353,
+                        101.6020636
+                    ],
+                    "polyline": {
+                        "points": "e`zQ{byjRTEb@Ul@St@SZIh@Mh@O\\GrAWXEj@Gv@Ib@Cp@Cl@Cl@CfAAlA?zCBt@@h@?\\?lACbAAtBCVAb@ARAt@EhCQdCUt@ITETChBW|Cg@dAS^G`@GXE~Dq@t@Mt@MTEhAQPA|Ci@`@G~Dq@r@MTETE|AYr@MlAYfAYb@M`@MNEtBo@BAZMhBs@TM^O^Q^QhB}@lBaAd@Ur@a@dAo@hAq@lC}AtAq@bBi@\\G`AU@?jAU`AOvAOr@Eb@Cb@EVAxCQN?bAARA\\CdAMVEj@I|@Sh@KLCRGt@SfA_@v@a@|@g@|@o@nB}AxAmAp@m@xEaEnAeAjB}AjDaDnAaAzCiC`A{@j@c@pEuDlAgA|E_E|CgCFIlA}@xBqAzA}@`Bq@p@Y\\OnEaB`@O|@]fE_B~BaAv@[dBq@^OvDqAtDqAfBi@zAa@bAYv@S`MyCnEeA^KDApBg@rBe@fB_@`ASdDm@tDk@rAOtAOxDe@dC]nC_@zAYjDm@jB_@^IxHiB^ERExAa@jEsAd@Md@O@A|Bu@nHqCxCcAlGkBfAYjFqAdB[pAUREVEl@KpAQvC_@lAMfAKDAbBOfCQ~DSz@CxDGjD?zCBV?zBBbAD~BHtAHVBdAFrAHdBP`CZxBZx@J`Er@bDn@bAV`@Jd@JnCz@tBj@hC|@ZJ`Cx@fDvAvAl@\\Nr@V|Ap@d@RtEnBvF`ChGjC~Ap@bAb@nBv@\\NLD^N^PzCjAh@RfA^FBpAb@jBf@`@H~EfA~@NpATHBr@Jh@FpBVvCX~AJlBDD?hGLvAAjBCRARAh@A|@EhAGxCSdBQvAOx@Mz@KnB_@|D{@dBe@r@SzBs@lC}@jBw@pCsArAs@p@]j@]zCgBnGwDbFsCvCcB|G_E\\[h@WnLaHhC{AnHiEjDoB^UjNeIVORMfAo@hFyCtFeD\\S\\S\\SxA{@\\S\\ShAq@|LiHvFaDnGsDpAw@nBiAhJsFtAu@hDkBxBiA`Ai@pL}F|@c@^On@[jCiA`H{CpF{BJGzRiIn]uNfAe@|BaAtAk@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9268353,
+                        101.6020636
+                    ],
+                    "end": [
+                        2.9232744,
+                        101.6062766
+                    ],
+                    "polyline": {
+                        "points": "wszP{cckRr@i@r@[r@[VMtB{@fBw@dBs@t@]TOPMPKBEDCRU@A@ANQLWNWHUFWHYD[DW?A?C@_@?]AYASAQAI@k@QoA"
+                    }
+                },
+                {
+                    "start": [
+                        2.9232744,
+                        101.6062766
+                    ],
+                    "end": [
+                        2.9275873,
+                        101.6197537
+                    ],
+                    "polyline": {
+                        "points": "m}yPg~ckRc@aCcEoUcBmHKa@Wy@a@kBg@{Ba@aB_@yAg@qBg@}BQu@_@}Am@iCk@yBAGc@{ASq@S{@c@kBU_A"
+                    }
+                },
+                {
+                    "start": [
+                        2.9275873,
+                        101.6197537
+                    ],
+                    "end": [
+                        2.9413037,
+                        101.6288626
+                    ],
+                    "polyline": {
+                        "points": "mxzPmrfkRm@mCsBmI]uASm@Ug@[s@_@w@c@w@i@m@_AcAs@s@?Ae@Yi@[{@g@mBw@oAa@i@Ms@OaAQCAg@EcAIiEMwJUw@CqCIq@E}@GcAOuAWm@QiA_@w@[o@]g@Y]Uy@m@y@s@k@o@{@aACEo@{@]i@IK"
+                    }
+                },
+                {
+                    "start": [
+                        2.9413037,
+                        101.6288626
+                    ],
+                    "end": [
+                        2.9410943,
+                        101.6326435
+                    ],
+                    "polyline": {
+                        "points": "cn}PkkhkRc@[Y_@QUi@q@MQ]g@u@aAWWAAS[QWYa@AAMg@CY?C?ODMBKT_@VSROb@Wl@_@l@a@t@e@pBmA"
+                    }
+                },
+                {
+                    "start": [
+                        2.9410943,
+                        101.6326435
+                    ],
+                    "end": [
+                        2.9368227,
+                        101.6334733
+                    ],
+                    "polyline": {
+                        "points": "yl}P_cikRAA?AA??A?AAA?A?C?A?A?A?A?A?A@A?A@A?A@A@A?A@A@?@A@?@A@?@A@?@?@?@?@?B?@?@?@@@?@@@?@@@??@@@@@@@?@@@?@?@@@?@?@?@?@?@?@?BA@?@?@A@A@A@A@A@A@Jr@Jp@FVJRBDPPJHj@Xr@Xd@\\Z\\@BLPDJBFN\\F\\HXN`@R`@PZXZ`@`@f@T\\NRBZF\\Dd@BX?PAXCRCXGRGRIVMDATOTQVWHMDGPYLWLg@F[Dg@?c@?EA]AKCSAOEYI[Oi@Qg@KUM_@I_@Mg@G]A_@Be@AAAA?AA??AAA?A?AA??A?A?A?A?A?A?A@A?A?A@??A?A@?@A"
+                    }
+                },
+                {
+                    "start": [
+                        2.9368227,
+                        101.6334733
+                    ],
+                    "end": [
+                        2.9365923,
+                        101.6334284
+                    ],
+                    "polyline": {
+                        "points": "cr|PehikR?A@??A@?@A@??A@?@?@?@A@?@?@?@?@@@?@?@@@??@@?@@@@@??@@@?@@@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9365923,
+                        101.6334284
+                    ],
+                    "end": [
+                        2.9342976,
+                        101.6335633
+                    ],
+                    "polyline": {
+                        "points": "up|P}gikR|BGhGM`AC"
+                    }
+                },
+                {
+                    "start": [
+                        2.9342976,
+                        101.6335633
+                    ],
+                    "end": [
+                        2.9141097,
+                        101.634991
+                    ],
+                    "polyline": {
+                        "points": "kb|PwhikRTAr@ArBErACfAC^AZAJ?nCGrACVA|@Al@Ad@?z@BVBT@b@Bf@B^Dp@Hp@LxDl@n@Jx@LhCb@fAPnEt@l@Hl@JR@`@DT@b@@n@@n@AN?L?\\AZCd@E\\EVCVGPCj@Mb@Md@OVKf@U|@c@z@e@LGRMb@UrAu@TMnBm@jAS`BUd@C`@Az@Cb@Ab@A~FO~AEl@CbAI`@Cl@IZILCtBk@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9141097,
+                        101.634991
+                    ],
+                    "end": [
+                        2.9121707,
+                        101.6373917
+                    ],
+                    "polyline": {
+                        "points": "edxPuqikRf@Qb@QXQPKVQTSVU\\a@Xc@T]Pa@Ti@HWVu@l@cB"
+                    }
+                },
+                {
+                    "start": [
+                        2.9121707,
+                        101.6373917
+                    ],
+                    "end": [
+                        2.9109129,
+                        101.6433268
+                    ],
+                    "polyline": {
+                        "points": "axwPu`jkRX}@JSRs@L_@Ng@Ja@H_@Jg@@QDUDk@@q@?[?S?IAa@A[CU?AKeAK_AWqCCa@?a@?E@WB]FUFSHSJQ@CDELQRQPOXSZQNI"
+                    }
+                }
+            ]
+        },
+        {
+            "hub": "City-link Express",
+            "origin": [
+                3.13856,
+                101.7627227
+            ],
+            "hubLocation": [
+                3.0319924887507144,
+                101.37344116244806
+            ],
+            "destination": [
+                2.9109129,
+                101.6433268
+            ],
+            "distance": 112.4,
+            "legs": [
+                {
+                    "start": [
+                        3.13856,
+                        101.7627227
+                    ],
+                    "end": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "polyline": {
+                        "points": "__dR_pblRCCYMSGa@Gi@Mq@M"
+                    }
+                },
+                {
+                    "start": [
+                        3.1394433,
+                        101.7630294
+                    ],
+                    "end": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "polyline": {
+                        "points": "oddR}qblRBYDEBCLORUXST[R]R_A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1387606,
+                        101.7641095
+                    ],
+                    "end": [
+                        3.137565,
+                        101.7641344
+                    ],
+                    "polyline": {
+                        "points": "g`dRuxblRb@Nr@P`@HPCVIjAa@"
+                    }
+                },
+                {
+                    "start": [
+                        3.137565,
+                        101.7641344
+                    ],
+                    "end": [
+                        3.136819,
+                        101.7623896
+                    ],
+                    "polyline": {
+                        "points": "wxcRyxblRf@|APh@`@lAXv@LXFNBHBL?J"
+                    }
+                },
+                {
+                    "start": [
+                        3.136819,
+                        101.7623896
+                    ],
+                    "end": [
+                        3.139252,
+                        101.7594568
+                    ],
+                    "polyline": {
+                        "points": "ctcR}mblRCDCDGFeA~@EDIJUh@}@fBQb@GLEHGDCBE@GBWDEBG@CDGFGHe@~@EJKPILONm@d@QRQPSX"
+                    }
+                },
+                {
+                    "start": [
+                        3.139252,
+                        101.7594568
+                    ],
+                    "end": [
+                        3.1428151,
+                        101.754868
+                    ],
+                    "polyline": {
+                        "points": "icdRs{alRKTKXKPORWXEDw@bAe@j@iBxBg@r@W\\SXSXs@fA_AvAED[`@IJEFq@`Ag@p@ORw@jA"
+                    }
+                },
+                {
+                    "start": [
+                        3.1428151,
+                        101.754868
+                    ],
+                    "end": [
+                        3.1411205,
+                        101.7532882
+                    ],
+                    "polyline": {
+                        "points": "sydR}~`lRBl@h@^bAr@h@`@zAdAl@b@\\XNR"
+                    }
+                },
+                {
+                    "start": [
+                        3.1411205,
+                        101.7532882
+                    ],
+                    "end": [
+                        3.1369184,
+                        101.7440218
+                    ],
+                    "polyline": {
+                        "points": "_odRau`lRh@hAv@~A~@fBpB`DJNzBvDLPtCvEPZzAhCpAxBlBdDV`@v@|Av@zAj@jALTNZ@B@DBJ@F?J?H?@?RSFo@R}DpA"
+                    }
+                },
+                {
+                    "start": [
+                        3.1369184,
+                        101.7440218
+                    ],
+                    "end": [
+                        3.1366596,
+                        101.7425965
+                    ],
+                    "polyline": {
+                        "points": "wtcRc{~kR[PC@CBAFADCLXv@Xx@\\fALl@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1366596,
+                        101.7425965
+                    ],
+                    "end": [
+                        3.1191752,
+                        101.720116
+                    ],
+                    "polyline": {
+                        "points": "cscRgr~kRDTBNHVJ\\J\\JXHVDLNb@Tx@Ph@XdAXz@FNDNPb@Ph@Pb@d@pADNFN?@FRBD@DBFFPLb@Vx@DLL`@Nf@JXDP\\dAPh@HRJPRVB@HJJHJFPF@@D@JBFBD@@?@?PBF@D@@?@?F?H?H?B?F?F?fAa@REv@W@?FCVI`A]XKr@UFAVMbBm@~Am@vAe@l@MFAJATATAR@R@^FPFVJZNNLPPNRNVT`@\\r@jA`CdBjD|@nBR\\P\\nAdCZj@h@bAxAdCHLR\\h@z@v@hAHHTZPVDBd@j@HHLLJJVVZ^TXRVLNHJ`ArAt@dAPXLTZZrA~ANVVb@h@`AJVL\\JXH\\Nj@ZrBLr@Jd@Nh@Z`Ad@dAdAdC|@tBd@hAb@pABJL`@HVRt@@@Jf@FRDRDR@RFd@LvAP~A?DDb@Hn@J|A"
+                    }
+                },
+                {
+                    "start": [
+                        3.1191752,
+                        101.720116
+                    ],
+                    "end": [
+                        3.1239033,
+                        101.7035109
+                    ],
+                    "polyline": {
+                        "points": "{e`RwezkRBn@LnAFn@BRBPL~@Lh@x@`DLh@Rx@Lh@Hb@@BDj@Bj@@j@?f@A@?ZEf@CVGZG^GVCLGRIRQd@KRU`@e@t@_AtAs@dA[`@Yd@sAlB]f@mC~DSd@Ud@IPO^CBQj@_@nAMh@Kf@O~@OtAOrAM~@K`AANAFC`@Aj@?^?X@^At@C^AHEXCPGVKb@M`@ADK^Qb@Uf@[n@Wd@]h@EDU\\[`@QT]Z_@^EBAB?B?D"
+                    }
+                },
+                {
+                    "start": [
+                        3.1239033,
+                        101.7035109
+                    ],
+                    "end": [
+                        3.1282449,
+                        101.7021457
+                    ],
+                    "polyline": {
+                        "points": "kcaR}}vkRc@\\e@ZGDMJC?YROHk@Xa@RYJ{@XUHWFg@Li@J}@NWB[Dm@DG?iED_A?"
+                    }
+                },
+                {
+                    "start": [
+                        3.1282449,
+                        101.7021457
+                    ],
+                    "end": [
+                        3.1341071,
+                        101.6972204
+                    ],
+                    "polyline": {
+                        "points": "o~aRmuvkR_@?]?eACE?]@G@_@@[DUB_@DMBOBWHA?QFMBQHMDMF]NUNWNSNIFEB]ZMPKJQV[d@QZIPM\\Up@GXALANGXE\\Kj@Ib@Kf@Oh@CHa@|@INSVSTc@^[RKHIDYN[Na@L_@NeBt@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1341071,
+                        101.6972204
+                    ],
+                    "end": [
+                        3.1334313,
+                        101.6946478
+                    ],
+                    "polyline": {
+                        "points": "eccRsvukR@DAB?DABA@GFONWTIJCDCFCHALAJ?J@L@LDXF\\RbBBN?BBHBNDJHNHJDHHFNJ@@VLVNB@JFJBLHLN"
+                    }
+                },
+                {
+                    "start": [
+                        3.1334313,
+                        101.6946478
+                    ],
+                    "end": [
+                        3.1179623,
+                        101.6795661
+                    ],
+                    "polyline": {
+                        "points": "}~bRqfukRFBHDNHTNVPJJNLNPHLJLNVFJDJHPFRJ`@FVDXLrABRBRFRDPFNFLHNFFDDFHPLTNLFRHXHNBZF`Cf@bEt@`@JNFh@RLFPLNJTTZ`@d@l@t@fA^p@t@jAv@jAb@l@\\f@j@v@f@p@NXP\\P\\JRFN\\|@Xz@dAnDb@xATx@FNN^Pd@h@`An@fA|C~Ex@nAzAbCPXlApBJPRZPRX^\\f@JLDFXTf@b@LHRJPJTJVJXJRFVFTDXD\\DJ@F?T?d@@`BCn@?H?DAL?t@Ar@?bAAdACP@"
+                    }
+                },
+                {
+                    "start": [
+                        3.1179623,
+                        101.6795661
+                    ],
+                    "end": [
+                        3.1147505,
+                        101.6753056
+                    ],
+                    "polyline": {
+                        "points": "g~_RihrkR\\Bh@Db@Db@FbARlAh@b@Rh@^\\ZBDTVTXBBx@xALXJ\\DVDPHZNv@DP@JLt@BXPvBF|@BNBRHX"
+                    }
+                },
+                {
+                    "start": [
+                        3.1147505,
+                        101.6753056
+                    ],
+                    "end": [
+                        3.0599642,
+                        101.4790309
+                    ],
+                    "polyline": {
+                        "points": "ej_RumqkRBp@NhEFtC@~A?TAT@t@@l@?rBOfGAlAElB?f@ErBA^AZAd@CnACpACl@EhBCrBCdAKpFGvBEvB@jBFxALfAZ|ADRDNFTLb@Nb@Rj@|@nBpAlC`AlBlAjCDFxBpELVLTLVXl@dAvBd@|@p@nAFJnBrDV`@dBxC|AjCfAhBpCvFf@`ALXd@|@l@tAbAvBbBnDbA~Bf@|AL^bB~FL`@^nAJ\\dCtFzAnC|CvFvJxSvAdC\\h@hAhArAdAr@f@RLB@f@Th@P`@Jx@TVLVD`AP|@RvBZJBfC`@hATRFTDx@RtA^z@VXJ`A`@@@^Pb@Rp@ZD@vAz@xBtAr@f@l@`@`@XlAfA\\Z^d@HFTVZ^dApAb@l@TZ~BdDZ`@r@hA~CtEzE`HBFnC~D`AxAv@lA~@`Bj@fA~A~DjAbEh@pC`@hCD^TdCNtB?DJlAb@bGDz@Dl@F`AJxB@r@@TBpA?J@T@vA?L@h@Bj@FhBHrAJrAJfANrATbBL|@NxAJhAFt@NfCHpB@z@?xA?z@C`B?H@|CHrK@jCBnA?`@B~C?rF?z@Cp@Ch@Cd@e@xEe@lESlAaAbJMdAYlCKdAMnAu@dIEh@Eh@UfDCTATCZIzAKbCEz@OlEAb@WrG@|@@~@Dh@Lz@P|@XbAh@lA`AnBvCxFn@lAv@fBPd@X~@Lh@?@Jb@Hh@DZ@JF`@F|@NpCJrD@b@FzBDzAZbK@l@LlEB`A@H?J@R?R?DBn@BnAFnAFp@Jl@BTLp@Ll@J`@Vt@zAvCb@r@R^Th@`@v@tBjEnBtDpAdD`@bAb@hAPj@^jBRx@Rx@fA|Dl@|BHXf@tB@FJ^J\\Hb@Tx@L^HZJ`@VbAz@nDLf@T|@Nj@Lb@lAtFVvAh@|CVdBl@lEXzATjAf@lCBPRj@XjBLv@`@dCBHd@jCZhCf@lCb@dCJj@T|@lBdG\\dAhBpFb@pAbB~EpB`GjBxFFPlGjRzBzGj@hCZxCDXDl@Dt@PzFBfAj@hRPfEPnEDhCJxEPpF@~@HxBNlBD`@NhAdAvIBNPzALz@ZtB`@nBhCzMFVH^~@bFl@zCdBrIHj@j@zCBJr@hDlBlJLn@j@hDv@|Q@PDhADnAB~@?bAC`D?TMhFAVC`AMzJOvJE~@K|CWdEQlCo@hKM|BCd@Cf@C\\AZC^C^ALA`A@~@B|@?DHhAD^@D@JTvArAjGDTNp@Nr@BHb@bB~AdEj@dCb@vBr@zEj@fDXvALd@f@lCtAlGJb@HZ"
+                    }
+                },
+                {
+                    "start": [
+                        3.0599642,
+                        101.4790309
+                    ],
+                    "end": [
+                        3.0586512,
+                        101.4756422
+                    ],
+                    "polyline": {
+                        "points": "wstQ}bkjRNTHRTx@Pp@BLZtA`@fB?@v@dCNb@DPf@zAJh@"
+                    }
+                },
+                {
+                    "start": [
+                        3.0586512,
+                        101.4756422
+                    ],
+                    "end": [
+                        3.0582795,
+                        101.474644
+                    ],
+                    "polyline": {
+                        "points": "qktQwmjjRx@tCNp@"
+                    }
+                },
+                {
+                    "start": [
+                        3.0582795,
+                        101.474644
+                    ],
+                    "end": [
+                        3.066903,
+                        101.4575169
+                    ],
+                    "polyline": {
+                        "points": "gitQogjjRJb@_Cn@mHxAkAXmDz@g@Jy@To@Pc@LSFOFODWJC@]No@\\iAr@k@^g@d@_@`@iAtAa@p@MTYr@Qf@]hAU~@Kr@EV[|DMjBG|@U~CI~AKxCa@rIQlCCb@Eb@GfAa@`GGpAQbDOzCMhBCf@KpASnB"
+                    }
+                },
+                {
+                    "start": [
+                        3.066903,
+                        101.4575169
+                    ],
+                    "end": [
+                        3.0415465,
+                        101.3874738
+                    ],
+                    "polyline": {
+                        "points": "c_vQo|fjR@LAPCRCVKb@I\\ENOl@m@dBg@`AWd@W^]d@m@p@e@b@k@f@UNo@d@i@`@a@Vg@Vc@T{@^iBt@mBz@uAx@wArASTe@`@a@Zc@Tm@TeATaARw@Nu@LI@[Fo@J}@Pe@HmAXQ@mEv@sNlCw@NgB\\A?}@PgB\\c@Je@LSHWHm@XSJa@V]Vs@p@IJWX_@j@g@|@]bAOl@GZEZ?HEj@Ch@AD?XAf@?rADzF?R@`C?rA@vE@l@?ZDrRHh[@~HBnG@z@D`AFnAD`@Fl@PhAJn@^dBP`ANf@Nd@Nf@Rh@h@pAf@`AxAfC^h@bAnA^b@`A`Ar@n@dAv@r@h@h@^h@Zf@XTJtAn@NHJDFBTHJB`A^bA^bA^~C`ATFh@PhBn@zBbAv@XxGjCnGdC|Bz@x@XTHjBr@lBr@pDrAj@Tb@Pd@PnC~@nAd@d@RVLr@\\n@\\XRn@b@j@`@p@h@d@`@b@b@h@n@^d@d@l@b@v@f@z@FNb@`Ap@hB^`BXxAPjA?@Bb@BTDdADdB?f@A\\E`AAVCPGt@Kv@If@ALERETs@pDIZGXOv@O`ASlACPGn@CVEb@CLCh@ALC^GfAAr@AhA?j@@f@@x@?VBz@FjAFv@B`@P|AXfBf@pCx@tDf@~BVlAbAzEb@nBh@`CRt@FNFPDN^lAd@hAZl@NZl@lAn@`Ax@jAv@|@x@z@LNHHx@v@rAdA`An@b@Vz@h@`@RB?ZPPHfAd@~Aj@jBd@dDr@~Dz@dCd@xARt@FhAHb@@l@@fA?p@AtAEnBQ`BSfBUpFu@dC[bBUp@I\\EXAV?V?N?L@B?J?VBXFLBRHDBTLb@V^Td@b@p@r@d@b@HH~CrCb@b@lClCbAlAdBrBxBjCj@n@BD@BBJ"
+                    }
+                },
+                {
+                    "start": [
+                        3.0415465,
+                        101.3874738
+                    ],
+                    "end": [
+                        3.031552,
+                        101.3782656
+                    ],
+                    "polyline": {
+                        "points": "u`qQufyiRxAlA~A|AzFnFrChCjBdBpF`Fn@b@tBnB|@v@jEzDrKtJpC`CpA`A"
+                    }
+                },
+                {
+                    "start": [
+                        3.031552,
+                        101.3782656
+                    ],
+                    "end": [
+                        3.028995,
+                        101.3765114
+                    ],
+                    "polyline": {
+                        "points": "eboQemwiRD?D?B@D@F@`B~@HDp@`@dErCzB|A"
+                    }
+                },
+                {
+                    "start": [
+                        3.028995,
+                        101.3765114
+                    ],
+                    "end": [
+                        3.035769600000001,
+                        101.3680359
+                    ],
+                    "polyline": {
+                        "points": "grnQebwiRTJk@x@[b@eBlCyAtB_AzAsCrE}CtEcHdKkExGMTSTONKHA@e@V[LWH_@FYDa@B"
+                    }
+                },
+                {
+                    "start": [
+                        3.035769600000001,
+                        101.3680359
+                    ],
+                    "end": [
+                        3.0314879,
+                        101.3730586
+                    ],
+                    "polyline": {
+                        "points": "q|oQgmuiR?Wt@Gb@IZIXMZSX[j@{@|DcGrH_Ll@{@dA}A"
+                    }
+                },
+                {
+                    "start": [
+                        3.0314879,
+                        101.3730586
+                    ],
+                    "end": [
+                        3.0293932,
+                        101.3759558
+                    ],
+                    "polyline": {
+                        "points": "yaoQslviRXa@rAwBx@qAxA_C`B_C~@wA"
+                    }
+                },
+                {
+                    "start": [
+                        3.0293932,
+                        101.3759558
+                    ],
+                    "end": [
+                        3.0414478,
+                        101.3872161
+                    ],
+                    "polyline": {
+                        "points": "utnQw~viRBS@I?M?MCSqBsAqCkBmA_AuAgAoA_ACCEEAEIQaBsAmBeBqI_IuCkCaIcHoAiAoAiAgAeAiAeAqBiB{@w@qCgCkBiBaAw@eA}@"
+                    }
+                },
+                {
+                    "start": [
+                        3.0414478,
+                        101.3872161
+                    ],
+                    "end": [
+                        3.0688682,
+                        101.4551167
+                    ],
+                    "polyline": {
+                        "points": "a`qQceyiR]KECIEs@k@cAu@iBqA_Aw@WW_@_@c@e@oBmBcA{@gGwFs@q@g@_@WQ_@QOGKEECe@Ok@Kg@GSAo@AS?M?O@YBq@Hu@JwARkC\\eC^aALm@FaBN{ADs@AcA?g@A]?WAc@Co@Gq@Em@Iq@KcB]gIcBm@O_AUkA_@iA_@_@Oq@]e@SYOCAw@a@IGo@_@g@]i@_@i@a@g@e@c@_@GEMQa@_@Y]SSa@e@]g@a@k@]e@[i@g@aAMUQ]M[O_@CG[y@M_@GSUq@Sy@Qs@Qw@_@cBGY}AkHEUeA{E_AyESwACQIy@Iw@Ek@Eq@I}@AiAA]CqCFyAD{@@YFqAJcA@IVqBPkA\\aBHa@`@mBRgADSDSD]L{@BYFs@@OBc@BaA?q@Au@C_AAICc@ASO_BIk@Kg@ScAW}@]gAa@aAEIQ]MUWe@_@m@S[c@o@m@q@g@i@aAy@eAu@KIw@e@y@e@w@_@]OcAc@iAc@yAi@MEeA_@WKwHsCo@Ws@U[MYKe@QeC}@_C}@CAaBk@YKeAe@uG{BaC_A}Ac@s@WiF{BaBo@{CoAqAq@iAq@{B}ASS_BuAaBcB[c@g@s@s@kAaB{C]{@g@oAi@oBKg@Me@G[Ke@E[K{@M_AEk@Gy@Cm@CaAAuA?WCiOOco@A_@@s@AwEAsC?i@A{BE}C?aA?k@@i@?EBa@B_@?AB]Hq@Hi@FSVu@Tq@HMZk@V_@HKLM^_@ROf@c@XQ^S@?dAe@d@OTEdAUJCTE~AY|FeAzE{@vJiBXENGbCe@DAZEFANEPE^Kp@Yp@_@p@_@n@g@l@e@v@y@`@Yv@u@TSXYZWHGrAgAj@c@bBgANK\\SBAPKpBeAtBcAB?DAx@@"
+                    }
+                },
+                {
+                    "start": [
+                        3.0688682,
+                        101.4551167
+                    ],
+                    "end": [
+                        3.0662941,
+                        101.4631896
+                    ],
+                    "polyline": {
+                        "points": "mkvQomfjRbCsBx@w@`@g@^i@\\m@Zq@Xs@DQBIRy@Hk@JmAF_APqC?OXoEHwAPoC`@cGHmA"
+                    }
+                },
+                {
+                    "start": [
+                        3.0662941,
+                        101.4631896
+                    ],
+                    "end": [
+                        3.0688179,
+                        101.4690862
+                    ],
+                    "polyline": {
+                        "points": "i{uQ}_hjRGw@Ds@Dq@@o@?ABg@CwAEkACMMu@Ms@AKQi@[_Ao@uAa@s@e@m@g@i@MMi@i@WWOQYY{@cAW[MOMMWa@GS"
+                    }
+                },
+                {
+                    "start": [
+                        3.0688179,
+                        101.4690862
+                    ],
+                    "end": [
+                        3.0930505,
+                        101.5500787
+                    ],
+                    "polyline": {
+                        "points": "ckvQydijRU]OQeCcDOSIKkFoGY]}AkBo@u@kDeE_@i@{@qAkAmBMQ_@k@o@mAg@_AMWa@w@KQWk@e@kAUe@qCyGACO_@gCaGoAyCaA{BSa@M[w@cBc@{@S]sAuBs@eAe@k@gAsAyBcC[[EGeFkFYYWW}BaCYY{@}@iEoE_D}CkCsCiB_CMOKOuBgCQUi@o@gF_HeAwAqEyFsBiCKOyEgGiD_FeA{AqAmBOY}CgF[k@KW_@y@]aAMe@CKSy@[yAI_ACm@EgAAcAByD@oADwC@UHyDBoB@U@a@BcA?ABcBB_B@}B?eB?aDCaC?E?Y?C?c@EaCC}AMmICsBGuEAkAAeAAc@Ac@CeAKuIAqD?wE@c@?u@B}B?c@@c@?c@HoH?oAB_I?mBA[CiA?GA[Aa@?ACs@E}@G{@IgAIcAG}@gC}WOyAKuAIuAE{B?w@B{@?I@}@@C@_@@YDu@Hu@Ju@Js@^wB`@eCl@gDr@kEt@cEVaB|AcJF]\\qBTeBPeBNcCDmA@m@?i@EeBY}FGmA"
+                    }
+                },
+                {
+                    "start": [
+                        3.0930505,
+                        101.5500787
+                    ],
+                    "end": [
+                        3.0875504,
+                        101.550696
+                    ],
+                    "polyline": {
+                        "points": "qb{Q__yjRMc@CUKi@Oe@AEMQCEOOWO[I_@CW?MBWJUNUXM^EPATB\\?DDZJf@HXHPFNDLFNFJHL`@d@TRf@\\f@\\n@X\\JXF^F^Fb@BfAA`@C`@EDA`@G@?FAn@Sh@SVIHCt@YhAe@vJuExCwA"
+                    }
+                },
+                {
+                    "start": [
+                        3.0875504,
+                        101.550696
+                    ],
+                    "end": [
+                        2.9268353,
+                        101.6020636
+                    ],
+                    "polyline": {
+                        "points": "e`zQ{byjRTEb@Ul@St@SZIh@Mh@O\\GrAWXEj@Gv@Ib@Cp@Cl@Cl@CfAAlA?zCBt@@h@?\\?lACbAAtBCVAb@ARAt@EhCQdCUt@ITETChBW|Cg@dAS^G`@GXE~Dq@t@Mt@MTEhAQPA|Ci@`@G~Dq@r@MTETE|AYr@MlAYfAYb@M`@MNEtBo@BAZMhBs@TM^O^Q^QhB}@lBaAd@Ur@a@dAo@hAq@lC}AtAq@bBi@\\G`AU@?jAU`AOvAOr@Eb@Cb@EVAxCQN?bAARA\\CdAMVEj@I|@Sh@KLCRGt@SfA_@v@a@|@g@|@o@nB}AxAmAp@m@xEaEnAeAjB}AjDaDnAaAzCiC`A{@j@c@pEuDlAgA|E_E|CgCFIlA}@xBqAzA}@`Bq@p@Y\\OnEaB`@O|@]fE_B~BaAv@[dBq@^OvDqAtDqAfBi@zAa@bAYv@S`MyCnEeA^KDApBg@rBe@fB_@`ASdDm@tDk@rAOtAOxDe@dC]nC_@zAYjDm@jB_@^IxHiB^ERExAa@jEsAd@Md@O@A|Bu@nHqCxCcAlGkBfAYjFqAdB[pAUREVEl@KpAQvC_@lAMfAKDAbBOfCQ~DSz@CxDGjD?zCBV?zBBbAD~BHtAHVBdAFrAHdBP`CZxBZx@J`Er@bDn@bAV`@Jd@JnCz@tBj@hC|@ZJ`Cx@fDvAvAl@\\Nr@V|Ap@d@RtEnBvF`ChGjC~Ap@bAb@nBv@\\NLD^N^PzCjAh@RfA^FBpAb@jBf@`@H~EfA~@NpATHBr@Jh@FpBVvCX~AJlBDD?hGLvAAjBCRARAh@A|@EhAGxCSdBQvAOx@Mz@KnB_@|D{@dBe@r@SzBs@lC}@jBw@pCsArAs@p@]j@]zCgBnGwDbFsCvCcB|G_E\\[h@WnLaHhC{AnHiEjDoB^UjNeIVORMfAo@hFyCtFeD\\S\\S\\SxA{@\\S\\ShAq@|LiHvFaDnGsDpAw@nBiAhJsFtAu@hDkBxBiA`Ai@pL}F|@c@^On@[jCiA`H{CpF{BJGzRiIn]uNfAe@|BaAtAk@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9268353,
+                        101.6020636
+                    ],
+                    "end": [
+                        2.9232744,
+                        101.6062766
+                    ],
+                    "polyline": {
+                        "points": "wszP{cckRr@i@r@[r@[VMtB{@fBw@dBs@t@]TOPMPKBEDCRU@A@ANQLWNWHUFWHYD[DW?A?C@_@?]AYASAQAI@k@QoA"
+                    }
+                },
+                {
+                    "start": [
+                        2.9232744,
+                        101.6062766
+                    ],
+                    "end": [
+                        2.9275873,
+                        101.6197537
+                    ],
+                    "polyline": {
+                        "points": "m}yPg~ckRc@aCcEoUcBmHKa@Wy@a@kBg@{Ba@aB_@yAg@qBg@}BQu@_@}Am@iCk@yBAGc@{ASq@S{@c@kBU_A"
+                    }
+                },
+                {
+                    "start": [
+                        2.9275873,
+                        101.6197537
+                    ],
+                    "end": [
+                        2.9413037,
+                        101.6288626
+                    ],
+                    "polyline": {
+                        "points": "mxzPmrfkRm@mCsBmI]uASm@Ug@[s@_@w@c@w@i@m@_AcAs@s@?Ae@Yi@[{@g@mBw@oAa@i@Ms@OaAQCAg@EcAIiEMwJUw@CqCIq@E}@GcAOuAWm@QiA_@w@[o@]g@Y]Uy@m@y@s@k@o@{@aACEo@{@]i@IK"
+                    }
+                },
+                {
+                    "start": [
+                        2.9413037,
+                        101.6288626
+                    ],
+                    "end": [
+                        2.9410943,
+                        101.6326435
+                    ],
+                    "polyline": {
+                        "points": "cn}PkkhkRc@[Y_@QUi@q@MQ]g@u@aAWWAAS[QWYa@AAMg@CY?C?ODMBKT_@VSROb@Wl@_@l@a@t@e@pBmA"
+                    }
+                },
+                {
+                    "start": [
+                        2.9410943,
+                        101.6326435
+                    ],
+                    "end": [
+                        2.9368227,
+                        101.6334733
+                    ],
+                    "polyline": {
+                        "points": "yl}P_cikRAA?AA??A?AAA?A?C?A?A?A?A?A?A@A?A@A?A@A@A?A@A@?@A@?@A@?@A@?@?@?@?@?B?@?@?@@@?@@@?@@@??@@@@@@@?@@@?@?@@@?@?@?@?@?@?@?BA@?@?@A@A@A@A@A@A@Jr@Jp@FVJRBDPPJHj@Xr@Xd@\\Z\\@BLPDJBFN\\F\\HXN`@R`@PZXZ`@`@f@T\\NRBZF\\Dd@BX?PAXCRCXGRGRIVMDATOTQVWHMDGPYLWLg@F[Dg@?c@?EA]AKCSAOEYI[Oi@Qg@KUM_@I_@Mg@G]A_@Be@AAAA?AA??AAA?A?AA??A?A?A?A?A?A?A@A?A?A@??A?A@?@A"
+                    }
+                },
+                {
+                    "start": [
+                        2.9368227,
+                        101.6334733
+                    ],
+                    "end": [
+                        2.9365923,
+                        101.6334284
+                    ],
+                    "polyline": {
+                        "points": "cr|PehikR?A@??A@?@A@??A@?@?@?@A@?@?@?@?@@@?@?@@@??@@?@@@@@??@@@?@@@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9365923,
+                        101.6334284
+                    ],
+                    "end": [
+                        2.9342976,
+                        101.6335633
+                    ],
+                    "polyline": {
+                        "points": "up|P}gikR|BGhGM`AC"
+                    }
+                },
+                {
+                    "start": [
+                        2.9342976,
+                        101.6335633
+                    ],
+                    "end": [
+                        2.9141097,
+                        101.634991
+                    ],
+                    "polyline": {
+                        "points": "kb|PwhikRTAr@ArBErACfAC^AZAJ?nCGrACVA|@Al@Ad@?z@BVBT@b@Bf@B^Dp@Hp@LxDl@n@Jx@LhCb@fAPnEt@l@Hl@JR@`@DT@b@@n@@n@AN?L?\\AZCd@E\\EVCVGPCj@Mb@Md@OVKf@U|@c@z@e@LGRMb@UrAu@TMnBm@jAS`BUd@C`@Az@Cb@Ab@A~FO~AEl@CbAI`@Cl@IZILCtBk@"
+                    }
+                },
+                {
+                    "start": [
+                        2.9141097,
+                        101.634991
+                    ],
+                    "end": [
+                        2.9121707,
+                        101.6373917
+                    ],
+                    "polyline": {
+                        "points": "edxPuqikRf@Qb@QXQPKVQTSVU\\a@Xc@T]Pa@Ti@HWVu@l@cB"
+                    }
+                },
+                {
+                    "start": [
+                        2.9121707,
+                        101.6373917
+                    ],
+                    "end": [
+                        2.9109129,
+                        101.6433268
+                    ],
+                    "polyline": {
+                        "points": "axwPu`jkRX}@JSRs@L_@Ng@Ja@H_@Jg@@QDUDk@@q@?[?S?IAa@A[CU?AKeAK_AWqCCa@?a@?E@WB]FUFSHSJQ@CDELQRQPOXSZQNI"
+                    }
+                }
+            ]
+        }
+    ]
+}

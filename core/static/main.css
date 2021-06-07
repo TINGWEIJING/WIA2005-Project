@@ -43,7 +43,9 @@ textarea.success {
   z-index: 1000;
 }
 
-.audio-graph-height{
-  /* height: 10px; */
-  /* position: relative; */
+.graph-img-height{
+  height: auto;
+  width: auto;
+  max-height: 300px;
+  max-width: 500px;
 }

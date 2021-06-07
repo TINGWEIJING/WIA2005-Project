@@ -1,4 +1,3 @@
-import data from './routesSampleResponse.js';
 const cityLinkBtn = document.getElementById('city-link-btn');
 const posLajuBtn = document.getElementById('pos-laju-btn');
 const gdexBtn = document.getElementById('gdex-btn');
@@ -18,27 +17,27 @@ const hubInfo = [
   {
     title: 'City-link Express',
     deliveryHub: 'Port Klang',
-    coordinate: `3.0319924887507144, \n101.37344116244806`
+    coordinate: `3.0319924887507144, 101.37344116244806`
   },
   {
     title: 'Pos Laju',
     deliveryHub: 'Petaling Jaya',
-    coordinate: `3.112924170027219, \n101.63982650389863 `
+    coordinate: `3.112924170027219, 101.63982650389863 `
   },
   {
     title: 'GDEX',
     deliveryHub: 'Batu Caves',
-    coordinate: `3.265154613796736, \n101.68024844550233`
+    coordinate: `3.265154613796736, 101.68024844550233`
   },
   {
     title: 'J&T',
     deliveryHub: 'Kajang',
-    coordinate: `2.9441205329488325, \n101.7901521759029 `
+    coordinate: `2.9441205329488325, 101.7901521759029 `
   },
   {
     title: 'DHL',
     deliveryHub: 'Sungai Buloh',
-    coordinate: `3.2127230893650065, \n101.57467295692778`
+    coordinate: `3.2127230893650065, 101.57467295692778`
   },
 ]
 
@@ -120,7 +119,6 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
       minLat = Math.abs(leg.start[0] - hubLat);
       minLng = Math.abs(leg.start[1] - hubLng);
       hubIdx = index;
-      console.log('found');
     }
   });
   // console.log(hubIdx);
@@ -303,21 +301,30 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
   ret.reverse().forEach((article, index) => {
     const { negative, neutral, positive, stop } = article.frequency;
     const div = document.createElement('div');
-    div.setAttribute('class', 'px-4 pb-5 col-12 col-lg-8');
-    div.setAttribute('style', 'height: 15rem;');
+    div.setAttribute('class', 'px-4 2 col-12 col-lg-8');
+    div.setAttribute('style', 'min-height: 10rem;');
     div.innerHTML = `
-    <div id="title_${index}"></div>
-    <canvas id="myChart_${index}"></canvas>`;
+    <div class="row">
+      <div id="title_${index}" class="col-12"></div>
+      <div class="col-12 col-md-9">
+        <canvas id="myChart_${index}" style="min-height: 10rem;"></canvas>
+      </div>
+      <div class="col-12 col-md-3 d-flex flex-column">
+        <div class="d-flex justify-content-center">Ratio (Neg. over pos.):</div>
+        <div class="h3 flex-grow-1 d-flex justify-content-center align-items-center">${article.ratio.toFixed(3)}</div>
+      </div>
+    </div>
+    `;
     var ctx = div.querySelector(`#myChart_${index}`).getContext('2d');
     Chart.defaults.plugins.legend.display = false;
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Negative', 'Neutral', 'Positive', 'Stop Word'],
+        labels: ['Negative', 'Positive', 'Neutral', 'Stop Word'],
         datasets: [{
           label: "Number of word",
           color: "white",
-          data: [negative, neutral, positive, stop],
+          data: [negative, positive, neutral, stop],
           backgroundColor: [
             'rgba(54, 162, 235, 1)',
             'rgba(54, 162, 235, 1)',
@@ -356,7 +363,7 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     const values = Object.keys(article.frequency).map(key => article.frequency[key]);
     const cap = div.querySelector(`#title_${index}`);
     cap.setAttribute('class', 'mt-2');
-    cap.innerHTML = `<a href="${article.url}">${article.title}</a>` + ` - <i>${getResult(article.result_value)} article</i>`;
+    cap.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>` + ` - <i>${getResult(article.result_value)} article</i>`;
     insertAfter(div, chartTitle);
     // insert courier company name
     if ((index - 2) % 3 === 0) {
