@@ -16,8 +16,6 @@
     <!-- icon - fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <!-- chart.css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
     <!-- custom css files -->
     <link rel='stylesheet' type='text/css' media='screen' href='../static/normalize.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../static/main.css'>
@@ -31,8 +29,8 @@
 <body class="bg-dark">
     <main class="container-fluid text-white">
         <div class="row d-flex justify-content-center">
-            <span class="h3 py-3">WIA2005 - Algorithm Analysis and Design</span><br/>
-            <span class="h3 py-3">Tutorial Group 9 - Group A</span>
+            <div class="col-12 h3 pt-3 d-flex justify-content-center">WIA2005 - Algorithm Analysis and Design</div>
+            <div class="col-12 h3 pb-3 d-flex justify-content-center">Tutorial Group 9 - Group A</div>
             <form class="col-12" id="generate-maps" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -62,7 +60,9 @@
                             <th scope="col">Courier Company</th>
                             <th scope="col">Delivery Hub</th>
                             <th scope="col">Coordinate</th>
-                            <th scope="col">Distance (km)</th>
+                            <th scope="col">From Origin to Hub (km)</th>
+                            <th scope="col">From Hub to Destination(km)</th>
+                            <th scope="col">Total Distance (km)</th>
                         </tr>
                     </thead>
                     <tbody id="result-table-tbody">
@@ -74,6 +74,8 @@
                                 101.37344116244806
                             </td>
                             <td>NA</td>
+                            <td>NA</td>
+                            <td>NA</td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
@@ -81,6 +83,8 @@
                             <td>Petaling Jaya</td>
                             <td>3.112924170027219,
                                 101.63982650389863</td>
+                            <td>NA</td>
+                            <td>NA</td>
                             <td>NA</td>
                         </tr>
                         <tr>
@@ -90,6 +94,8 @@
                             <td>3.265154613796736,
                                 101.68024844550233</td>
                             <td>NA</td>
+                            <td>NA</td>
+                            <td>NA</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
@@ -98,6 +104,8 @@
                             <td>2.9441205329488325,
                                 101.7901521759029</td>
                             <td>NA</td>
+                            <td>NA</td>
+                            <td>NA</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
@@ -105,6 +113,8 @@
                             <td>Sungai Buloh</td>
                             <td>3.2127230893650065,
                                 101.57467295692778</td>
+                            <td>NA</td>
+                            <td>NA</td>
                             <td>NA</td>
                         </tr>
                     </tbody>
@@ -162,7 +172,7 @@
 
             <h2 class="text-white col-12 d-flex justify-content-center pt-3" id="chart-title"> Sentiment Analysis Statistics </h2>
             <div class="col-12">
-                <div class="d-flex flex-row-reverse pb-3"><button type="button" class="btn btn-primary" id="direct-to-analysis-page">Open Sentiment Analysis Page</button>
+                <div class="d-flex justify-content-center pb-3 pt-4"><button type="button" class="btn btn-primary" id="direct-to-analysis-page">Open Audio Analysis Page</button>
                 </div>
             </div>
             <div class="col-12">
