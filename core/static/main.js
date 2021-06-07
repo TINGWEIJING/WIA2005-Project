@@ -17,27 +17,27 @@ const hubInfo = [
   {
     title: 'City-link Express',
     deliveryHub: 'Port Klang',
-    coordinate: `3.0319924887507144, \n101.37344116244806`
+    coordinate: `3.0319924887507144, 101.37344116244806`
   },
   {
     title: 'Pos Laju',
     deliveryHub: 'Petaling Jaya',
-    coordinate: `3.112924170027219, \n101.63982650389863 `
+    coordinate: `3.112924170027219, 101.63982650389863 `
   },
   {
     title: 'GDEX',
     deliveryHub: 'Batu Caves',
-    coordinate: `3.265154613796736, \n101.68024844550233`
+    coordinate: `3.265154613796736, 101.68024844550233`
   },
   {
     title: 'J&T',
     deliveryHub: 'Kajang',
-    coordinate: `2.9441205329488325, \n101.7901521759029 `
+    coordinate: `2.9441205329488325, 101.7901521759029 `
   },
   {
     title: 'DHL',
     deliveryHub: 'Sungai Buloh',
-    coordinate: `3.2127230893650065, \n101.57467295692778`
+    coordinate: `3.2127230893650065, 101.57467295692778`
   },
 ]
 
@@ -301,15 +301,15 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
   ret.reverse().forEach((article, index) => {
     const { negative, neutral, positive, stop } = article.frequency;
     const div = document.createElement('div');
-    div.setAttribute('class', 'px-4 pb-5 col-12 col-lg-8');
-    div.setAttribute('style', 'min-height: 15rem;');
+    div.setAttribute('class', 'px-4 2 col-12 col-lg-8');
+    div.setAttribute('style', 'min-height: 10rem;');
     div.innerHTML = `
     <div class="row">
       <div id="title_${index}" class="col-12"></div>
-      <div class="col-12 col-md-10">
-        <canvas id="myChart_${index}" style="min-height: 15rem;"></canvas>
+      <div class="col-12 col-md-9">
+        <canvas id="myChart_${index}" style="min-height: 10rem;"></canvas>
       </div>
-      <div class="col-12 col-md-2 d-flex flex-column">
+      <div class="col-12 col-md-3 d-flex flex-column">
         <div class="d-flex justify-content-center">Ratio (Neg. over pos.):</div>
         <div class="h3 flex-grow-1 d-flex justify-content-center align-items-center">${article.ratio.toFixed(3)}</div>
       </div>

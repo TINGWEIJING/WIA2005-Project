@@ -22,7 +22,7 @@ class GoogleDirectionsRouting:
         self.origin = origin
         self.destination = destination
         self.routes = []
-        return
+        # return
         for hub in self.__class__.HUB_LOCATION:
             # lat,long coordinate for waypoint
             print(hub)
@@ -102,11 +102,11 @@ class GoogleDirectionsRouting:
         # return sorted Ordered Dict
         
         # DEBUG IN
-        with open('data.json', 'r') as outfile:
-            self.sorted_routes = json.load(outfile)
+        # with open('data.json', 'r') as outfile:
+        #     self.sorted_routes = json.load(outfile)
         # DEBUG OUT
-        # with open('data.json', 'w') as outfile:
-        #     json.dump(self.sorted_routes, outfile, indent=4)
+        with open('data.json', 'w') as outfile:
+            json.dump(self.sorted_routes, outfile, indent=4)
         return self.sorted_routes
 
     @classmethod
