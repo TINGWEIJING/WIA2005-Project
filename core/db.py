@@ -39,6 +39,7 @@ def init_db():
     db = get_db()
     # insert some data
     data_list = SentimentAnalysis.retrieve_all()
+    db.analysis.remove({})
     for data in data_list:
         filter = {
             "courier":data['courier'],
