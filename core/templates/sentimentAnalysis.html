@@ -27,7 +27,7 @@
 <body class="bg-dark">
   <main class="container-fluid text-white">
     <div class="row d-flex justify-content-center">
-      <span class="h1 py-3">Sentiment Analysis</span>
+      <span class="h1 py-3">Audio Analysis</span>
       <div class="col-12">
         <div class="col-12 d-flex justify-content-center py-2">
           <div>
@@ -47,6 +47,7 @@
           Transcript
         </div>
         <div class="col-12 pt-4">
+          <div class="h3">Using Resampled Audio</div>
           <table class="table table-striped table-dark table-bordered table-hover overflow-auto d-block">
             <thead>
               <tr>
@@ -56,22 +57,20 @@
               </tr>
             </thead>
             <tbody id="result-sample-1-table-tbody">
-              <!-- <tr>
-                <td class="w-100 audio-graph-height">
-                  <img src='../static/graph 1/1_kurang.jpg' alt="" class="graph-img-height">
-                </td>
-                <td><audio controls>
-                    <source src="example2.ogg" type="audio/ogg">
-                    <source src="example2.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                  </audio></td>
-                <td><audio controls>
-                    <source src="example2.ogg" type="audio/ogg">
-                    <source src="example2.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                  </audio>
-                </td>
-              </tr> -->
+            </tbody>
+          </table>
+        </div>
+        <div class="col-12 pt-4">
+          <div class="h3">Using Own Sample Audio</div>
+          <table class="table table-striped table-dark table-bordered table-hover overflow-auto d-block">
+            <thead>
+              <tr>
+                <th scope="col">Graph</th>
+                <th scope="col">Actual word</th>
+                <th scope="col">Detected word</th>
+              </tr>
+            </thead>
+            <tbody id="result-sample-2-table-tbody">
             </tbody>
           </table>
         </div>

@@ -31,27 +31,28 @@
 <body class="bg-dark">
     <main class="container-fluid text-white">
         <div class="row d-flex justify-content-center">
-            <span class="h1 py-3">Project Title</span>
+            <span class="h3 py-3">WIA2005 - Algorithm Analysis and Design</span><br/>
+            <span class="h3 py-3">Tutorial Group 9 - Group A</span>
             <form class="col-12" id="generate-maps" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="start-destination">Origin (Address)</label>
                         <div></div>
                         <textarea rows="4" class="form-control" id="start-destination"
-                            aria-describedby="start destination">26, Jalan Kejora U5/121A, Taman Puteri Subang</textarea>
+                            aria-describedby="start destination">9-1, Jalan Mawar 4, Taman Kosaso, 48200 Serendah, Selangor</textarea>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="end-destination">Destination (Address)</label>
                         <div></div>
                         <textarea rows="4" class="form-control" id="end-destination"
-                            aria-describedby="end destination">University of Malaya, Kuala Lumpur</textarea>
+                            aria-describedby="end destination">2, Jalan Kubah U8/58, Bukit Jelutong, 40150 Shah Alam, Selangor</textarea>
                     </div>
                 </div>
                 <div class="d-flex flex-row-reverse pb-3"><button type="submit" class="btn btn-primary" id="submit-input-btn">Submit</button>
                 </div>
             </form>
             <div class="col-12">
-                <h2 class="text-white col-12 d-flex justify-content-center pt-3"> Result </h2>
+                <h2 class="text-white col-12 d-flex justify-content-center pt-3"> Distance Result </h2>
                 <table class="table table-striped table-dark table-bordered table-hover">
                     <thead>
                         <tr>
@@ -159,7 +160,7 @@
 
             <h2 class="text-white col-12 d-flex justify-content-center pt-3" id="chart-title"> Sentiment Analysis Statistics </h2>
             <div class="col-12">
-                <div class="d-flex flex-row-reverse pb-3"><button type="button" class="btn btn-primary" id="direct-to-analysis-page">Enter Sentiment Analysis Page</button>
+                <div class="d-flex flex-row-reverse pb-3"><button type="button" class="btn btn-primary" id="direct-to-analysis-page">Open Sentiment Analysis Page</button>
                 </div>
             </div>
             <div class="col-12">
@@ -171,7 +172,7 @@
                             <th scope="col">Courier Company</th>
                             <th scope="col">Delivery Hub</th>
                             <th scope="col">Distance (km)</th>
-                            <th scope="col">Overall Sentiment Value</th>
+                            <th scope="col">Mean Ratio</th>
                         </tr>
                     </thead>
                     <tbody id="ranking-table-tbody">

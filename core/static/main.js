@@ -1,4 +1,3 @@
-import data from './routesSampleResponse.js';
 const cityLinkBtn = document.getElementById('city-link-btn');
 const posLajuBtn = document.getElementById('pos-laju-btn');
 const gdexBtn = document.getElementById('gdex-btn');
@@ -120,7 +119,6 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
       minLat = Math.abs(leg.start[0] - hubLat);
       minLng = Math.abs(leg.start[1] - hubLng);
       hubIdx = index;
-      console.log('found');
     }
   });
   // console.log(hubIdx);
@@ -304,20 +302,29 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     const { negative, neutral, positive, stop } = article.frequency;
     const div = document.createElement('div');
     div.setAttribute('class', 'px-4 pb-5 col-12 col-lg-8');
-    div.setAttribute('style', 'height: 15rem;');
+    div.setAttribute('style', 'min-height: 15rem;');
     div.innerHTML = `
-    <div id="title_${index}"></div>
-    <canvas id="myChart_${index}"></canvas>`;
+    <div class="row">
+      <div id="title_${index}" class="col-12"></div>
+      <div class="col-12 col-md-10">
+        <canvas id="myChart_${index}" style="min-height: 15rem;"></canvas>
+      </div>
+      <div class="col-12 col-md-2 d-flex flex-column">
+        <div class="d-flex justify-content-center">Ratio (Neg. over pos.):</div>
+        <div class="h3 flex-grow-1 d-flex justify-content-center align-items-center">${article.ratio.toFixed(3)}</div>
+      </div>
+    </div>
+    `;
     var ctx = div.querySelector(`#myChart_${index}`).getContext('2d');
     Chart.defaults.plugins.legend.display = false;
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Negative', 'Neutral', 'Positive', 'Stop Word'],
+        labels: ['Negative', 'Positive', 'Neutral', 'Stop Word'],
         datasets: [{
           label: "Number of word",
           color: "white",
-          data: [negative, neutral, positive, stop],
+          data: [negative, positive, neutral, stop],
           backgroundColor: [
             'rgba(54, 162, 235, 1)',
             'rgba(54, 162, 235, 1)',
