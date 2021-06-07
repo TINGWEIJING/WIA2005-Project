@@ -363,7 +363,7 @@ fetch('http://127.0.0.1:5000/api/getAnalysis', {
     const values = Object.keys(article.frequency).map(key => article.frequency[key]);
     const cap = div.querySelector(`#title_${index}`);
     cap.setAttribute('class', 'mt-2');
-    cap.innerHTML = `<a href="${article.url}">${article.title}</a>` + ` - <i>${getResult(article.result_value)} article</i>`;
+    cap.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>` + ` - <i>${getResult(article.result_value)} article</i>`;
     insertAfter(div, chartTitle);
     // insert courier company name
     if ((index - 2) % 3 === 0) {
