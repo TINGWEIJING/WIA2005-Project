@@ -42,7 +42,6 @@ const hubInfo = [
 ]
 
 btns.forEach((btn, idx) => {
-  console.log(btn);
   btn.addEventListener('click', (event) => {
     displayNone(event.currentTarget.id);
     event.preventDefault();
@@ -113,18 +112,13 @@ function initialize(mapCanvasEle, originLat, originLng, hubLat, hubLng, destinat
   // parse legs
   let hubIdx = -1, minLat = 100, minLng = 100;
   legs.forEach((leg, index) => {
-    // console.log(leg.start[0] + " " + leg.start[1]);
-    // console.log(hubLat + " " + hubLng);
     if (Math.abs(leg.start[0] - hubLat) <= minLat && Math.abs(leg.start[1] - hubLng) <= minLng) {
       minLat = Math.abs(leg.start[0] - hubLat);
       minLng = Math.abs(leg.start[1] - hubLng);
       hubIdx = index;
     }
   });
-  // console.log(hubIdx);
   const legsAfterHub = legs.splice(hubIdx);
-  // console.log(legs);
-  // console.log(legsAfterHub);
   const googleLatLngLegsArr = legs.map(leg => {
     return google.maps.geometry.encoding.decodePath(leg.polyline.points);
   });
@@ -228,10 +222,7 @@ form.addEventListener('submit', evt => {
       const jntInfo = routing.filter(route => route.hub === 'J&T')[0];
       const dhlInfo = routing.filter(route => route.hub === 'DHL')[0];
       const couriers = [cityInfo, posInfo, gdexInfo, jntInfo, dhlInfo];
-      // console.log(couriers);
-      // console.log(JSON.stringify(data));
       canvas.forEach((single_canvas, index) => {
-        // console.log(single_canvas);
         const courier = couriers[index];
         const { origin, hubLocation, destination } = courier;
         console.log(courier);
@@ -250,8 +241,12 @@ form.addEventListener('submit', evt => {
         tableDataArr[0].innerText = tempHub.title;
         tableDataArr[1].innerText = tempHub.deliveryHub;
         tableDataArr[2].innerText = tempHub.coordinate;
-        const distance = parseFloat(routing[index]['distance']);
+        let distance = parseFloat(routing[index]['distance']);
         tableDataArr[3].innerText = distance.toFixed(2);
+        distance = parseFloat(routing[index]['path1_distance']);
+        tableDataArr[4].innerText = distance.toFixed(2);
+        distance = parseFloat(routing[index]['path2_distance']);
+        tableDataArr[5].innerText = distance.toFixed(2);
       });
       // update ranking table
       const rankingTableTbody = document.getElementById('ranking-table-tbody');

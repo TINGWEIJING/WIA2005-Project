@@ -63,14 +63,13 @@ class GoogleDirectionsRouting:
                     if(i == len(res['routes'][0]['legs'][path]['steps'])-1):
                         destinationLocation = [res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lat"],
                                                res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lng"]]
-
                     start = [res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lat"],
                              res['routes'][0]['legs'][path]['steps'][i]["start_location"]["lng"]]
                     end = [res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lat"],
                            res['routes'][0]['legs'][path]['steps'][i]["end_location"]["lng"]]
                     legs.append({
-                        "start": start,
-                        "end": end,
+                        "start":start,
+                        "end":end,
                         "polyline": res['routes'][0]['legs'][path]['steps'][i]["polyline"]
                     })
 
@@ -81,6 +80,8 @@ class GoogleDirectionsRouting:
                 "hubLocation": [self.__class__.HUB_LOCATION[hub]["lat"], self.__class__.HUB_LOCATION[hub]["long"]],
                 "destination": destinationLocation,
                 "distance": distance,
+                "path1_distance": float(res['routes'][0]['legs'][0]['distance']['text'].replace(' km', '')),
+                "path2_distance": float(res['routes'][0]['legs'][1]['distance']['text'].replace(' km', '')),
                 "legs": legs
             })
         
