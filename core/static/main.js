@@ -242,11 +242,11 @@ form.addEventListener('submit', evt => {
         tableDataArr[1].innerText = tempHub.deliveryHub;
         tableDataArr[2].innerText = tempHub.coordinate;
         let distance = parseFloat(routing[index]['distance']);
-        tableDataArr[3].innerText = distance.toFixed(2);
-        distance = parseFloat(routing[index]['path1_distance']);
-        tableDataArr[4].innerText = distance.toFixed(2);
-        distance = parseFloat(routing[index]['path2_distance']);
         tableDataArr[5].innerText = distance.toFixed(2);
+        distance = parseFloat(routing[index]['path1_distance']);
+        tableDataArr[3].innerText = distance.toFixed(2);
+        distance = parseFloat(routing[index]['path2_distance']);
+        tableDataArr[4].innerText = distance.toFixed(2);
       });
       // update ranking table
       const rankingTableTbody = document.getElementById('ranking-table-tbody');
