@@ -29,13 +29,13 @@ fetch('http://127.0.0.1:5000/api/getAudio', {
       <td class="w-100 audio-graph-height">
         <img src='${word.graph_img_path}' alt="" class="graph-img-height">
       </td>
-      <td><audio controls>
+      <td><audio controls class="pixel-200">
           <source src="${word.actual_audio_path}" type="audio/ogg">
           <source src="${word.actual_audio_path}" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
         <div class="col-12 d-flex justify-content-center pt-1 h4">${word.actual_word}</div></td>
-      <td><audio controls>
+      <td><audio controls class="pixel-200">
           <source src="${word.detected_audio_path}" type="audio/ogg">
           <source src="${word.detected_audio_path}" type="audio/mpeg">
           Your browser does not support the audio element.
