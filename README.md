@@ -103,6 +103,12 @@ flask run
    - [Read an audio file / Split audio files using Python](https://dataunbox.com/split-audio-files-using-python/)
    - [Simple Audio Processing in Python With Pydub](https://betterprogramming.pub/simple-audio-processing-in-python-with-pydub-c3a217dabf11)
    - [Automatic splitting of audio files on silence in Python](https://walczak.org/2019/02/automatic-splitting-audio-files-silence-python/) 
+   - MFCC
+     - [Cepstrum and MFCC](https://wiki.aalto.fi/display/ITSP/Cepstrum+and+MFCC)
+     - [Mel Frequency Cepstral Coefficient (MFCC) tutorial](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/)
+     - [Understanding Audio data, Fourier Transform, FFT and Spectrogram features for a Speech Recognition System](https://towardsdatascience.com/understanding-audio-data-fourier-transform-fft-spectrogram-and-speech-recognition-a4072d228520)
+     - [Introduction To Dynamic Time Warping](https://riptutorial.com/algorithm/example/24981/introduction-to-dynamic-time-warping)
+
 7. Billing infomation
    - [Google Cloud Billing Overview](https://developers.google.com/maps/billing/gmp-billing#billing-overview)
    - [Google Cloud Billing Credit](https://developers.google.com/maps/billing-credits)
