@@ -1,18 +1,17 @@
 from collections import OrderedDict
 
 
-
 class Company:
-    def __init__(self, name: str, sentiment_value: int, distance: float):
+    def __init__(self, name: str, mean_ratio: int, distance: float):
         self.name = name
-        self.sentiment_value = sentiment_value
+        self.mean_ratio = mean_ratio
         self.distance = distance
 
     def get_name(self) -> str:
         return self.name
 
-    def get_sentiment_value(self) -> int:
-        return self.sentiment_value
+    def get_mean_ratio(self) -> int:
+        return self.mean_ratio
 
     def get_distance(self) -> float:
         return self.distance
@@ -21,11 +20,12 @@ class Company:
     def __gt__(self, other: 'Company'):
         # if the difference in distance between first and second item is smaller or equal to 10 and the second one has better sentiment
         # if the second element is shorter than the first element (difference that is more than 10), means that second one is better
-        if abs(other.distance - self.distance) <= 10 and self.sentiment_value != other.sentiment_value:
-            return self.sentiment_value > other.sentiment_value
+        if abs(other.distance - self.distance) <= 10 and self.mean_ratio != other.mean_ratio:
+            return self.mean_ratio < other.mean_ratio
         else:
             return self.distance < other.distance
         # return (abs(other.distance - self.distance) <= 10 and other.sentiment_value <= self.sentiment_value) or other.distance - self.distance > 10
+
 
 class Ranking:
     def __init__(self, routes_data: dict, sentiment_data: dict):
@@ -39,20 +39,29 @@ class Ranking:
 
         # filter sentiment analysis data
         sentiment = sentiment_data.get('result')
-        _hub_sentiments = {}
+        _hub_mean_ratio = {}
         for obj in sentiment:
             _hub = obj.get('courier')
-            _value = obj.get('result_value')
-            if _hub_sentiments.get(_hub) is None:
-                _hub_sentiments[_hub] = _value
+            _value = obj.get('ratio')
+            if _hub_mean_ratio.get(_hub) is None:
+                _hub_mean_ratio[_hub] = (_value, 1)
             else:
-                _hub_sentiments[_hub] += _value
-    
+                new_value, new_count = _hub_mean_ratio[_hub]
+                new_value += _value
+                new_count += 1
+                _hub_mean_ratio[_hub] = (new_value, new_count)
+
+        # calculate mean ratio
+        for hub, ratio_count in _hub_mean_ratio.items():
+            ratio, count = ratio_count
+            mean_ratio = ratio / count
+            _hub_mean_ratio[hub] = mean_ratio
+
         self.companies = []
         for hub in _hub_dists.keys():
-            new_company = Company(name=hub, 
-            sentiment_value=_hub_sentiments[hub], 
-            distance=_hub_dists[hub])
+            new_company = Company(name=hub,
+                                  mean_ratio=_hub_mean_ratio[hub],
+                                  distance=_hub_dists[hub])
             self.companies.append(new_company)
 
         # sort
@@ -62,18 +71,17 @@ class Ranking:
         result = []
         for i, company in enumerate(self.companies):
             data = {
-                'ranking':i,
-                'hub':company.name,
-                'distance':company.distance,
-                'sentiment_value':company.sentiment_value
+                'ranking': i,
+                'hub': company.name,
+                'distance': company.distance,
+                'mean_ratio': company.mean_ratio
             }
             result.append(data)
         return result
 
-        
     @classmethod
     def insertionSort(cls, arr, left, right):
-        '''sorts array from left index to right index'''
+        '''Sorts array from left index to right index'''
         for i in range(left + 1, right + 1):
             j = i
             while j > left and arr[j] > arr[j - 1]:

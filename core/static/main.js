@@ -259,7 +259,7 @@ form.addEventListener('submit', evt => {
         tableDataArr[1].innerText = tempHub.deliveryHub;
         const distance = parseFloat(ranking[index]['distance']);
         tableDataArr[2].innerText = distance.toFixed(2);
-        tableDataArr[3].innerText = ranking[index]['sentiment_value'];
+        tableDataArr[3].innerText = ranking[index]['mean_ratio'].toFixed(3);
       })
       // conclusion
       const conclusion = document.getElementById('conclusion-text');
