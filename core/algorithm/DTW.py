@@ -8,9 +8,13 @@ import os
 
 
 class AudioAnalysis:
+    # == Constants ==
     FULL_SENTENCE = 'kurang jelas terhadap sistem pengagihan bonus dalam kalangan pegawai jabatan menjadi punca kepada kejadian mogok dan tindakan melempar barangan milik pelanggan oleh kakitangan J&T Express'
     SAMPLE_WORDS = FULL_SENTENCE.split()
-    PARENT_FOLDER = r'core\storage'
+    TARGET_AUDIO_NAME = 'J&T Sistem Pengagihan Bonus Tak Jelas.mp3'
+    TARGET_URL = r'https://youtu.be/OnAA1dIG6iY'
+    PARENT_FOLDER = r'..\static\full'
+    # == Folder Names ==
     FULL_TARGET_FOLDER = 'full'
     SAMPLE_FOLDER_1 = 'sample 1'
     SAMPLE_FOLDER_2 = 'sample 2'
@@ -18,10 +22,23 @@ class AudioAnalysis:
     GRAPH_FOLDER_2 = 'graph 2'
     DETECTED_FOLDER_1 = 'detected 1'
     DETECTED_FOLDER_2 = 'detected 2'
+    # == Librosa Audio ==
     AUDIO_SAMPLE_1 = []
     AUDIO_SAMPLE_2 = []
     TARGET_FULL_AUDIO = None
     TARGET_FULL_RATE = None
+    # == MFCC ==
+    MFCC_SAMPLE_1 = []
+    MFCC_SAMPLE_2 = []
+    TARGET_FULL_MFCC = None
+    # == DISTANCE 2D LISTS==
+    DIST_2D_1 = []
+    DIST_2D_2 = []
+    # == TIME RANGES LIST ==
+    TIME_RANGES_1 = []
+    TIME_RANGES_2 = []
+    # =========================
+
 
     def __init__(self) -> None:
         self.mfcc_samples_1 = []
@@ -66,7 +83,7 @@ class AudioAnalysis:
                 dists_2d[i][j] = single_dist
 
     def get_timeRange(dists: list, window_size: int):
-        '''Get time range from mfcc'''
+        '''Get time range from MFCC'''
         # smallest value index
         word_match_idx = dists.argmin()
         # get index bounds
