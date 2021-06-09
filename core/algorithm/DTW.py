@@ -150,11 +150,12 @@ class AudioAnalysis:
 
         # save to json
         raw_data = {}
+        folder = r'..\static'
         # target
         full_target_audio_data = {
             "audio_title": cls.TARGET_AUDIO_NAME,
             "source_link": cls.TARGET_URL,
-            "target_audio_path": os.path.join(cls.PARENT_FOLDER, cls.FULL_TARGET_FOLDER, cls.TARGET_AUDIO_NAME).replace("\\", "/"),
+            "target_audio_path": os.path.join(folder, cls.FULL_TARGET_FOLDER, cls.TARGET_AUDIO_NAME).replace("\\", "/"),
             "transcript": cls.FULL_SENTENCE
         }
 
@@ -167,9 +168,9 @@ class AudioAnalysis:
 
         for i, word in enumerate(cls.SAMPLE_WORDS):
             # sample 1
-            img_path = os.path.join(cls.PARENT_FOLDER, cls.GRAPH_FOLDER_1, f'{i+1}_{word}.jpg').replace("\\", "/")
-            actual_audio_path = os.path.join(cls.PARENT_FOLDER, cls.SAMPLE_FOLDER_1, f'{i+1}_{word}.mp3').replace("\\", "/")
-            detected_audio_path = os.path.join(cls.PARENT_FOLDER, cls.DETECTED_FOLDER_1, f'{i+1}_{word}.wav').replace("\\", "/")
+            img_path = os.path.join(folder, cls.GRAPH_FOLDER_1, f'{i+1}_{word}.jpg').replace("\\", "/")
+            actual_audio_path = os.path.join(folder, cls.SAMPLE_FOLDER_1, f'{i+1}_{word}.mp3').replace("\\", "/")
+            detected_audio_path = os.path.join(folder, cls.DETECTED_FOLDER_1, f'{i+1}_{word}.wav').replace("\\", "/")
 
             data = {
                 "actual_word": word,
@@ -180,9 +181,9 @@ class AudioAnalysis:
             sample_audio_1_data.append(data)
 
             # sample 2
-            img_path = os.path.join(cls.PARENT_FOLDER, cls.GRAPH_FOLDER_2, f'{i+1}_{word}.jpg').replace("\\", "/")
-            actual_audio_path = os.path.join(cls.PARENT_FOLDER, cls.SAMPLE_FOLDER_2, f'{i+1}_{word}.mp3').replace("\\", "/")
-            detected_audio_path = os.path.join(cls.PARENT_FOLDER, cls.DETECTED_FOLDER_2, f'{i+1}_{word}.wav').replace("\\", "/")
+            img_path = os.path.join(folder, cls.GRAPH_FOLDER_2, f'{i+1}_{word}.jpg').replace("\\", "/")
+            actual_audio_path = os.path.join(folder, cls.SAMPLE_FOLDER_2, f'{i+1}_{word}.mp3').replace("\\", "/")
+            detected_audio_path = os.path.join(folder, cls.DETECTED_FOLDER_2, f'{i+1}_{word}.wav').replace("\\", "/")
 
             data = {
                 "actual_word": word,
