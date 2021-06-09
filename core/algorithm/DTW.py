@@ -193,10 +193,18 @@ class AudioAnalysis:
             }
             sample_audio_2_data.append(data)
 
+
         raw_data["sample_audio_1"] = sample_audio_1_data
         raw_data["sample_audio_2"] = sample_audio_2_data
 
-        with open('data.json', 'w') as outfile:
+        JSON_FOLDER = r'..\storage'
+        ALTER_JSON_FOLDER = r'.\core\storage'
+
+        if not os.path.exists(JSON_FOLDER):
+            JSON_FOLDER = ALTER_JSON_FOLDER
+
+
+        with open(os.path.join(JSON_FOLDER, 'data.json'), 'w') as outfile:
             json.dump(raw_data, outfile, indent=4)
         print('Finish output data json:', (time.time() - start_time))
 
