@@ -44,13 +44,13 @@ venv\Scripts\activate
 ```Shell
 py -m pip install -r requirements.txt
 ```
-4. Provide your own api key & database URI
-   a. Go to `instance\config_ex.py` file
-   b. Add Mongo database URI (`MONGO_URI`)
-   c. Add Google Direction API key (`GOOGLE_API_KEY`)
-   d. Rename the file to `config.py`
-   e. Go to `core\templates\index.html` file, line 27 - 28
-   f. Insert the Google Map API key
+4. Provide your own api key & database URI <br>
+   a. Go to `instance\config_ex.py` file <br>
+   b. Add Mongo database URI (`MONGO_URI`) <br>
+   c. Add Google Direction API key (`GOOGLE_API_KEY`) <br>
+   d. Rename the file to `config.py` <br>
+   e. Go to `core\templates\index.html` file, line 27 - 28 <br>
+   f. Insert the Google Map API key <br>
    
 
 ## Run
