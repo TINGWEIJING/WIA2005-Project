@@ -8,9 +8,6 @@ from flask import current_app, g
 from flask.cli import with_appcontext
 from core import mongo_db
 from core.algorithm.SentimentAnalysis import SentimentAnalysis
-from core.algorithm.CompressedTrie import CompressedTrie
-from core.algorithm.DTW import AudioAnalysis
-
 
 def init_app(app: Flask):
     """Initialize app for registering functions"""
@@ -18,9 +15,6 @@ def init_app(app: Flask):
     # app.teardown_appcontext(close_db)
     # new command that can be called with the flask command
     app.cli.add_command(init_db_command)
-    app.cli.add_command(generate_compressed_trie)
-    app.cli.add_command(run_audio_analysis)
-    
 
 
 def get_db():
@@ -65,19 +59,3 @@ def init_db_command():
     """Clear the existing data and create new tables."""
     init_db()
     click.echo('Initialized the database.')
-
-@click.command('gen-compressed-trie')
-@with_appcontext
-def generate_compressed_trie():
-    """Regenerate compressed trie for string matching"""
-    ct = CompressedTrie()
-    ct.run_generate_compressed_trie()
-    click.echo('Generated compressed trie')
-
-@click.command('run-audio-analysis')
-@with_appcontext
-def run_audio_analysis():
-    """Rerun audio analysis using DTW"""
-    tr = AudioAnalysis()
-    tr.run_audio_analysis()
-    click.echo('Performed DTW audio analysis')
