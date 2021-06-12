@@ -21,17 +21,18 @@ def create_app(test_config=None):
         # DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
 
-    if test_config is None:
-        # load the instance config, if it exists, when not testing
-        # will overide default config from config.py
-        app.config.from_pyfile('config.py', silent=True)
-    else:
-        # load the test config if passed in
-        # map to config instance
-        app.config.from_mapping(test_config)
+    # if test_config is None:
+    #     # load the instance config, if it exists, when not testing
+    #     # will overide default config from config.py
+    #     app.config.from_pyfile('config.py', silent=True)
+    # else:
+    #     # load the test config if passed in
+    #     # map to config instance
+    #     app.config.from_mapping(test_config)
+
+    app.config.from_pyfile('config.py', silent=False)
 
     # setting up MongoDB
-    app.config["MONGO_URI"] = "mongodb+srv://admin:0KwfxU628CQ6uA66@cluster0.pibyp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     global mongo_db
     mongo_db = PyMongo(app).db
 
@@ -41,14 +42,6 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        db = mongo_db
-        todo = db.todos.find_one()
-        print(todo)
-        return 'Hello, World!'
 
     # initialize app and register functions in db.py
     from . import db

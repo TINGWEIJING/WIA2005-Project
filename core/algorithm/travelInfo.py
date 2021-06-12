@@ -5,19 +5,22 @@ import os
 import sys
 from collections import OrderedDict
 import math as math
-
+from flask import app
 
 class GoogleDirectionsRouting:
     # set quota per minute per user to UNLIMITED
-    # API_KEY = "AIzaSyBKKRxcvNqrV1E89QKSEsvYAVHlJHJDEm8"
-    API_KEY = "AIzaSyA6cAGqGi60aw4-sIFeKIj-JvtFfNV5X1c"
+    API_KEY = None
     HUB_LOCATION_JSON_FILE = os.getcwd()+'\\core\\storage\\hub_location.json'
     HUB_LOCATION = {}
 
-    def __init__(self, origin, destination):
+    def __init__(self, origin, destination, api_key:str):
         # if HUB_LOCATION dict is empty
         if len(self.__class__.HUB_LOCATION) == 0:
             self.__class__.read_hub_location()
+
+        # set google API KEY
+        if self.__class__.API_KEY is None:
+            self.__class__.API_KEY = api_key
 
         self.origin = origin
         self.destination = destination
