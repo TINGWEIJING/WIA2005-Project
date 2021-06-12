@@ -1,6 +1,6 @@
 import functools
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for, app, Flask, jsonify
+    Blueprint, flash, g, redirect, render_template, request, session, url_for, app, Flask, jsonify, current_app
 )
 from flask.wrappers import Response
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -61,7 +61,7 @@ def obtainRoutesRequest():
         error = 'Source or destination address is empty'
         return error, 400
 
-    newRoute = GoogleDirectionsRouting(source, destination)
+    newRoute = GoogleDirectionsRouting(source, destination, current_app.config.get('GOOGLE_API_KEY'))
     routes_data = newRoute.get_sorted_routes()
     # print(json.dumps(result, indent = 4))
 
