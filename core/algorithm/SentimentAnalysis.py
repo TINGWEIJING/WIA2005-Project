@@ -1,3 +1,4 @@
+import numpy as np
 import json
 import requests
 from bs4 import BeautifulSoup
@@ -6,7 +7,7 @@ import re
 import warnings
 from datetime import datetime
 warnings.filterwarnings('ignore')
-import numpy as np
+
 
 class AlgoException(Exception):
     pass
@@ -149,16 +150,12 @@ class SentimentAnalysis:
         '''Return analysis_result and its value in tuple'''
         result = ''
         result_val = 0
-        if(self.pos_words >= self.neg_words * 4 and self.pos_words<=10):
-            result = "This article shows neutral sentiment."
-            result_val = 0
-        elif (self.pos_words >= self.neg_words * 4):
+        if (self.pos_words >= self.neg_words * 4):
             result = "This article shows positive sentiment."
             result_val = 1
         else:
             result = "This article shows negative sentiment."
             result_val = -1
-
         return result, result_val
 
     def get_data(self) -> dict:
@@ -225,24 +222,26 @@ class SentimentAnalysis:
         # TODO: tries building
         pass
 
+
 def identify_best_sentiment_company(result_list: list) -> dict:
     ratio_dict = {}
     # accumulate ratio
     for article in result_list:
         if article['courier'] not in ratio_dict:
-            ratio_dict[article['courier']]= {'ratio':[]}
+            ratio_dict[article['courier']] = {'ratio': []}
         ratio_dict[article['courier']]['ratio'].append(article['ratio'])
 
     # calculate mean of ratio and compare to the best
-    min, i = 0,0
+    min, i = 0, 0
     bestCourier = ''
     for courier in ratio_dict:
-        ratio_dict[courier]['mean']=np.mean(ratio_dict[courier]['ratio'])
+        ratio_dict[courier]['mean'] = np.mean(ratio_dict[courier]['ratio'])
         if i == 0 or ratio_dict[courier]['mean'] < min:
             min = ratio_dict[courier]['mean']
             bestCourier = courier
         i += 1
     return bestCourier, min
+
 
 if __name__ == "__main__":
     # URL_LIST_JSON_FILE = r'core\storage\url_list.json'
